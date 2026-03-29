@@ -1,300 +1,234 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DuarTecnologia | Infraestrutura de TI, Cloud & Inteligência Artificial</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Soluções Corporativas de TI</title>
     <style>
-        :root {
-            --primary: #00e6ff;
-            --secondary: #0078d4;
-            --dark: #050609;
-            --card-bg: rgba(22, 27, 34, 0.7);
-            --text: #c9d1d9;
-            --white: #ffffff;
-            --border: #30363d;
-            --gradient: linear-gradient(135deg, var(--secondary), #7000ff);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
-        html { scroll-behavior: smooth; font-size: 16px; }
 
         body {
-            margin: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: var(--dark);
-            color: var(--text);
+            background-color: #f4f7f6;
+            color: #333;
             line-height: 1.6;
-            
-            /* FUNDO COM TRANSPARÊNCIA AJUSTADA */
-            background-image: 
-                linear-gradient(rgba(5, 6, 9, 0.85), rgba(5, 6, 9, 0.85)),
-                radial-gradient(at 10% 10%, rgba(0, 120, 212, 0.15) 0px, transparent 50%),
-                radial-gradient(at 90% 90%, rgba(112, 0, 255, 0.1) 0px, transparent 50%),
-                url('duartecnologia_fundo.png'); 
-
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
         }
 
-        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
-        .section-title { font-size: 2.5rem; color: var(--white); text-align: center; margin-bottom: 10px; letter-spacing: -1px; }
-        .section-subtitle { font-size: 1.1rem; color: var(--primary); text-align: center; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 60px; }
-        strong { color: var(--white); }
-
+        /* Menu Superior */
         header {
-            height: 90vh;
+            background-color: #2c3e50;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            text-align: center;
             padding: 0 20px;
-            position: relative;
         }
 
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient);
-        }
-
-        h1 { font-size: clamp(3rem, 7vw, 5rem); color: var(--white); margin-bottom: 15px; letter-spacing: -2px; }
-        h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        .header-desc { font-size: 1.4rem; color: var(--text); max-width: 700px; margin-bottom: 40px; }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--gradient);
-            color: white;
-            padding: 18px 40px;
-            border-radius: 50px;
-            text-decoration: none;
+        .logo {
+            color: #fff;
+            font-size: 1.5rem;
             font-weight: bold;
-            font-size: 1.1rem;
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 4px 15px rgba(112, 0, 255, 0.3);
         }
 
-        .cta-button:hover { transform: scale(1.05) translateY(-3px); box-shadow: 0 8px 25px rgba(112, 0, 255, 0.5); }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
 
-        .grid {
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* Conteúdo Principal */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+
+        /* Seção de Soluções */
+        .solucoes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            padding: 80px 0;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
         .card {
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            transition: 0.4s ease;
-            backdrop-filter: blur(5px);
-            position: relative;
-            overflow: hidden;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 5px solid #3498db;
+            transition: transform 0.3s;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: 0 15px 40px rgba(0, 230, 255, 0.15);
+            transform: translateY(-5px);
         }
 
-        .card::before {
-            content: '';
+        .card h3 {
+            margin-bottom: 15px;
+            color: #2980b9;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: "✔";
             position: absolute;
-            top: 0;
             left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--border);
-            transition: 0.4s;
+            color: #27ae60;
         }
-        .card:hover::before { background: var(--gradient); }
 
-        .card i { font-size: 3rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 25px; display: inline-block; }
-        .card h3 { color: var(--white); font-size: 1.5rem; margin-top: 0; margin-bottom: 15px; }
-
-        .about-section {
-            background: rgba(13, 17, 23, 0.8);
-            padding: 100px 0;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; text-align: center; } }
-
-        .mvv-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+        /* Tabela Comparativa */
+        .tabela-container {
             margin-top: 50px;
+            overflow-x: auto;
         }
-        @media (max-width: 768px) { .mvv-grid { grid-template-columns: 1fr; } }
-        .mvv-item {
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+        }
+
+        table th, table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #2980b9;
+            color: white;
+        }
+
+        footer {
             text-align: center;
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
+            padding: 40px 0;
+            color: #7f8c8d;
         }
-        .mvv-item i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
-        .mvv-item h4 { color: var(--white); margin: 0 0 10px 0; text-transform: uppercase; letter-spacing: 1px; }
-
-        .remote-section { padding: 100px 0; background: rgba(5, 6, 9, 0.6); }
-        .remote-panel {
-            background: var(--card-bg);
-            max-width: 600px;
-            margin: auto;
-            padding: 40px;
-            border-radius: 20px;
-            border: 2px dashed var(--secondary);
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-        .remote-panel i { font-size: 3rem; color: var(--secondary); margin-bottom: 20px; }
-
-        .contact-section { padding: 100px 0; background: linear-gradient(180deg, rgba(13, 17, 23, 0) 0%, rgba(13, 17, 23, 0.9) 100%); }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-        @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
-
-        .contact-form { background: var(--card-bg); padding: 40px; border-radius: 16px; border: 1px solid var(--border); }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; color: var(--white); margin-bottom: 8px; font-weight: 600; }
-        .form-control, .form-select, textarea {
-            width: 100%; padding: 15px; background: rgba(0,0,0,0.3); border: 1px solid var(--border);
-            border-radius: 8px; color: var(--white); box-sizing: border-box; font-family: inherit;
-        }
-        .form-submit { width: 100%; background: var(--gradient); color: white; border: none; padding: 18px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: 0.3s; }
-
-        .whatsapp-float {
-            position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white;
-            width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center;
-            align-items: center; font-size: 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); z-index: 100;
-        }
-
-        footer { text-align: center; padding: 60px 20px; background: var(--dark); font-size: 0.9rem; color: #8b949e; border-top: 1px solid var(--border); }
-        .footer-logo { font-size: 1.5rem; font-weight: bold; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; display: inline-block;}
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Duar<span>Tecnologia</span></h1>
-    <p class="header-desc">Consultoria Estratégica em TI, Ecossistema Microsoft 365, Cloud Computing e Integração de IA.</p>
-    <a href="#consultoria" class="cta-button">Agendar Consultoria Gratuita</a>
-</header>
+    <header>
+        <nav>
+            <div class="logo">TI Solutions</div>
+            <ul class="nav-links">
+                <li><a href="#solucoes">Soluções</a></li>
+                <li><a href="#tabela">Comparativo</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<main class="container">
-    
-    <section id="empresa" class="about-section">
-        <div class="about-grid">
-            <div>
-                <p class="section-subtitle" style="text-align: left; margin-bottom: 10px;">A Empresa</p>
-                <h2 style="color: var(--white); font-size: 2.2rem; margin-top: 0; text-align: left;">Sua Ponte para a Transformação Digital</h2>
-                <p>A <strong>DuarTecnologia</strong> é mais que um suporte técnico. Somos parceiros estratégicos de negócios que buscam eficiência, segurança e inovação.</p>
-            </div>
-            <div class="card" style="padding: 20px;">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" alt="Dashboard" style="width: 100%; border-radius: 12px;">
-            </div>
-        </div>
-    </section>
+    <div class="container" id="solucoes">
+        <h1>Nossas Soluções Corporativas</h1>
 
-    <section id="servicos" style="padding: 100px 0;">
-        <h2 class="section-title">Soluções Corporativas</h2>
-        <p class="section-subtitle">Onde o Suporte VIP encontra a Alta Tecnologia</p>
-        
-        <div class="grid" style="padding: 0;">
+        <div class="solucoes-grid">
             <div class="card">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <h3>Cloud Arquitetura</h3>
-                <p>Migração estruturada de ambientes legacy, gestão avançada de Azure e otimização de custos em Cloud Computing.</p>
+                <h3>☁️ Cloud Computing</h3>
+                <p>Migração e gestão de infraestrutura escalável para sua empresa.</p>
+                <ul>
+                    <li>Servidores em Nuvem (AWS/Azure)</li>
+                    <li>Backup Gerenciado</li>
+                    <li>Disponibilidade 99.9%</li>
+                </ul>
             </div>
-            
-            <div class="card">
-                <i class="fas fa-server"></i>
-                <h3>Soluções de Microsoft 365</h3>
-                <p>Governança de Microsoft 365, implantação completa de Intune, SharePoint corporativo e Exchange Online.</p>
+
+            <div class="card" style="border-top-color: #f39c12;">
+                <h3>📧 Microsoft 365</h3>
+                <p>Produtividade e colaboração de qualquer lugar com ferramentas líderes.</p>
+                <ul>
+                    <li>Outlook, Teams e SharePoint</li>
+                    <li>Segurança de E-mail Avançada</li>
+                    <li>Licenciamento Flexível</li>
+                </ul>
             </div>
-            
-            <div class="card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Cyber Segurança</h3>
-                <p>Gerenciamento de Firewalls, implementação de VPNs seguras, auditorias de segurança e treinamento.</p>
+
+            <div class="card" style="border-top-color: #e74c3c;">
+                <h3>🛡️ Cyber Segurança</h3>
+                <p>Proteção robusta contra ameaças digitais e conformidade com LGPD.</p>
+                <ul>
+                    <li>Firewall e Antivírus EDR</li>
+                    <li>Pentest e Auditoria</li>
+                    <li>Monitoramento 24/7 (SOC)</li>
+                </ul>
             </div>
         </div>
-    </section>
 
-    <section id="suporte" class="remote-section">
-        <h2 class="section-title">Suporte Remoto VIP</h2>
-        <p class="section-subtitle">Acesso rápido e seguro para sua empresa</p>
-        
-        <div class="remote-panel">
-            <i class="fas fa-desktop"></i>
-            <h3>Precisa de Suporte agora?</h3>
-            <p>Faça o download do nosso console oficial (AnyDesk).</p>
-            
-            <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 30px;">
-                <a href="https://download.anydesk.com/AnyDesk.exe" class="cta-button" style="background: #ef4444; width: 100%; box-sizing: border-box;">
-                    <i class="fas fa-download" style="margin-right: 10px;"></i> Baixar AnyDesk (Windows)
-                </a>
-                <a href="https://wa.me/5511970273342?text=Preciso%20de%20ajuda%20com%20o%20suporte%20remoto" target="_blank" style="text-decoration: none; color: var(--primary); font-weight: bold; border: 1px solid var(--primary); padding: 12px; border-radius: 8px;">
-                    <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
-                </a>
-            </div>
+        <div class="tabela-container" id="tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Solução</th>
+                        <th>Principais Benefícios</th>
+                        <th>Indicado para</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cloud</td>
+                        <td>Redução de custos com hardware e escalabilidade rápida.</td>
+                        <td>Empresas em crescimento.</td>
+                    </tr>
+                    <tr>
+                        <td>Microsoft 365</td>
+                        <td>Colaboração em tempo real e arquivos centralizados.</td>
+                        <td>Trabalho remoto e híbrido.</td>
+                    </tr>
+                    <tr>
+                        <td>Cyber Segurança</td>
+                        <td>Prevenção de ataques Ransomware e vazamento de dados.</td>
+                        <td>Conformidade e Proteção Crítica.</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </section>
+    </div>
 
-    <section id="consultoria" class="contact-section">
-        <div class="contact-grid">
-            <div>
-                <h2 style="color: var(--white); font-size: 2.5rem; text-align: left; margin-bottom: 10px;">Interessado na Evolução da sua Empresa?</h2>
-                <p>Preencha o formulário e nossa equipe entrará em contato em até 4 horas úteis.</p>
-            </div>
-            
-            <div class="contact-form">
-                <form action="https://formspree.io/f/xbjnqzzl" method="POST">
-                    <div class="form-group">
-                        <label for="name">Seu Nome Completo</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="company_email">E-mail Corporativo</label>
-                        <input type="email" id="company_email" name="_replyto" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Telefone / WhatsApp</label>
-                        <input type="tel" id="phone" name="phone" class="form-control" required>
-                    </div>
-                    <button type="submit" class="form-submit">Enviar Solicitação</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<footer>
-    <div class="footer-logo">DuarTecnologia</div>
-    <p>&copy; 2026 DuarTecnologia - São Paulo e Região - Atendimento Corporativo.</p>
-</footer>
-
-<a href="https://wa.me/5511970273342" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
+    <footer>
+        <p>&copy; 2026 TI Solutions Corporativas. Todos os direitos reservados.</p>
+    </footer>
 
 </body>
 </html>
