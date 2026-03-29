@@ -1,459 +1,247 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DuarTecnologia | Infraestrutura de TI, Cloud & Inteligência Artificial</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            /* Nova Paleta de Cores: Mais moderna, focada em Cloud e IA */
-            --primary: #00e6ff; /* Ciano Neon (IA/Inovação) */
-            --secondary: #0078d4; /* Azul Microsoft (Cloud/Confiança) */
-            --dark: #050609; /* Quase preto para contraste */
-            --card-bg: rgba(22, 27, 34, 0.7); /* Transparência para o fundo tecnológico */
-            --text: #c9d1d9;
-            --white: #ffffff;
-            --border: #30363d;
-            --gradient: linear-gradient(135deg, var(--secondary), #7000ff);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        html { scroll-behavior: smooth; font-size: 16px; }
+<title>DuarTecnologia | Soluções em TI, Cloud e IA</title>
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: var(--dark);
-            color: var(--text);
-            line-height: 1.6;
-            /* Fundo Tecnológico Sutil: Evoca Nuvem e Redes Neurais */
-            background-image: 
-                radial-gradient(at 10% 10%, rgba(0, 120, 212, 0.15) 0px, transparent 50%),
-                radial-gradient(at 90% 90%, rgba(112, 0, 255, 0.1) 0px, transparent 50%),
-                url('https://images.unsplash.com/photo-1593720219276-0f1eacd0aef4?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-        }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-        /* Utilitários */
-        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
-        .section-title { font-size: 2.5rem; color: var(--white); text-align: center; margin-bottom: 10px; letter-spacing: -1px; }
-        .section-subtitle { font-size: 1.1rem; color: var(--primary); text-align: center; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 60px; }
-        strong { color: var(--white); }
+<style>
+:root {
+    --primary:#00e6ff;
+    --secondary:#0078d4;
+    --dark:#050609;
+    --card:#161b22;
+    --text:#c9d1d9;
+    --white:#fff;
+    --gradient:linear-gradient(135deg,#0078d4,#7000ff);
+}
 
-        /* Header (Nuvem & IA) */
-        header {
-            height: 90vh; /* Mais alto para impacto */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            position: relative;
-        }
+body {
+    margin:0;
+    font-family:'Segoe UI';
+    background:var(--dark);
+    color:var(--text);
+}
 
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient);
-        }
+/* NAV */
+.navbar {
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(5,6,9,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #222;
+    z-index:999;
+}
+.nav-container {
+    max-width:1200px;
+    margin:auto;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+}
+.logo {color:white;font-weight:bold;}
+.logo span{color:var(--primary);}
+.nav-menu{display:flex;gap:20px;list-style:none;}
+.nav-menu a{color:var(--text);text-decoration:none;}
+.nav-menu a:hover{color:var(--primary);}
+.nav-cta{
+    background:var(--gradient);
+    padding:6px 15px;
+    border-radius:20px;
+    color:white !important;
+}
 
-        h1 { font-size: clamp(3rem, 7vw, 5rem); color: var(--white); margin-bottom: 15px; letter-spacing: -2px; }
-        h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        .header-desc { font-size: 1.4rem; color: var(--text); max-width: 700px; margin-bottom: 40px; }
+/* HERO */
+.hero {
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+.hero h1{
+    font-size:3rem;
+    color:white;
+}
+.hero span{color:var(--primary);}
+.hero p{max-width:600px;margin:auto;}
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:15px 30px;
+    background:var(--gradient);
+    border-radius:30px;
+    color:white;
+    text-decoration:none;
+}
 
-        /* Componentes de Botão */
-        .cta-button {
-            display: inline-block;
-            background: var(--gradient);
-            color: white;
-            padding: 18px 40px;
-            border-radius: 50px; /* Mais arredondado, visual de startup tech */
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 4px 15px rgba(112, 0, 255, 0.3);
-        }
+/* SECTION */
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:80px 20px;
+}
+.section h2{
+    text-align:center;
+    color:white;
+}
 
-        .cta-button:hover { transform: scale(1.05) translateY(-3px); box-shadow: 0 8px 25px rgba(112, 0, 255, 0.5); }
+/* CARDS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+.card{
+    background:var(--card);
+    padding:25px;
+    border-radius:10px;
+    transition:.3s;
+}
+.card:hover{
+    transform:translateY(-5px);
+    border:1px solid var(--primary);
+}
 
-        /* Grid de Serviços/Soluções */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            padding: 80px 0;
-        }
+/* MVV */
+.mvv{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+.mvv div{
+    background:var(--card);
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
 
-        .card {
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            transition: 0.4s ease;
-            backdrop-filter: blur(5px); /* Efeito de vidro moderno */
-            position: relative;
-            overflow: hidden;
-        }
+/* CTA */
+.cta-section{
+    text-align:center;
+    background:linear-gradient(180deg,transparent,#0d1117);
+}
 
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: 0 15px 40px rgba(0, 230, 255, 0.15);
-        }
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px;
+    border-top:1px solid #222;
+}
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--border);
-            transition: 0.4s;
-        }
-        .card:hover::before { background: var(--gradient); }
-
-        .card i { font-size: 3rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 25px; display: inline-block; }
-        .card h3 { color: var(--white); font-size: 1.5rem; margin-top: 0; margin-bottom: 15px; }
-
-        /* Seção Sobre/Empresa */
-        .about-section {
-            background: rgba(13, 17, 23, 0.8);
-            padding: 100px 0;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; text-align: center; } }
-
-        /* Missão, Visão, Valores */
-        .mvv-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-        }
-        @media (max-width: 768px) { .mvv-grid { grid-template-columns: 1fr; } }
-        .mvv-item {
-            text-align: center;
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-        .mvv-item i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
-        .mvv-item h4 { color: var(--white); margin: 0 0 10px 0; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* Painel de Acesso Remoto Personalizado */
-        .remote-section {
-            padding: 100px 0;
-            background: rgba(5, 6, 9, 0.6);
-        }
-        .remote-panel {
-            background: var(--card-bg);
-            max-width: 600px;
-            margin: auto;
-            padding: 40px;
-            border-radius: 20px;
-            border: 2px dashed var(--secondary);
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-        .remote-panel i { font-size: 3rem; color: var(--secondary); margin-bottom: 20px; }
-        .remote-input-group {
-            display: flex;
-            gap: 10px;
-            margin-top: 25px;
-        }
-        @media (max-width: 600px) { .remote-input-group { flex-direction: column; } }
-        .remote-input {
-            flex-grow: 1;
-            padding: 15px;
-            background: rgba(0,0,0,0.3);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--white);
-            font-family: monospace;
-            font-size: 1.1rem;
-        }
-        .remote-input:focus { outline: none; border-color: var(--primary); }
-        .remote-button {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .remote-button:hover { background: #005a9e; }
-
-        /* Clientes (Placeholders Futuros) */
-        .clients-section { padding: 100px 0; }
-        .clients-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 30px;
-            align-items: center;
-            justify-items: center;
-            opacity: 0.6;
-        }
-        .client-logo {
-            width: 100%;
-            height: 100px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #444;
-            font-weight: bold;
-            border: 1px solid var(--border);
-        }
-
-        /* Formulário de Leads (Contato/Consultoria) */
-        .contact-section {
-            padding: 100px 0;
-            background: linear-gradient(180deg, rgba(13, 17, 23, 0) 0%, rgba(13, 17, 23, 0.9) 100%);
-        }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-        @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
-
-        .contact-form {
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-        }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; color: var(--white); margin-bottom: 8px; font-weight: 600; }
-        .form-control, .form-select, textarea {
-            width: 100%;
-            padding: 15px;
-            background: rgba(0,0,0,0.3);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--white);
-            box-sizing: border-box;
-            font-family: inherit;
-        }
-        .form-control:focus, .form-select:focus, textarea:focus { outline: none; border-color: var(--primary); }
-        textarea { resize: vertical; height: 120px; }
-        .form-submit {
-            width: 100%;
-            background: var(--gradient);
-            color: white;
-            border: none;
-            padding: 18px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .form-submit:hover { opacity: 0.9; transform: translateY(-2px); }
-
-        /* Botão WhatsApp Flutuante */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366;
-            color: white;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 35px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            z-index: 100;
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
-
-        /* Footer */
-        footer { 
-            text-align: center; 
-            padding: 60px 20px; 
-            background: var(--dark);
-            font-size: 0.9rem; 
-            color: #8b949e; 
-            border-top: 1px solid var(--border);
-        }
-        .footer-info { margin-bottom: 10px; font-size: 1.1rem; color: var(--white); }
-        .footer-logo { font-size: 1.5rem; font-weight: bold; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; display: inline-block;}
-    </style>
+/* WHATS */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25d366;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:30px;
+}
+</style>
 </head>
+
 <body>
 
-<header>
-    <h1>Duarte<span>Tecnologia</span></h1>
-    <p class="header-desc">Consultoria Estratégica em TI, Ecosistema Microsoft 365, Cloud Computing e Integração de IA.</p>
-    <a href="#consultoria" class="cta-button">Agendar Consultoria Gratuita</a>
-</header>
+<!-- NAV -->
+<nav class="navbar">
+<div class="nav-container">
+<div class="logo">Duar<span>Tecnologia</span></div>
+<ul class="nav-menu">
+<li><a href="#empresa">Empresa</a></li>
+<li><a href="#servicos">Serviços</a></li>
+<li><a href="#consultoria" class="nav-cta">Agendar</a></li>
+</ul>
+</div>
+</nav>
 
-<main class="container">
-    
-    <section id="empresa" class="about-section">
-        <div class="about-grid">
-            <div>
-                <p class="subtitle" style="text-align: left; margin-bottom: 10px;">A Empresa</p>
-                <h2 style="color: var(--white); font-size: 2.2rem; margin-top: 0; text-align: left;">Sua Ponte para a Transformação Digital</h2>
-                <p>A <strong>DuarTecnologia</strong> é mais que um suporte técnico. Somos parceiros estratégicos de negócios que buscam eficiência, segurança e inovação. Com foco em arquitetura de TI moderna, ajudamos sua empresa a adotar o poder da Nuvem e os avanços da Inteligência Artificial.</p>
-            </div>
-            <div class="card" style="padding: 20px;">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" alt="Dashboard de dados" style="width: 100%; border-radius: 12px;">
-            </div>
-        </div>
-        
-        <div class="mvv-grid">
-            <div class="mvv-item">
-                <i class="fas fa-bullseye"></i>
-                <h4>Missão</h4>
-                <p>Entregar soluções de TI de classe corporativa, simplificando a adoção tecnológica para maximizar os resultados dos nossos clientes.</p>
-            </div>
-            <div class="mvv-item">
-                <i class="fas fa-eye"></i>
-                <h4>Visão</h4>
-                <p>Ser referência nacional em consultoria de TI focada na convergência entre Cloud Computing e Inteligência Artificial.</p>
-            </div>
-            <div class="mvv-item">
-                <i class="fas fa-heart"></i>
-                <h4>Valores</h4>
-                <p>Transparência, Segurança da Informação, Inovação Contínua e Foco na Continuidade de Negócios.</p>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero">
+<div>
+<h1>Soluções em <span>TI, Cloud e IA</span></h1>
+<p>Transformamos tecnologia em resultado real para empresas. Segurança, performance e inovação em um só lugar.</p>
+<a href="https://wa.me/5511970273342" class="btn">Falar no WhatsApp</a>
+</div>
+</section>
 
-    <section id="servicos" style="padding: 100px 0;">
-        <h2 class="section-title">Soluções Corporativas</h2>
-        <p class="section-subtitle">Onde o Suporte VIP encontra a Alta Tecnologia</p>
-        
-        <div class="grid" style="padding: 0;">
-            <div class="card">
-                <i class="fas fa-brain"></i>
-                <h3>IA Integrada</h3>
-                <p>Consultoria e implementação de Copilot e soluções de automação baseadas em IA para aumentar a produtividade e insights de negócios.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <h3>Cloud Arquitetura</h3>
-                <p>Migração estruturada de ambientes legacy, gestão avançada de Azure e otimização de custos em Cloud Computing.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-server"></i>
-                <h3>M365 Especializado</h3>
-                <p>Governança de Microsoft 365, implantação completa de Intune, SharePoint corporativo e Exchange Online.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Cyber Segurança</h3>
-                <p>Gerenciamento de Firewalls, implementação de VPNs seguras, auditorias de segurança e treinamento C-Level.</p>
-            </div>
-        </div>
-    </section>
+<!-- EMPRESA -->
+<section id="empresa" class="section">
+<h2>Sobre a DuarTecnologia</h2>
+<p style="text-align:center;max-width:700px;margin:auto;">
+Especialista em suporte corporativo, cloud e Microsoft 365, com mais de 8 anos de experiência ajudando empresas a evoluírem tecnologicamente.
+</p>
 
-    <section id="suporte" class="remote-section">
-        <h2 class="section-title">Suporte Remoto VIP</h2>
-        <p class="section-subtitle">Inicie sua conexão segura</p>
-        <div class="remote-panel">
-            <i class="fas fa-desktop"></i>
-            <h3>Acesso ao Portal de Suporte</h3>
-            <p>Seu técnico solicitou uma conexão? Digite o código da sessão abaixo.</p>
-            <div class="remote-input-group">
-                <input type="text" class="remote-input" placeholder="Ex: 12345678" maxlength="8">
-                <button class="remote-button">Conectar</button>
-            </div>
-            <p style="font-size: 0.8rem; color: #666; margin-top: 15px;">Ao clicar, você concorda com os termos de acesso remoto da DuarTecnologia.</p>
-        </div>
-    </section>
+<div class="mvv">
+<div>
+<h3>Missão</h3>
+<p>Transformar tecnologia em resultados reais para empresas.</p>
+</div>
 
-    <section id="clientes" class="clients-section">
-        <h2 class="section-title">Empresas que Confiam</h2>
-        <p class="section-subtitle">Casos de sucesso em construção</p>
-        <div class="clients-grid">
-            <div class="client-logo">[Logo 1]</div>
-            <div class="client-logo">[Logo 2]</div>
-            <div class="client-logo">[Logo 3]</div>
-            <div class="client-logo">[Logo 4]</div>
-            <div class="client-logo">[Logo 5]</div>
-            <div class="client-logo">[Logo 6]</div>
-        </div>
-    </section>
+<div>
+<h3>Visão</h3>
+<p>Ser referência em soluções modernas de TI no Brasil.</p>
+</div>
 
-    <section id="consultoria" class="contact-section">
-        <div class="contact-grid">
-            <div>
-                <h2 style="color: var(--white); font-size: 2.5rem; text-align: left; margin-bottom: 10px;">Interessado na Evolução Tecnológica da sua Empresa?</h2>
-                <p class="subtitle" style="text-align: left; margin-bottom: 25px;">Agende uma conversa estratégica com um especialista.</p>
-                <p>Com mais de <strong>8 anos de experiência</strong> no mercado corporativo, Édipo Duarte pode analisar seu ambiente e desenhar a melhor rota para a Cloud e IA.</p>
-                <p>Preencha o formulário e nossa equipe entrará em contato em até 4 horas úteis.</p>
-            </div>
-            
-            <div class="contact-form">
-                <form action="https://formspree.io/f/xbjnqzzl" method="POST">
-                    <div class="form-group">
-                        <label for="name">Seu Nome Completo</label>
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Ex: Édipo Duarte" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="company_email">E-mail Corporativo</label>
-                        <input type="email" id="company_email" name="_replyto" class="form-control" placeholder="empresa@seudominio.com.br" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Telefone / WhatsApp</label>
-                        <input type="tel" id="phone" name="phone" class="form-control" placeholder="(11) 99999-9999" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="interest">Assunto de Maior Interesse</label>
-                        <select id="interest" name="interest" class="form-select">
-                            <option value="consultoria">Consultoria Estratégica</option>
-                            <option value="cloud">Migração/Gestão Cloud</option>
-                            <option value="microsoft365">Microsoft 365 (SharePoint/Intune)</option>
-                            <option value="ia">Automação com IA</option>
-                            <option value="seguranca">Segurança da Informação</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mensagem ou Desafio Atual (Opcional)</label>
-                        <textarea id="message" name="message" placeholder="Conte brevemente sobre sua necessidade..."></textarea>
-                    </div>
-                    <button type="submit" class="form-submit">Enviar Solicitação</button>
-                </form>
-            </div>
-        </div>
-    </section>
+<div>
+<h3>Valores</h3>
+<p>Transparência, inovação, segurança e foco no cliente.</p>
+</div>
+</div>
+</section>
 
-</main>
+<!-- SERVIÇOS -->
+<section id="servicos" class="section">
+<h2>Serviços</h2>
 
-<footer id="contato">
-    <div class="footer-logo">DuarTecnologia</div>
-    <p>&copy; 2026 DuarTecnologia - São Paulo e Região - Atendimento Corporativo e Especializado.</p>
+<div class="grid">
+<div class="card">
+<h3>Suporte TI</h3>
+<p>Atendimento remoto e presencial especializado.</p>
+</div>
+
+<div class="card">
+<h3>Cloud</h3>
+<p>Microsoft 365, Azure e migração para nuvem.</p>
+</div>
+
+<div class="card">
+<h3>Redes</h3>
+<p>Configuração, Wi-Fi e infraestrutura.</p>
+</div>
+
+<div class="card">
+<h3>Segurança</h3>
+<p>VPN, firewall e proteção de dados.</p>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section id="consultoria" class="section cta-section">
+<h2>Precisa de ajuda em TI?</h2>
+<p>Fale agora comigo e receba um diagnóstico gratuito.</p>
+<a href="https://wa.me/5511970273342" class="btn">Agendar Agora</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2026 DuarTecnologia - Todos os direitos reservados</p>
 </footer>
 
-<a href="https://wa.me/5511970273342" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-    <i class="fab fa-whatsapp"></i>
+<a href="https://wa.me/5511970273342" class="whatsapp">
+<i class="fab fa-whatsapp"></i>
 </a>
 
 </body>
