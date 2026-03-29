@@ -25,64 +25,18 @@
             background-color: var(--dark);
             color: var(--text);
             line-height: 1.6;
+            
+            /* FUNDO COM TRANSPARÊNCIA AJUSTADA */
             background-image: 
                 linear-gradient(rgba(5, 6, 9, 0.85), rgba(5, 6, 9, 0.85)),
                 radial-gradient(at 10% 10%, rgba(0, 120, 212, 0.15) 0px, transparent 50%),
                 radial-gradient(at 90% 90%, rgba(112, 0, 255, 0.1) 0px, transparent 50%),
                 url('duartecnologia_fundo.png'); 
+
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
         }
-
-        /* --- NOVO MENU SUPERIOR --- */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(5, 6, 9, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            padding: 15px 0;
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-nav {
-            font-weight: bold;
-            font-size: 1.4rem;
-            text-decoration: none;
-            color: var(--white);
-        }
-        .logo-nav span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text);
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover { color: var(--primary); }
-
-        /* Ajuste para não o conteúdo não ficar escondido sob o menu */
-        section { scroll-margin-top: 80px; } 
-
-        /* -------------------------- */
 
         .container { max-width: 1200px; margin: auto; padding: 0 20px; }
         .section-title { font-size: 2.5rem; color: var(--white); text-align: center; margin-bottom: 10px; letter-spacing: -1px; }
@@ -90,7 +44,7 @@
         strong { color: var(--white); }
 
         header {
-            height: 100vh;
+            height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -181,10 +135,24 @@
             gap: 50px;
             align-items: center;
         }
-        @media (max-width: 768px) { 
-            .about-grid { grid-template-columns: 1fr; text-align: center; } 
-            .nav-links { display: none; } /* Esconde o menu no mobile por enquanto para manter simples */
+        @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; text-align: center; } }
+
+        .mvv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
         }
+        @media (max-width: 768px) { .mvv-grid { grid-template-columns: 1fr; } }
+        .mvv-item {
+            text-align: center;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        .mvv-item i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+        .mvv-item h4 { color: var(--white); margin: 0 0 10px 0; text-transform: uppercase; letter-spacing: 1px; }
 
         .remote-section { padding: 100px 0; background: rgba(5, 6, 9, 0.6); }
         .remote-panel {
@@ -201,10 +169,12 @@
 
         .contact-section { padding: 100px 0; background: linear-gradient(180deg, rgba(13, 17, 23, 0) 0%, rgba(13, 17, 23, 0.9) 100%); }
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
 
         .contact-form { background: var(--card-bg); padding: 40px; border-radius: 16px; border: 1px solid var(--border); }
         .form-group { margin-bottom: 20px; }
-        .form-control {
+        .form-group label { display: block; color: var(--white); margin-bottom: 8px; font-weight: 600; }
+        .form-control, .form-select, textarea {
             width: 100%; padding: 15px; background: rgba(0,0,0,0.3); border: 1px solid var(--border);
             border-radius: 8px; color: var(--white); box-sizing: border-box; font-family: inherit;
         }
@@ -221,18 +191,6 @@
     </style>
 </head>
 <body>
-
-<nav>
-    <div class="container">
-        <a href="#" class="logo-nav">Duar<span>Tecnologia</span></a>
-        <ul class="nav-links">
-            <li><a href="#empresa">Sobre</a></li>
-            <li><a href="#servicos">Soluções</a></li>
-            <li><a href="#suporte">Suporte Remoto</a></li>
-            <li><a href="#consultoria">Contato</a></li>
-        </ul>
-    </div>
-</nav>
 
 <header>
     <h1>Duar<span>Tecnologia</span></h1>
