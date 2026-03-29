@@ -1,316 +1,190 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DuarTecnologia | Infraestrutura de TI, Cloud & IA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duarte Tecnologia</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<style>
-:root {
-    --primary: #00e6ff;
-    --secondary: #0078d4;
-    --dark: #050609;
-    --card-bg: rgba(22, 27, 34, 0.7);
-    --text: #c9d1d9;
-    --white: #ffffff;
-    --border: #30363d;
-    --gradient: linear-gradient(135deg, var(--secondary), #7000ff);
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-    margin: 0;
-    font-family: 'Segoe UI', system-ui;
-    background-color: var(--dark);
-    color: var(--text);
-}
-
-/* NAVBAR */
-.navbar {
-    /* NAVBAR NOVA */
-.navbar {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(5,6,9,0.85);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #222;
-    z-index: 999;
-    transition: 0.3s;
-}
-
-.navbar.scrolled {
-    background: rgba(5,6,9,0.95);
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    color: white;
-    font-weight: bold;
-}
-
-.logo span {
-    color: var(--primary);
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: var(--text);
-}
-
-.nav-cta {
-    background: var(--gradient);
-    padding: 8px 18px;
-    border-radius: 20px;
-    color: white !important;
-}
-
-/* MOBILE */
-.menu-toggle {
-    display: none;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
 
-    .nav-menu {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        background: #0d1117;
-        flex-direction: column;
-        display: none;
-        padding: 20px 0;
+    body {
+      background: #0f172a;
+      color: #fff;
     }
 
-    .nav-menu.active {
-        display: flex;
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
     }
-}
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(5,6,9,0.9);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-    z-index: 999;
-}
-.nav-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.logo {
-    color: white;
-    font-weight: bold;
-}
-.logo span { color: var(--primary); }
 
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
-.nav-menu a {
-    text-decoration: none;
-    color: var(--text);
-}
-.nav-menu a:hover { color: var(--primary); }
+    header h1 {
+      color: #38bdf8;
+    }
 
-.nav-cta {
-    background: var(--gradient);
-    padding: 6px 15px;
-    border-radius: 20px;
-    color: white !important;
-}
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #fff;
+      transition: 0.3s;
+    }
 
-/* HEADER */
-header {
-    margin-top: 80px;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-h1 { font-size: 3rem; color: white; }
-h1 span { color: var(--primary); }
+    nav a:hover {
+      color: #38bdf8;
+    }
 
-.cta-button {
-    display: inline-block;
-    margin-top: 20px;
-    background: var(--gradient);
-    padding: 15px 30px;
-    border-radius: 30px;
-    color: white;
-    text-decoration: none;
-}
+    section {
+      padding: 100px 50px;
+      min-height: 100vh;
+    }
 
-/* SECTION */
-.container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
+    .hero h2 {
+      font-size: 40px;
+    }
 
-.card {
-    background: var(--card-bg);
-    padding: 25px;
-    border-radius: 10px;
-}
+    .hero p {
+      margin: 20px 0;
+      max-width: 500px;
+    }
 
-/* MVV */
-.mvv-grid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
-    margin-top: 30px;
-}
-.mvv-item {
-    text-align: center;
-    background: var(--card-bg);
-    padding: 20px;
-    border-radius: 10px;
-}
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #38bdf8;
+      color: #000;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 40px;
-    border-top: 1px solid var(--border);
-}
+    .btn:hover {
+      background: #0ea5e9;
+    }
 
-/* WHATS */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25d366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:30px;
-}
-</style>
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- MENU -->
-<nav class="navbar">
-  <div class="nav-container">
-
-    <div class="logo">Duar<span>Tecnologia</span></div>
-
-    <div class="menu-toggle" id="menu-toggle">
-      <i class="fas fa-bars"></i>
-    </div>
-
-    <ul class="nav-menu" id="nav-menu">
-      <li><a href="#empresa">Empresa</a></li>
-      <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#consultoria">Contato</a></li>
-      <li><a href="#consultoria" class="nav-cta">Agendar</a></li>
-    </ul>
-
-  </div>
-</nav>
-<!-- HEADER -->
 <header>
-<div>
-<h1>Duar<span>Tecnologia</span></h1>
-<p>Consultoria em TI, Cloud e Inteligência Artificial</p>
-<a href="#consultoria" class="cta-button">Falar no WhatsApp</a>
-</div>
+  <h1>Duarte Tecnologia</h1>
+  <nav>
+    <a href="#home">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#contato">Contato</a>
+  </nav>
 </header>
 
-<!-- EMPRESA -->
-<section id="empresa" class="container">
-<h2>Sobre a Empresa</h2>
-<p>A DuarTecnologia atua com soluções modernas de TI, focando em Cloud, segurança e suporte corporativo.</p>
-
-<div class="mvv-grid">
-<div class="mvv-item">
-<h3>Missão</h3>
-<p>Transformar tecnologia em resultados reais para empresas.</p>
-</div>
-
-<div class="mvv-item">
-<h3>Visão</h3>
-<p>Ser referência em soluções modernas de TI.</p>
-</div>
-
-<div class="mvv-item">
-<h3>Valores</h3>
-<p>Transparência, inovação e foco no cliente.</p>
-</div>
-</div>
+<section id="home" class="hero">
+  <h2>Soluções em Tecnologia e Suporte de TI</h2>
+  <p>Especialista em suporte técnico, redes, cloud e infraestrutura. Transformando tecnologia em resultado.</p>
+  <a href="#contato" class="btn">Fale Comigo</a>
 </section>
 
-<!-- SERVIÇOS -->
-<section id="servicos" class="container">
-<h2>Serviços</h2>
+<section id="sobre">
+  <h2>Sobre</h2>
+  <p>Sou profissional de TI com mais de 8 anos de experiência em suporte técnico, redes, infraestrutura e cloud. Atuação com atendimento a usuários, diretoria e ambientes corporativos.</p>
 
-<div class="grid">
-<div class="card"><h3>Suporte TI</h3><p>Atendimento remoto e presencial.</p></div>
-<div class="card"><h3>Cloud</h3><p>Azure e Microsoft 365.</p></div>
-<div class="card"><h3>Redes</h3><p>Configuração e segurança.</p></div>
-<div class="card"><h3>Segurança</h3><p>VPN, Firewall e proteção.</p></div>
-</div>
+  <div class="cards">
+    <div class="card">
+      <h3>Missão</h3>
+      <p>Oferecer soluções tecnológicas eficientes e acessíveis.</p>
+    </div>
+    <div class="card">
+      <h3>Visão</h3>
+      <p>Ser referência em suporte e inovação em tecnologia.</p>
+    </div>
+    <div class="card">
+      <h3>Valores</h3>
+      <p>Compromisso, qualidade, inovação e transparência.</p>
+    </div>
+  </div>
 </section>
 
-<!-- CLIENTES -->
-<section id="clientes" class="container">
-<h2>Clientes</h2>
-<p>Em construção...</p>
+<section id="servicos">
+  <h2>Serviços</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Suporte Técnico</h3>
+      <p>Atendimento remoto e presencial para empresas e usuários.</p>
+    </div>
+
+    <div class="card">
+      <h3>Redes e Infraestrutura</h3>
+      <p>Configuração de roteadores, Wi-Fi e cabeamento estruturado.</p>
+    </div>
+
+    <div class="card">
+      <h3>Cloud e Office 365</h3>
+      <p>Administração, configuração e suporte em ambientes Microsoft.</p>
+    </div>
+
+    <div class="card">
+      <h3>Segurança</h3>
+      <p>Firewall, VPN e proteção de dados corporativos.</p>
+    </div>
+  </div>
 </section>
 
-<!-- CONTATO -->
-<section id="consultoria" class="container">
-<h2>Contato</h2>
-<p>Entre em contato via WhatsApp para atendimento rápido.</p>
+<section id="contato">
+  <h2>Contato</h2>
+  <p>Entre em contato para soluções em TI:</p>
+  
+  <p>Email: contato@duartecnologia.com.br</p>
+  <p>WhatsApp: (11) 99999-9999</p>
 </section>
 
-<!-- FOOTER -->
 <footer>
-<p>© 2026 DuarTecnologia</p>
+  <p>© 2026 Duarte Tecnologia - Todos os direitos reservados</p>
 </footer>
-
-<a href="https://wa.me/5511970273342" class="whatsapp-float">
-<i class="fab fa-whatsapp"></i>
-</a>
 
 </body>
 </html>
