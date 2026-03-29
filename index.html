@@ -30,6 +30,86 @@ body {
 
 /* NAVBAR */
 .navbar {
+    /* NAVBAR NOVA */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(5,6,9,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #222;
+    z-index: 999;
+    transition: 0.3s;
+}
+
+.navbar.scrolled {
+    background: rgba(5,6,9,0.95);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.nav-cta {
+    background: var(--gradient);
+    padding: 8px 18px;
+    border-radius: 20px;
+    color: white !important;
+}
+
+/* MOBILE */
+.menu-toggle {
+    display: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background: #0d1117;
+        flex-direction: column;
+        display: none;
+        padding: 20px 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+}
     position: fixed;
     width: 100%;
     top: 0;
@@ -150,17 +230,23 @@ footer {
 
 <!-- MENU -->
 <nav class="navbar">
-<div class="nav-container">
-<div class="logo">Duar<span>Tecnologia</span></div>
-<ul class="nav-menu">
-<li><a href="#empresa">Empresa</a></li>
-<li><a href="#servicos">Serviços</a></li>
-<li><a href="#clientes">Clientes</a></li>
-<li><a href="#consultoria" class="nav-cta">Agendar</a></li>
-</ul>
-</div>
-</nav>
+  <div class="nav-container">
 
+    <div class="logo">Duar<span>Tecnologia</span></div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="#empresa">Empresa</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#consultoria">Contato</a></li>
+      <li><a href="#consultoria" class="nav-cta">Agendar</a></li>
+    </ul>
+
+  </div>
+</nav>
 <!-- HEADER -->
 <header>
 <div>
