@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #00e6ff;
-            --secondary: #0078d4;
-            --dark: #050609;
-            --card-bg: rgba(22, 27, 34, 0.7);
+            /* Nova Paleta de Cores: Mais moderna, focada em Cloud e IA */
+            --primary: #00e6ff; /* Ciano Neon (IA/Inovação) */
+            --secondary: #0078d4; /* Azul Microsoft (Cloud/Confiança) */
+            --dark: #050609; /* Quase preto para contraste */
+            --card-bg: rgba(22, 27, 34, 0.7); /* Transparência para o fundo tecnológico */
             --text: #c9d1d9;
             --white: #ffffff;
             --border: #30363d;
@@ -25,26 +26,25 @@
             background-color: var(--dark);
             color: var(--text);
             line-height: 1.6;
-            
-            /* FUNDO COM TRANSPARÊNCIA AJUSTADA */
+            /* Fundo Tecnológico Sutil: Evoca Nuvem e Redes Neurais */
             background-image: 
-                linear-gradient(rgba(5, 6, 9, 0.85), rgba(5, 6, 9, 0.85)),
                 radial-gradient(at 10% 10%, rgba(0, 120, 212, 0.15) 0px, transparent 50%),
                 radial-gradient(at 90% 90%, rgba(112, 0, 255, 0.1) 0px, transparent 50%),
-                url('duartecnologia_fundo.png'); 
-
+                url('https://images.unsplash.com/photo-1593720219276-0f1eacd0aef4?q=80&w=2000&auto=format&fit=crop');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
         }
 
+        /* Utilitários */
         .container { max-width: 1200px; margin: auto; padding: 0 20px; }
         .section-title { font-size: 2.5rem; color: var(--white); text-align: center; margin-bottom: 10px; letter-spacing: -1px; }
         .section-subtitle { font-size: 1.1rem; color: var(--primary); text-align: center; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 60px; }
         strong { color: var(--white); }
 
+        /* Header (Nuvem & IA) */
         header {
-            height: 90vh;
+            height: 90vh; /* Mais alto para impacto */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -69,12 +69,13 @@
         
         .header-desc { font-size: 1.4rem; color: var(--text); max-width: 700px; margin-bottom: 40px; }
 
+        /* Componentes de Botão */
         .cta-button {
             display: inline-block;
             background: var(--gradient);
             color: white;
             padding: 18px 40px;
-            border-radius: 50px;
+            border-radius: 50px; /* Mais arredondado, visual de startup tech */
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
@@ -84,6 +85,7 @@
 
         .cta-button:hover { transform: scale(1.05) translateY(-3px); box-shadow: 0 8px 25px rgba(112, 0, 255, 0.5); }
 
+        /* Grid de Serviços/Soluções */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -97,7 +99,7 @@
             border-radius: 16px;
             border: 1px solid var(--border);
             transition: 0.4s ease;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px); /* Efeito de vidro moderno */
             position: relative;
             overflow: hidden;
         }
@@ -123,6 +125,7 @@
         .card i { font-size: 3rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 25px; display: inline-block; }
         .card h3 { color: var(--white); font-size: 1.5rem; margin-top: 0; margin-bottom: 15px; }
 
+        /* Seção Sobre/Empresa */
         .about-section {
             background: rgba(13, 17, 23, 0.8);
             padding: 100px 0;
@@ -137,6 +140,7 @@
         }
         @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; text-align: center; } }
 
+        /* Missão, Visão, Valores */
         .mvv-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -154,7 +158,11 @@
         .mvv-item i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
         .mvv-item h4 { color: var(--white); margin: 0 0 10px 0; text-transform: uppercase; letter-spacing: 1px; }
 
-        .remote-section { padding: 100px 0; background: rgba(5, 6, 9, 0.6); }
+        /* Painel de Acesso Remoto Personalizado */
+        .remote-section {
+            padding: 100px 0;
+            background: rgba(5, 6, 9, 0.6);
+        }
         .remote-panel {
             background: var(--card-bg);
             max-width: 600px;
@@ -166,35 +174,142 @@
             backdrop-filter: blur(10px);
         }
         .remote-panel i { font-size: 3rem; color: var(--secondary); margin-bottom: 20px; }
+        .remote-input-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+        }
+        @media (max-width: 600px) { .remote-input-group { flex-direction: column; } }
+        .remote-input {
+            flex-grow: 1;
+            padding: 15px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--white);
+            font-family: monospace;
+            font-size: 1.1rem;
+        }
+        .remote-input:focus { outline: none; border-color: var(--primary); }
+        .remote-button {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .remote-button:hover { background: #005a9e; }
 
-        .contact-section { padding: 100px 0; background: linear-gradient(180deg, rgba(13, 17, 23, 0) 0%, rgba(13, 17, 23, 0.9) 100%); }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        /* Clientes (Placeholders Futuros) */
+        .clients-section { padding: 100px 0; }
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            align-items: center;
+            justify-items: center;
+            opacity: 0.6;
+        }
+        .client-logo {
+            width: 100%;
+            height: 100px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #444;
+            font-weight: bold;
+            border: 1px solid var(--border);
+        }
+
+        /* Formulário de Leads (Contato/Consultoria) */
+        .contact-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, rgba(13, 17, 23, 0) 0%, rgba(13, 17, 23, 0.9) 100%);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
         @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
 
-        .contact-form { background: var(--card-bg); padding: 40px; border-radius: 16px; border: 1px solid var(--border); }
+        .contact-form {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; color: var(--white); margin-bottom: 8px; font-weight: 600; }
         .form-control, .form-select, textarea {
-            width: 100%; padding: 15px; background: rgba(0,0,0,0.3); border: 1px solid var(--border);
-            border-radius: 8px; color: var(--white); box-sizing: border-box; font-family: inherit;
+            width: 100%;
+            padding: 15px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--white);
+            box-sizing: border-box;
+            font-family: inherit;
         }
-        .form-submit { width: 100%; background: var(--gradient); color: white; border: none; padding: 18px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: 0.3s; }
+        .form-control:focus, .form-select:focus, textarea:focus { outline: none; border-color: var(--primary); }
+        textarea { resize: vertical; height: 120px; }
+        .form-submit {
+            width: 100%;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .form-submit:hover { opacity: 0.9; transform: translateY(-2px); }
 
+        /* Botão WhatsApp Flutuante */
         .whatsapp-float {
-            position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white;
-            width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center;
-            align-items: center; font-size: 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); z-index: 100;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            z-index: 100;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
+        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
 
-        footer { text-align: center; padding: 60px 20px; background: var(--dark); font-size: 0.9rem; color: #8b949e; border-top: 1px solid var(--border); }
+        /* Footer */
+        footer { 
+            text-align: center; 
+            padding: 60px 20px; 
+            background: var(--dark);
+            font-size: 0.9rem; 
+            color: #8b949e; 
+            border-top: 1px solid var(--border);
+        }
+        .footer-info { margin-bottom: 10px; font-size: 1.1rem; color: var(--white); }
         .footer-logo { font-size: 1.5rem; font-weight: bold; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; display: inline-block;}
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Duar<span>Tecnologia</span></h1>
-    <p class="header-desc">Consultoria Estratégica em TI, Ecossistema Microsoft 365, Cloud Computing e Integração de IA.</p>
+    <h1>Duarte<span>Tecnologia</span></h1>
+    <p class="header-desc">Consultoria Estratégica em TI, Ecosistema Microsoft 365, Cloud Computing e Integração de IA.</p>
     <a href="#consultoria" class="cta-button">Agendar Consultoria Gratuita</a>
 </header>
 
@@ -203,12 +318,30 @@
     <section id="empresa" class="about-section">
         <div class="about-grid">
             <div>
-                <p class="section-subtitle" style="text-align: left; margin-bottom: 10px;">A Empresa</p>
+                <p class="subtitle" style="text-align: left; margin-bottom: 10px;">A Empresa</p>
                 <h2 style="color: var(--white); font-size: 2.2rem; margin-top: 0; text-align: left;">Sua Ponte para a Transformação Digital</h2>
-                <p>A <strong>DuarTecnologia</strong> é mais que um suporte técnico. Somos parceiros estratégicos de negócios que buscam eficiência, segurança e inovação.</p>
+                <p>A <strong>DuarTecnologia</strong> é mais que um suporte técnico. Somos parceiros estratégicos de negócios que buscam eficiência, segurança e inovação. Com foco em arquitetura de TI moderna, ajudamos sua empresa a adotar o poder da Nuvem e os avanços da Inteligência Artificial.</p>
             </div>
             <div class="card" style="padding: 20px;">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" alt="Dashboard" style="width: 100%; border-radius: 12px;">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" alt="Dashboard de dados" style="width: 100%; border-radius: 12px;">
+            </div>
+        </div>
+        
+        <div class="mvv-grid">
+            <div class="mvv-item">
+                <i class="fas fa-bullseye"></i>
+                <h4>Missão</h4>
+                <p>Entregar soluções de TI de classe corporativa, simplificando a adoção tecnológica para maximizar os resultados dos nossos clientes.</p>
+            </div>
+            <div class="mvv-item">
+                <i class="fas fa-eye"></i>
+                <h4>Visão</h4>
+                <p>Ser referência nacional em consultoria de TI focada na convergência entre Cloud Computing e Inteligência Artificial.</p>
+            </div>
+            <div class="mvv-item">
+                <i class="fas fa-heart"></i>
+                <h4>Valores</h4>
+                <p>Transparência, Segurança da Informação, Inovação Contínua e Foco na Continuidade de Negócios.</p>
             </div>
         </div>
     </section>
@@ -219,49 +352,62 @@
         
         <div class="grid" style="padding: 0;">
             <div class="card">
+                <i class="fas fa-brain"></i>
+                <h3>IA Integrada</h3>
+                <p>Consultoria e implementação de Copilot e soluções de automação baseadas em IA para aumentar a produtividade e insights de negócios.</p>
+            </div>
+            <div class="card">
                 <i class="fas fa-cloud-upload-alt"></i>
                 <h3>Cloud Arquitetura</h3>
                 <p>Migração estruturada de ambientes legacy, gestão avançada de Azure e otimização de custos em Cloud Computing.</p>
             </div>
-            
             <div class="card">
                 <i class="fas fa-server"></i>
-                <h3>Soluções de Microsoft 365</h3>
+                <h3>M365 Especializado</h3>
                 <p>Governança de Microsoft 365, implantação completa de Intune, SharePoint corporativo e Exchange Online.</p>
             </div>
-            
             <div class="card">
                 <i class="fas fa-shield-alt"></i>
                 <h3>Cyber Segurança</h3>
-                <p>Gerenciamento de Firewalls, implementação de VPNs seguras, auditorias de segurança e treinamento.</p>
+                <p>Gerenciamento de Firewalls, implementação de VPNs seguras, auditorias de segurança e treinamento C-Level.</p>
             </div>
         </div>
     </section>
 
     <section id="suporte" class="remote-section">
         <h2 class="section-title">Suporte Remoto VIP</h2>
-        <p class="section-subtitle">Acesso rápido e seguro para sua empresa</p>
-        
+        <p class="section-subtitle">Inicie sua conexão segura</p>
         <div class="remote-panel">
             <i class="fas fa-desktop"></i>
-            <h3>Precisa de Suporte agora?</h3>
-            <p>Faça o download do nosso console oficial (AnyDesk).</p>
-            
-            <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 30px;">
-                <a href="https://download.anydesk.com/AnyDesk.exe" class="cta-button" style="background: #ef4444; width: 100%; box-sizing: border-box;">
-                    <i class="fas fa-download" style="margin-right: 10px;"></i> Baixar AnyDesk (Windows)
-                </a>
-                <a href="https://wa.me/5511970273342?text=Preciso%20de%20ajuda%20com%20o%20suporte%20remoto" target="_blank" style="text-decoration: none; color: var(--primary); font-weight: bold; border: 1px solid var(--primary); padding: 12px; border-radius: 8px;">
-                    <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
-                </a>
+            <h3>Acesso ao Portal de Suporte</h3>
+            <p>Seu técnico solicitou uma conexão? Digite o código da sessão abaixo.</p>
+            <div class="remote-input-group">
+                <input type="text" class="remote-input" placeholder="Ex: 12345678" maxlength="8">
+                <button class="remote-button">Conectar</button>
             </div>
+            <p style="font-size: 0.8rem; color: #666; margin-top: 15px;">Ao clicar, você concorda com os termos de acesso remoto da DuarTecnologia.</p>
+        </div>
+    </section>
+
+    <section id="clientes" class="clients-section">
+        <h2 class="section-title">Empresas que Confiam</h2>
+        <p class="section-subtitle">Casos de sucesso em construção</p>
+        <div class="clients-grid">
+            <div class="client-logo">[Logo 1]</div>
+            <div class="client-logo">[Logo 2]</div>
+            <div class="client-logo">[Logo 3]</div>
+            <div class="client-logo">[Logo 4]</div>
+            <div class="client-logo">[Logo 5]</div>
+            <div class="client-logo">[Logo 6]</div>
         </div>
     </section>
 
     <section id="consultoria" class="contact-section">
         <div class="contact-grid">
             <div>
-                <h2 style="color: var(--white); font-size: 2.5rem; text-align: left; margin-bottom: 10px;">Interessado na Evolução da sua Empresa?</h2>
+                <h2 style="color: var(--white); font-size: 2.5rem; text-align: left; margin-bottom: 10px;">Interessado na Evolução Tecnológica da sua Empresa?</h2>
+                <p class="subtitle" style="text-align: left; margin-bottom: 25px;">Agende uma conversa estratégica com um especialista.</p>
+                <p>Com mais de <strong>8 anos de experiência</strong> no mercado corporativo, Édipo Duarte pode analisar seu ambiente e desenhar a melhor rota para a Cloud e IA.</p>
                 <p>Preencha o formulário e nossa equipe entrará em contato em até 4 horas úteis.</p>
             </div>
             
@@ -269,15 +415,29 @@
                 <form action="https://formspree.io/f/xbjnqzzl" method="POST">
                     <div class="form-group">
                         <label for="name">Seu Nome Completo</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Ex: Édipo Duarte" required>
                     </div>
                     <div class="form-group">
                         <label for="company_email">E-mail Corporativo</label>
-                        <input type="email" id="company_email" name="_replyto" class="form-control" required>
+                        <input type="email" id="company_email" name="_replyto" class="form-control" placeholder="empresa@seudominio.com.br" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Telefone / WhatsApp</label>
-                        <input type="tel" id="phone" name="phone" class="form-control" required>
+                        <input type="tel" id="phone" name="phone" class="form-control" placeholder="(11) 99999-9999" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Assunto de Maior Interesse</label>
+                        <select id="interest" name="interest" class="form-select">
+                            <option value="consultoria">Consultoria Estratégica</option>
+                            <option value="cloud">Migração/Gestão Cloud</option>
+                            <option value="microsoft365">Microsoft 365 (SharePoint/Intune)</option>
+                            <option value="ia">Automação com IA</option>
+                            <option value="seguranca">Segurança da Informação</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem ou Desafio Atual (Opcional)</label>
+                        <textarea id="message" name="message" placeholder="Conte brevemente sobre sua necessidade..."></textarea>
                     </div>
                     <button type="submit" class="form-submit">Enviar Solicitação</button>
                 </form>
@@ -287,12 +447,12 @@
 
 </main>
 
-<footer>
+<footer id="contato">
     <div class="footer-logo">DuarTecnologia</div>
-    <p>&copy; 2026 DuarTecnologia - São Paulo e Região - Atendimento Corporativo.</p>
+    <p>&copy; 2026 DuarTecnologia - São Paulo e Região - Atendimento Corporativo e Especializado.</p>
 </footer>
 
-<a href="https://wa.me/5511970273342" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/5511970273342" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
     <i class="fab fa-whatsapp"></i>
 </a>
 
