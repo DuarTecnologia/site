@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TecnoCorp | Soluções em TI & Suporte</title>
+    <title>Soluções Corporativas de TI</title>
     <style>
-        /* Estilos Globais */
         * {
             margin: 0;
             padding: 0;
@@ -13,33 +12,24 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light-bg: #f8f9fa;
-            --white: #ffffff;
-            --text: #333;
-        }
-
         body {
-            background-color: var(--light-bg);
-            color: var(--text);
+            background-color: #f4f7f6;
+            color: #333;
             line-height: 1.6;
         }
 
         /* Menu Superior */
         header {
-            background-color: var(--primary);
+            background-color: #2c3e50;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         nav {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -48,201 +38,113 @@
         }
 
         .logo {
-            color: var(--white);
+            color: #fff;
             font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: 1px;
+            font-weight: bold;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            align-items: center;
         }
 
         .nav-links li {
-            margin-left: 25px;
+            margin-left: 20px;
         }
 
         .nav-links a {
-            color: var(--white);
+            color: #fff;
             text-decoration: none;
-            font-size: 0.95rem;
-            transition: 0.3s;
+            font-size: 0.9rem;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--secondary);
-        }
-
-        .btn-nav-anydesk {
-            background-color: var(--accent);
-            padding: 10px 18px;
-            border-radius: 6px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-nav-anydesk:hover {
-            background-color: #c0392b;
-            color: white !important;
+            color: #3498db;
         }
 
         /* Conteúdo Principal */
         .container {
-            max-width: 1200px;
-            margin: 60px auto;
+            max-width: 1100px;
+            margin: 40px auto;
             padding: 0 20px;
         }
 
-        .section-header {
+        h1 {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
+            color: #2c3e50;
         }
 
-        .section-header h1 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        /* Cards de Soluções */
-        .grid-solucoes {
+        /* Seção de Soluções */
+        .solucoes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
         .card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            border-top: 6px solid transparent;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 5px solid #3498db;
+            transition: transform 0.3s;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .card.cloud { border-top-color: #3498db; }
-        .card.m365 { border-top-color: #f39c12; }
-        .card.cyber { border-top-color: #e74c3c; }
-
-        .card .icon {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            display: block;
+            transform: translateY(-5px);
         }
 
         .card h3 {
-            font-size: 1.6rem;
-            color: var(--primary);
             margin-bottom: 15px;
+            color: #2980b9;
         }
 
-        .card p {
-            color: #666;
-            margin-bottom: 25px;
-        }
-
-        .card-list {
-            text-align: left;
+        .card ul {
             list-style: none;
         }
 
-        .card-list li {
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .card-list li::before {
-            content: "✓";
-            color: #27ae60;
-            font-weight: bold;
-            margin-right: 12px;
-        }
-
-        /* Banner de Suporte Remoto */
-        .suporte-banner {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            padding: 50px;
-            border-radius: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
-
-        .suporte-info {
-            flex: 1;
-            min-width: 300px;
-            margin-bottom: 20px;
-        }
-
-        .suporte-info h2 {
-            font-size: 2rem;
+        .card ul li {
             margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
         }
 
-        .suporte-info p {
-            opacity: 0.9;
-            font-size: 1.1rem;
+        .card ul li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
         }
 
-        .download-action {
-            text-align: center;
+        /* Tabela Comparativa */
+        .tabela-container {
+            margin-top: 50px;
+            overflow-x: auto;
         }
 
-        .btn-download-large {
-            display: inline-block;
-            background-color: var(--accent);
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+        }
+
+        table th, table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #2980b9;
             color: white;
-            text-decoration: none;
-            padding: 18px 35px;
-            border-radius: 10px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
         }
 
-        .btn-download-large:hover {
-            background-color: #c0392b;
-            transform: scale(1.05);
-        }
-
-        /* Footer */
         footer {
             text-align: center;
-            padding: 40px;
+            padding: 40px 0;
             color: #7f8c8d;
-            font-size: 0.9rem;
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .nav-links li:not(:last-child) {
-                display: none; /* Esconde links internos no mobile para foco no AnyDesk */
-            }
-            .suporte-banner {
-                text-align: center;
-                padding: 30px;
-            }
-            .download-action {
-                width: 100%;
-            }
         }
     </style>
 </head>
@@ -250,75 +152,82 @@
 
     <header>
         <nav>
-            <div class="logo">TecnoCorp</div>
+            <div class="logo">TI Solutions</div>
             <ul class="nav-links">
                 <li><a href="#solucoes">Soluções</a></li>
-                <li><a href="#suporte">Suporte</a></li>
-                <li><a class="btn-nav-anydesk" href="https://anydesk.com/pt/downloads" target="_blank">
-                    📥 AnyDesk
-                </a></li>
+                <li><a href="#tabela">Comparativo</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="container">
-        
-        <div class="section-header" id="solucoes">
-            <h1>Soluções Corporativas</h1>
-            <p>Tecnologia estratégica para impulsionar seu negócio</p>
-        </div>
+    <div class="container" id="solucoes">
+        <h1>Nossas Soluções Corporativas</h1>
 
-        <div class="grid-solucoes">
-            <div class="card cloud">
-                <span class="icon">☁️</span>
-                <h3>Cloud Computing</h3>
-                <p>Infraestrutura moderna e elástica para hospedar seus sistemas com segurança.</p>
-                <ul class="card-list">
-                    <li>Migração para AWS, Azure e Google Cloud</li>
-                    <li>Servidores VPS e Dedicados</li>
-                    <li>Backup Gerenciado em Nuvem</li>
+        <div class="solucoes-grid">
+            <div class="card">
+                <h3>☁️ Cloud Computing</h3>
+                <p>Migração e gestão de infraestrutura escalável para sua empresa.</p>
+                <ul>
+                    <li>Servidores em Nuvem (AWS/Azure)</li>
+                    <li>Backup Gerenciado</li>
+                    <li>Disponibilidade 99.9%</li>
                 </ul>
             </div>
 
-            <div class="card m365">
-                <span class="icon">📧</span>
-                <h3>Microsoft 365</h3>
-                <p>O melhor em produtividade, colaboração e comunicação empresarial.</p>
-                <ul class="card-list">
-                    <li>E-mails corporativos (Outlook)</li>
-                    <li>Microsoft Teams para reuniões</li>
-                    <li>Armazenamento no OneDrive e SharePoint</li>
+            <div class="card" style="border-top-color: #f39c12;">
+                <h3>📧 Microsoft 365</h3>
+                <p>Produtividade e colaboração de qualquer lugar com ferramentas líderes.</p>
+                <ul>
+                    <li>Outlook, Teams e SharePoint</li>
+                    <li>Segurança de E-mail Avançada</li>
+                    <li>Licenciamento Flexível</li>
                 </ul>
             </div>
 
-            <div class="card cyber">
-                <span class="icon">🛡️</span>
-                <h3>Cyber Segurança</h3>
-                <p>Proteja os dados da sua empresa contra invasões e ataques digitais.</p>
-                <ul class="card-list">
-                    <li>Gestão de Firewall e VPN</li>
-                    <li>Antivírus Gerenciado (EDR/XDR)</li>
-                    <li>Consultoria em conformidade LGPD</li>
+            <div class="card" style="border-top-color: #e74c3c;">
+                <h3>🛡️ Cyber Segurança</h3>
+                <p>Proteção robusta contra ameaças digitais e conformidade com LGPD.</p>
+                <ul>
+                    <li>Firewall e Antivírus EDR</li>
+                    <li>Pentest e Auditoria</li>
+                    <li>Monitoramento 24/7 (SOC)</li>
                 </ul>
             </div>
         </div>
 
-        <div class="suporte-banner" id="suporte">
-            <div class="suporte-info">
-                <h2>Suporte Remoto Imediato</h2>
-                <p>Baixe o AnyDesk e forneça o ID ao nosso técnico para iniciar o atendimento.</p>
-            </div>
-            <div class="download-action">
-                <a href="https://download.anydesk.com/AnyDesk.exe" class="btn-download-large">
-                    Baixar AnyDesk para Windows
-                </a>
-            </div>
+        <div class="tabela-container" id="tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Solução</th>
+                        <th>Principais Benefícios</th>
+                        <th>Indicado para</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cloud</td>
+                        <td>Redução de custos com hardware e escalabilidade rápida.</td>
+                        <td>Empresas em crescimento.</td>
+                    </tr>
+                    <tr>
+                        <td>Microsoft 365</td>
+                        <td>Colaboração em tempo real e arquivos centralizados.</td>
+                        <td>Trabalho remoto e híbrido.</td>
+                    </tr>
+                    <tr>
+                        <td>Cyber Segurança</td>
+                        <td>Prevenção de ataques Ransomware e vazamento de dados.</td>
+                        <td>Conformidade e Proteção Crítica.</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-
     </div>
 
     <footer>
-        <p>&copy; 2026 TecnoCorp TI Solutions. <br> Especialistas em Infraestrutura e Segurança Digital.</p>
+        <p>&copy; 2026 TI Solutions Corporativas. Todos os direitos reservados.</p>
     </footer>
 
 </body>
