@@ -4,759 +4,268 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DuarTecnologia - Soluções em TI</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Especialistas em suporte técnico, redes, cloud e infraestrutura. Transformamos tecnologia em resultado para sua empresa.">
   
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts - Apenas peso necessário -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome - Versão compacta -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    /* Reset básico */
+    *{margin:0;padding:0;box-sizing:border-box}
+    
     body {
-      font-family: 'Poppins', sans-serif;
-      background: #0f172a;
-      color: #fff;
-      overflow-x: hidden;
-      position: relative;
+      font-family:'Poppins',sans-serif;
+      background:#0f172a;
+      color:#fff;
+      position:relative
     }
 
-    /* Imagem de fundo */ 
+    /* Imagem de fundo otimizada */
     body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('cnologia_fundo.png') no-repeat center center fixed;
-      background-size: cover;
-      opacity: 0.35;
-      z-index: -2;
-      pointer-events: none;
+      content:'';
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:url('duartecnologia_fundo.png') center/cover no-repeat fixed;
+      opacity:.35;
+      z-index:-2;
+      pointer-events:none
     }
 
-    /* Overlay escuro para melhor contraste */
     body::after {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(30, 41, 59, 0.75));
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    /* Botão Flutuante do WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 1000;
-      animation: pulse 2s infinite;
-    }
-
-    .whatsapp-float a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      background: #25d366;
-      border-radius: 50%;
-      color: #fff;
-      font-size: 2rem;
-      text-decoration: none;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-      transition: all 0.3s ease;
-    }
-
-    .whatsapp-float a:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-    }
-
-    /* Tooltip do WhatsApp */
-    .whatsapp-tooltip {
-      position: absolute;
-      right: 70px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.8);
-      color: #fff;
-      padding: 8px 15px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      white-space: nowrap;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      font-weight: 500;
-    }
-
-    .whatsapp-float:hover .whatsapp-tooltip {
-      opacity: 1;
-    }
-
-    /* Animação de pulso */
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.05);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    /* Scrollbar personalizada */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #1e293b;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #38bdf8;
-      border-radius: 5px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #0ea5e9;
+      content:'';
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:linear-gradient(135deg,rgba(15,23,42,.75),rgba(30,41,59,.8));
+      z-index:-1;
+      pointer-events:none
     }
 
     /* Header */
     header {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(10px);
-      padding: 1rem 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      position:fixed;
+      width:100%;
+      top:0;
+      background:rgba(15,23,42,.95);
+      backdrop-filter:blur(10px);
+      padding:1rem 5%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:1000;
+      transition:.3s
     }
 
-    header.scrolled {
-      padding: 0.7rem 5%;
-      background: rgba(15, 23, 42, 0.98);
-    }
+    header.scrolled{padding:.7rem 5%;background:rgba(15,23,42,.98)}
+    header h1{color:#38bdf8;font-size:1.5rem;font-weight:700}
+    header h1 i{margin-right:10px}
 
-    header h1 {
-      color: #38bdf8;
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
+    /* Menu */
+    nav{display:flex;gap:2rem}
+    nav a{text-decoration:none;color:#fff;font-weight:500;transition:.3s;position:relative}
+    nav a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background:#38bdf8;transition:.3s}
+    nav a:hover::after,.active::after{width:100%}
+    nav a:hover,.active{color:#38bdf8}
 
-    header h1 i {
-      margin-right: 10px;
-    }
-
-    /* Menu Desktop */
-    nav {
-      display: flex;
-      gap: 2rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0%;
-      height: 2px;
-      background: #38bdf8;
-      transition: width 0.3s ease;
-    }
-
-    nav a:hover::after,
-    nav a.active::after {
-      width: 100%;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #38bdf8;
-    }
-
-    /* Menu Mobile */
-    .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #fff;
-      transition: color 0.3s ease;
-    }
-
-    .menu-toggle:hover {
-      color: #38bdf8;
-    }
+    .menu-toggle{display:none;font-size:1.5rem;cursor:pointer}
 
     /* Seções */
-    section {
-      padding: 100px 5%;
-      min-height: 100vh;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease;
-      position: relative;
-      z-index: 1;
-    }
+    section{padding:100px 5%;min-height:100vh;opacity:0;transform:translateY(30px);transition:.6s}
+    section.visible{opacity:1;transform:translateY(0)}
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    /* Hero */
+    .hero{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+    .hero h2{font-size:3rem;margin-bottom:1rem;text-shadow:2px 2px 4px rgba(0,0,0,.3)}
+    .hero p{font-size:1.2rem;margin:1.5rem 0;max-width:600px;color:#cbd5e1}
 
-    /* Hero Section */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: transparent;
+    /* Botões */
+    .btn,.download-btn,.btn-submit{
+      display:inline-block;
+      padding:1rem 2rem;
+      background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+      color:#fff;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:600;
+      transition:.3s;
+      border:none;
+      cursor:pointer
     }
-
-    .hero h2 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      animation: fadeInUp 0.8s ease;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin: 1.5rem 0;
-      max-width: 600px;
-      color: #cbd5e1;
-      animation: fadeInUp 0.8s ease 0.2s backwards;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 1rem 2rem;
-      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-      color: #fff;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
-      animation: fadeInUp 0.8s ease 0.4s backwards;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
-    }
-
-    .btn-whatsapp {
-      background: linear-gradient(135deg, #25d366, #128C7E);
-      margin-left: 1rem;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-    }
-
-    .btn-whatsapp:hover {
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-    }
+    .btn:hover,.download-btn:hover,.btn-submit:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(56,189,248,.4)}
+    .btn-whatsapp{background:linear-gradient(135deg,#25d366,#128C7E);margin-left:1rem}
+    .btn-whatsapp:hover{box-shadow:0 6px 20px rgba(37,211,102,.4)}
 
     /* Títulos */
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: #38bdf8;
-      border-radius: 2px;
-    }
-
-    section:not(.hero) h2 {
-      text-align: center;
-      display: block;
-    }
-
-    section:not(.hero) h2::after {
-      left: 50%;
-      transform: translateX(-50%);
-    }
+    h2{font-size:2.5rem;margin-bottom:2rem;position:relative;display:inline-block}
+    h2::after{content:'';position:absolute;bottom:-10px;left:0;width:60px;height:3px;background:#38bdf8;border-radius:2px}
+    section:not(.hero) h2{text-align:center;display:block}
+    section:not(.hero) h2::after{left:50%;transform:translateX(-50%)}
 
     /* Cards */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:3rem}
+    .card{
+      background:rgba(30,41,59,.8);
+      backdrop-filter:blur(10px);
+      padding:2rem;
+      border-radius:15px;
+      transition:.3s;
+      border:1px solid rgba(56,189,248,.2);
+      text-align:center
     }
+    .card:hover{transform:translateY(-10px);border-color:#38bdf8;background:rgba(30,41,59,.9)}
+    .card i{font-size:2.5rem;color:#38bdf8;margin-bottom:1rem}
+    .card h3{font-size:1.3rem;margin-bottom:1rem}
+    .card p{color:#cbd5e1;line-height:1.6}
 
-    .card {
-      background: rgba(30, 41, 59, 0.8);
-      backdrop-filter: blur(10px);
-      padding: 2rem;
-      border-radius: 15px;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(56, 189, 248, 0.2);
-      text-align: center;
+    /* Tecnologias */
+    #tecnologias{background:rgba(15,23,42,.4);backdrop-filter:blur(10px);border-radius:20px;margin:2rem 5%}
+    .tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:3rem}
+    .tech-item{
+      background:rgba(30,41,59,.7);
+      backdrop-filter:blur(5px);
+      padding:2rem 1.5rem;
+      border-radius:15px;
+      text-align:center;
+      transition:.3s;
+      border:1px solid rgba(56,189,248,.2)
     }
+    .tech-item:hover{transform:translateY(-5px);border-color:#38bdf8}
+    .tech-icon{
+      width:80px;
+      height:80px;
+      margin:0 auto 1rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+      border-radius:50%;
+      transition:.3s
+    }
+    .tech-item:hover .tech-icon{transform:scale(1.1)}
+    .tech-icon i{font-size:2.5rem;color:#fff}
+    .tech-item h3{font-size:1.2rem;margin-bottom:.5rem}
+    .tech-item p{font-size:.85rem;color:#94a3b8}
 
-    .card:hover {
-      transform: translateY(-10px);
-      border-color: #38bdf8;
-      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
-      background: rgba(30, 41, 59, 0.9);
+    /* Suporte Remoto */
+    .remote-support{
+      background:rgba(15,23,42,.6);
+      backdrop-filter:blur(10px);
+      border:2px solid rgba(56,189,248,.3);
+      border-radius:20px
     }
+    .remote-content{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2rem}
+    .remote-info h3{font-size:1.8rem;margin-bottom:1rem;color:#38bdf8}
+    .download-btn{margin-right:1rem;margin-bottom:1rem}
+    .code-info{
+      background:rgba(0,0,0,.5);
+      padding:1.5rem;
+      border-radius:15px;
+      text-align:center;
+      border:1px solid rgba(56,189,248,.3)
+    }
+    .access-code{
+      background:#0f172a;
+      padding:1rem;
+      border-radius:10px;
+      font-size:2rem;
+      font-weight:700;
+      letter-spacing:5px;
+      color:#38bdf8;
+      margin:1rem 0;
+      font-family:monospace
+    }
+    .copy-btn{
+      background:rgba(56,189,248,.2);
+      border:1px solid #38bdf8;
+      color:#38bdf8;
+      padding:.5rem 1rem;
+      border-radius:8px;
+      cursor:pointer;
+      transition:.3s
+    }
+    .copy-btn:hover{background:#38bdf8;color:#fff}
 
-    .card i {
-      font-size: 2.5rem;
-      color: #38bdf8;
-      margin-bottom: 1rem;
+    /* Contato */
+    .contact-container{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2rem}
+    .contact-info,.contact-form{background:rgba(30,41,59,.8);backdrop-filter:blur(10px);padding:2rem;border-radius:15px}
+    .contact-info p{margin:1rem 0;display:flex;align-items:center;gap:1rem}
+    .contact-info a{color:#fff;text-decoration:none;transition:.3s}
+    .contact-info a:hover{color:#25d366}
+    .contact-info i{color:#38bdf8;width:30px}
+    .contact-info .fa-whatsapp{color:#25d366}
+    input,textarea{
+      width:100%;
+      padding:1rem;
+      background:rgba(15,23,42,.8);
+      border:1px solid rgba(56,189,248,.3);
+      border-radius:8px;
+      color:#fff;
+      font-family:inherit;
+      transition:.3s
     }
-
-    .card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      color: #fff;
-    }
-
-    .card p {
-      color: #cbd5e1;
-      line-height: 1.6;
-    }
-
-    /* Seção de Tecnologias */
-    #tecnologias {
-      background: rgba(15, 23, 42, 0.4);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      margin: 2rem 5%;
-    }
-
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .tech-item {
-      background: rgba(30, 41, 59, 0.7);
-      backdrop-filter: blur(5px);
-      padding: 2rem 1.5rem;
-      border-radius: 15px;
-      text-align: center;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(56, 189, 248, 0.2);
-    }
-
-    .tech-item:hover {
-      transform: translateY(-5px);
-      border-color: #38bdf8;
-      background: rgba(30, 41, 59, 0.9);
-      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
-    }
-
-    .tech-icon {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-      border-radius: 50%;
-      transition: all 0.3s ease;
-    }
-
-    .tech-icon i {
-      font-size: 2.5rem;
-      color: #fff;
-    }
-
-    .tech-item:hover .tech-icon {
-      transform: scale(1.1);
-      box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4);
-    }
-
-    .tech-item h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: #fff;
-    }
-
-    .tech-item p {
-      font-size: 0.85rem;
-      color: #94a3b8;
-    }
-
-    /* Seção de Suporte Remoto */
-    .remote-support {
-      background: rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(56, 189, 248, 0.3);
-      margin-top: 3rem;
-      border-radius: 20px;
-    }
-
-    .remote-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-      margin-top: 2rem;
-    }
-
-    .remote-info {
-      text-align: left;
-    }
-
-    .remote-info h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #38bdf8;
-    }
-
-    .remote-info p {
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-
-    .download-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-      color: #fff;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      margin-right: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .download-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
-    }
-
-    .code-info {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 1.5rem;
-      border-radius: 15px;
-      text-align: center;
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      backdrop-filter: blur(5px);
-    }
-
-    .code-info h4 {
-      color: #38bdf8;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
-
-    .access-code {
-      background: #0f172a;
-      padding: 1rem;
-      border-radius: 10px;
-      font-size: 2rem;
-      font-weight: bold;
-      letter-spacing: 5px;
-      color: #38bdf8;
-      margin: 1rem 0;
-      font-family: monospace;
-    }
-
-    .copy-btn {
-      background: rgba(56, 189, 248, 0.2);
-      border: 1px solid #38bdf8;
-      color: #38bdf8;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .copy-btn:hover {
-      background: #38bdf8;
-      color: #fff;
-    }
-
-    /* Formulário */
-    .contact-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      margin-top: 2rem;
-    }
-
-    .contact-info {
-      background: rgba(30, 41, 59, 0.8);
-      backdrop-filter: blur(10px);
-      padding: 2rem;
-      border-radius: 15px;
-    }
-
-    .contact-info p {
-      margin: 1rem 0;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .contact-info a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .contact-info a:hover {
-      color: #25d366;
-    }
-
-    .contact-info i {
-      color: #38bdf8;
-      font-size: 1.2rem;
-      width: 30px;
-    }
-
-    .contact-info .fa-whatsapp {
-      color: #25d366;
-    }
-
-    .contact-form {
-      background: rgba(30, 41, 59, 0.8);
-      backdrop-filter: blur(10px);
-      padding: 2rem;
-      border-radius: 15px;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 1rem;
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      border-radius: 8px;
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
-      transition: all 0.3s ease;
-    }
-
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: #38bdf8;
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .btn-submit {
-      width: 100%;
-      padding: 1rem;
-      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .btn-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
-    }
+    input:focus,textarea:focus{outline:none;border-color:#38bdf8}
+    textarea{resize:vertical;min-height:120px}
+    .btn-submit{width:100%}
 
     /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: rgba(2, 6, 23, 0.9);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid rgba(56, 189, 248, 0.1);
-      position: relative;
-      z-index: 1;
+    footer{text-align:center;padding:2rem;background:rgba(2,6,23,.9);border-top:1px solid rgba(56,189,248,.1)}
+    footer p{color:#94a3b8}
+
+    /* WhatsApp Flutuante */
+    .whatsapp-float{position:fixed;bottom:30px;right:30px;z-index:1000;animation:pulse 2s infinite}
+    .whatsapp-float a{
+      display:flex;
+      width:60px;
+      height:60px;
+      background:#25d366;
+      border-radius:50%;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:2rem;
+      text-decoration:none;
+      transition:.3s
     }
+    .whatsapp-float a:hover{transform:scale(1.1)}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 
-    footer p {
-      color: #94a3b8;
-    }
-
-    /* Animações */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
+    /* Responsivo */
+    @media (max-width:768px){
+      .menu-toggle{display:block}
+      nav{
+        position:fixed;
+        top:60px;
+        left:-100%;
+        width:100%;
+        background:rgba(15,23,42,.98);
+        flex-direction:column;
+        align-items:center;
+        padding:2rem;
+        gap:1.5rem;
+        transition:.3s
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Responsividade */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.2rem;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      nav {
-        position: fixed;
-        top: 60px;
-        left: -100%;
-        width: 100%;
-        background: rgba(15, 23, 42, 0.98);
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem;
-        gap: 1.5rem;
-        transition: left 0.3s ease;
-      }
-
-      nav.active {
-        left: 0;
-      }
-
-      .hero h2 {
-        font-size: 2rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .hero .btn {
-        display: block;
-        margin: 0.5rem auto;
-        width: 80%;
-      }
-
-      .btn-whatsapp {
-        margin-left: 0;
-        margin-top: 1rem;
-      }
-
-      .remote-content {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .contact-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      section {
-        padding: 80px 1.5rem;
-      }
-
-      h2 {
-        font-size: 2rem;
-      }
-
-      .access-code {
-        font-size: 1.2rem;
-        letter-spacing: 2px;
-      }
-
-      body::before {
-        background-attachment: scroll;
-      }
-
-      .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
-      }
-
-      .whatsapp-float a {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-      }
-
-      /* Responsividade para tecnologias */
-      .tech-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1rem;
-      }
-
-      .tech-icon {
-        width: 60px;
-        height: 60px;
-      }
-
-      .tech-icon i {
-        font-size: 1.8rem;
-      }
-
-      .tech-item h3 {
-        font-size: 1rem;
-      }
-
-      .tech-item p {
-        font-size: 0.75rem;
-      }
-
-      #tecnologias {
-        margin: 1rem 1.5rem;
-      }
-    }
-
-    /* Tablet */
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .hero h2 {
-        font-size: 2.5rem;
-      }
-      
-      .remote-content {
-        gap: 2rem;
-      }
+      nav.active{left:0}
+      .hero h2{font-size:2rem}
+      .hero p{font-size:1rem}
+      .btn-whatsapp{margin-left:0;margin-top:1rem}
+      .remote-content,.contact-container{grid-template-columns:1fr}
+      section{padding:80px 1.5rem}
+      h2{font-size:2rem}
+      .access-code{font-size:1.2rem;letter-spacing:2px}
+      .whatsapp-float{bottom:20px;right:20px}
+      .whatsapp-float a{width:50px;height:50px;font-size:1.5rem}
+      .tech-grid{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem}
+      .tech-icon{width:60px;height:60px}
+      .tech-icon i{font-size:1.8rem}
+      #tecnologias{margin:1rem 1.5rem}
     }
   </style>
 </head>
@@ -765,15 +274,13 @@
 
 <header id="header">
   <h1><i class="fas fa-laptop-code"></i> DuarTecnologia</h1>
-  <div class="menu-toggle" id="menuToggle">
-    <i class="fas fa-bars"></i>
-  </div>
+  <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
   <nav id="navMenu">
-    <a href="#home" class="active">Início</a>
+    <a href="#home">Início</a>
     <a href="#sobre">Sobre</a>
     <a href="#servicos">Serviços</a>
     <a href="#tecnologias">Tecnologias</a>
-    <a href="#suporte-remoto">Suporte Remoto</a>
+    <a href="#suporte-remoto">Suporte</a>
     <a href="#contato">Contato</a>
   </nav>
 </header>
@@ -783,206 +290,86 @@
   <p>Especialista em suporte técnico, redes, cloud e infraestrutura. Transformando tecnologia em resultado.</p>
   <div>
     <a href="#suporte-remoto" class="btn"><i class="fas fa-desktop"></i> Suporte Remoto</a>
-    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20de%20TI." target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
   </div>
 </section>
 
 <section id="sobre">
   <h2>Sobre</h2>
-  <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Sou profissional de TI com mais de 8 anos de experiência em suporte técnico, redes, infraestrutura e cloud. Atuação com atendimento a usuários, diretoria e ambientes corporativos.</p>
-
+  <p style="text-align:center;max-width:800px;margin:0 auto 2rem">Profissional de TI com mais de 8 anos de experiência em suporte técnico, redes, infraestrutura e cloud. Atuação com atendimento a usuários, diretoria e ambientes corporativos.</p>
   <div class="cards">
-    <div class="card">
-      <i class="fas fa-bullseye"></i>
-      <h3>Missão</h3>
-      <p>Oferecer soluções tecnológicas eficientes e acessíveis para transformar negócios.</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-eye"></i>
-      <h3>Visão</h3>
-      <p>Ser referência em suporte e inovação em tecnologia no mercado nacional.</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-heart"></i>
-      <h3>Valores</h3>
-      <p>Compromisso, qualidade, inovação e transparência em cada projeto.</p>
-    </div>
+    <div class="card"><i class="fas fa-bullseye"></i><h3>Missão</h3><p>Oferecer soluções tecnológicas eficientes e acessíveis.</p></div>
+    <div class="card"><i class="fas fa-eye"></i><h3>Visão</h3><p>Ser referência em suporte e inovação em tecnologia.</p></div>
+    <div class="card"><i class="fas fa-heart"></i><h3>Valores</h3><p>Compromisso, qualidade, inovação e transparência.</p></div>
   </div>
 </section>
 
 <section id="servicos">
   <h2>Serviços</h2>
-
   <div class="cards">
-    <div class="card">
-      <i class="fas fa-headset"></i>
-      <h3>Suporte Técnico</h3>
-      <p>Atendimento remoto e presencial para empresas e usuários com excelência.</p>
-    </div>
-
-    <div class="card">
-      <i class="fas fa-network-wired"></i>
-      <h3>Redes e Infraestrutura</h3>
-      <p>Configuração de roteadores, Wi-Fi, cabeamento estruturado e servidores.</p>
-    </div>
-
-    <div class="card">
-      <i class="fas fa-cloud"></i>
-      <h3>Cloud e Office 365</h3>
-      <p>Administração, configuração e suporte em ambientes Microsoft 365.</p>
-    </div>
-
-    <div class="card">
-      <i class="fas fa-shield-alt"></i>
-      <h3>Segurança da Informação</h3>
-      <p>Firewall, VPN, backup e proteção de dados corporativos.</p>
-    </div>
+    <div class="card"><i class="fas fa-headset"></i><h3>Suporte Técnico</h3><p>Atendimento remoto e presencial para empresas e usuários.</p></div>
+    <div class="card"><i class="fas fa-network-wired"></i><h3>Redes e Infraestrutura</h3><p>Configuração de roteadores, Wi-Fi e cabeamento estruturado.</p></div>
+    <div class="card"><i class="fas fa-cloud"></i><h3>Cloud e Office 365</h3><p>Administração e suporte em ambientes Microsoft.</p></div>
+    <div class="card"><i class="fas fa-shield-alt"></i><h3>Segurança</h3><p>Firewall, VPN e proteção de dados corporativos.</p></div>
   </div>
 </section>
 
-<!-- SEÇÃO DE TECNOLOGIAS - INSERIDA AQUI -->
 <section id="tecnologias">
   <h2>Tecnologias Parceiras</h2>
-  <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Trabalhamos com as melhores e mais confiáveis tecnologias do mercado para garantir soluções de alta qualidade.</p>
-
+  <p style="text-align:center;max-width:800px;margin:0 auto 2rem">Trabalhamos com as melhores tecnologias do mercado para garantir soluções de alta qualidade.</p>
   <div class="tech-grid">
-    <div class="tech-item">
-      <div class="tech-icon">
-        <i class="fab fa-microsoft"></i>
-      </div>
-      <h3>Microsoft 365</h3>
-      <p>Produtividade e colaboração em nuvem</p>
-    </div>
-
-    <div class="tech-item">
-      <div class="tech-icon">
-        <i class="fas fa-shield-alt"></i>
-      </div>
-      <h3>Sophos</h3>
-      <p>Segurança e proteção de dados</p>
-    </div>
-
-    <div class="tech-item">
-      <div class="tech-icon">
-        <i class="fas fa-firewall"></i>
-      </div>
-      <h3>FortiGate</h3>
-      <p>Firewall de última geração</p>
-    </div>
-
-    <div class="tech-item">
-      <div class="tech-icon">
-        <i class="fas fa-desktop"></i>
-      </div>
-      <h3>AnyDesk</h3>
-      <p>Acesso remoto seguro</p>
-    </div>
-
-    <div class="tech-item">
-      <div class="tech-icon">
-        <i class="fas fa-wifi"></i>
-      </div>
-      <h3>Ubiquiti</h3>
-      <p>Redes e infraestrutura wireless</p>
-    </div>
-
-    <div class="tech-item">
-      <div class="tech-icon">
-        <i class="fas fa-database"></i>
-      </div>
-      <h3>Intebras</h3>
-      <p>Backup e armazenamento</p>
-    </div>
-
-    <div class="tech-item">
-      <div class="tech-icon">
-        <i class="fas fa-laptop"></i>
-      </div>
-      <h3>Dell</h3>
-      <p>Hardware e servidores</p>
-    </div>
-
-    <div class="tech-item">
-      <div class="tech-icon">
-        <i class="fas fa-print"></i>
-      </div>
-      <h3>HP</h3>
-      <p>Impressoras e workstations</p>
-    </div>
-
-    <div class="tech-item">
-      <div class="tech-icon">
-        <i class="fas fa-network-wired"></i>
-      </div>
-      <h3>Cisco</h3>
-      <p>Redes corporativas</p>
-    </div>
+    <div class="tech-item"><div class="tech-icon"><i class="fab fa-microsoft"></i></div><h3>Microsoft 365</h3><p>Produtividade em nuvem</p></div>
+    <div class="tech-item"><div class="tech-icon"><i class="fas fa-shield-alt"></i></div><h3>Sophos</h3><p>Segurança de dados</p></div>
+    <div class="tech-item"><div class="tech-icon"><i class="fas fa-firewall"></i></div><h3>FortiGate</h3><p>Firewall NG</p></div>
+    <div class="tech-item"><div class="tech-icon"><i class="fas fa-desktop"></i></div><h3>AnyDesk</h3><p>Acesso remoto</p></div>
+    <div class="tech-item"><div class="tech-icon"><i class="fas fa-wifi"></i></div><h3>Ubiquiti</h3><p>Redes wireless</p></div>
+    <div class="tech-item"><div class="tech-icon"><i class="fas fa-database"></i></div><h3>Intebras</h3><p>Backup</p></div>
+    <div class="tech-item"><div class="tech-icon"><i class="fas fa-laptop"></i></div><h3>Dell</h3><p>Hardware</p></div>
+    <div class="tech-item"><div class="tech-icon"><i class="fas fa-print"></i></div><h3>HP</h3><p>Workstations</p></div>
+    <div class="tech-item"><div class="tech-icon"><i class="fas fa-network-wired"></i></div><h3>Cisco</h3><p>Redes</p></div>
   </div>
 </section>
-<!-- FIM DA SEÇÃO DE TECNOLOGIAS -->
 
 <section id="suporte-remoto" class="remote-support">
   <h2>Suporte Remoto</h2>
-  <p style="text-align: center; max-width: 800px; margin: 0 auto;">Precisa de ajuda? Conecte-se remotamente e resolva seus problemas de forma rápida e segura.</p>
-
+  <p style="text-align:center;max-width:800px;margin:0 auto">Precisa de ajuda? Conecte-se remotamente de forma rápida e segura.</p>
   <div class="remote-content">
     <div class="remote-info">
       <h3><i class="fas fa-download"></i> Baixe o AnyDesk</h3>
-      <p>Para iniciar o atendimento remoto, baixe e execute o AnyDesk clicando no botão abaixo. É rápido, seguro e não requer instalação.</p>
-      <a href="https://anydesk.com/pt/downloads" target="_blank" class="download-btn">
-        <i class="fas fa-download"></i> Baixar AnyDesk
-      </a>
-      <a href="https://anydesk.com/pt" target="_blank" class="download-btn" style="background: rgba(56, 189, 248, 0.2); border: 1px solid #38bdf8;">
-        <i class="fas fa-info-circle"></i> Saiba mais
-      </a>
-      <div style="margin-top: 1.5rem;">
-        <p><i class="fas fa-check-circle" style="color: #38bdf8;"></i> <strong>Compatível com:</strong> Windows, Mac, Linux, Android, iOS</p>
-        <p><i class="fas fa-lock" style="color: #38bdf8;"></i> <strong>Conexão segura</strong> com criptografia TLS 1.2</p>
+      <p>Baixe e execute o AnyDesk. É rápido, seguro e não requer instalação.</p>
+      <a href="https://anydesk.com/pt/downloads" target="_blank" class="download-btn"><i class="fas fa-download"></i> Baixar AnyDesk</a>
+      <div style="margin-top:1.5rem">
+        <p><i class="fas fa-check-circle" style="color:#38bdf8"></i> Windows, Mac, Linux, Android, iOS</p>
+        <p><i class="fas fa-lock" style="color:#38bdf8"></i> Conexão segura com criptografia TLS</p>
       </div>
     </div>
-
     <div class="code-info">
       <h4><i class="fas fa-qrcode"></i> Código de Acesso</h4>
-      <p>Após baixar o AnyDesk, informe o código abaixo para iniciar o atendimento:</p>
-      <div class="access-code" id="accessCode">
-        123 456 789
-      </div>
-      <button class="copy-btn" onclick="copyAccessCode()">
-        <i class="fas fa-copy"></i> Copiar código
-      </button>
-      <p style="margin-top: 1rem; font-size: 0.9rem; color: #94a3b8;">
-        <i class="fas fa-clock"></i> Disponível em horário comercial<br>
-        Atendimento rápido e personalizado
-      </p>
+      <p>Após baixar, informe o código abaixo:</p>
+      <div class="access-code" id="accessCode">123 456 789</div>
+      <button class="copy-btn" onclick="copyAccessCode()"><i class="fas fa-copy"></i> Copiar código</button>
+      <p style="margin-top:1rem;font-size:.9rem;color:#94a3b8"><i class="fas fa-clock"></i> Atendimento em horário comercial</p>
     </div>
   </div>
 </section>
 
 <section id="contato">
   <h2>Contato</h2>
-  <p style="text-align: center; margin-bottom: 2rem;">Entre em contato para soluções em TI:</p>
-
+  <p style="text-align:center;margin-bottom:2rem">Entre em contato para soluções em TI:</p>
   <div class="contact-container">
     <div class="contact-info">
       <p><i class="fas fa-envelope"></i> contato@duartecnologia.com.br</p>
-      <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20de%20TI." target="_blank">(11) 99999-9999</a></p>
-      
+      <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações" target="_blank">(11) 99999-9999</a></p>
+      <p><i class="fas fa-phone"></i> (11) 3333-4444</p>
       <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
       <p><i class="fas fa-clock"></i> Segunda a Sexta: 8h às 18h</p>
     </div>
-
     <div class="contact-form">
       <form id="contactForm">
-        <div class="form-group">
-          <input type="text" id="name" placeholder="Seu nome" required>
-        </div>
-        <div class="form-group">
-          <input type="email" id="email" placeholder="Seu e-mail" required>
-        </div>
-        <div class="form-group">
-          <textarea id="message" placeholder="Sua mensagem" required></textarea>
-        </div>
-        <button type="submit" class="btn-submit">Enviar Mensagem</button>
+        <input type="text" id="name" placeholder="Seu nome" required>
+        <input type="email" id="email" placeholder="Seu e-mail" required style="margin-top:1rem">
+        <textarea id="message" placeholder="Sua mensagem" required style="margin-top:1rem"></textarea>
+        <button type="submit" class="btn-submit" style="margin-top:1rem">Enviar Mensagem</button>
       </form>
     </div>
   </div>
@@ -992,156 +379,37 @@
   <p>© 2026 DuarTecnologia - Todos os direitos reservados</p>
 </footer>
 
-<!-- Botão Flutuante WhatsApp -->
 <div class="whatsapp-float">
-  <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20de%20TI." target="_blank">
-    <i class="fab fa-whatsapp"></i>
-    <span class="whatsapp-tooltip">Fale conosco no WhatsApp!</span>
-  </a>
+  <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações" target="_blank"><i class="fab fa-whatsapp"></i></a>
 </div>
 
 <script>
-  // Menu mobile toggle
-  const menuToggle = document.getElementById('menuToggle');
-  const navMenu = document.getElementById('navMenu');
-
-  menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    menuToggle.querySelector('i').classList.toggle('fa-bars');
-    menuToggle.querySelector('i').classList.toggle('fa-times');
-  });
-
-  // Fechar menu ao clicar em link
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-      menuToggle.querySelector('i').classList.add('fa-bars');
-      menuToggle.querySelector('i').classList.remove('fa-times');
-    });
-  });
-
+  // Menu mobile
+  const menuToggle=document.getElementById('menuToggle'),navMenu=document.getElementById('navMenu');
+  menuToggle?.addEventListener('click',()=>{navMenu.classList.toggle('active');menuToggle.querySelector('i').classList.toggle('fa-bars');menuToggle.querySelector('i').classList.toggle('fa-times')});
+  document.querySelectorAll('nav a').forEach(l=>l.addEventListener('click',()=>{navMenu.classList.remove('active');menuToggle.querySelector('i').classList.add('fa-bars');menuToggle.querySelector('i').classList.remove('fa-times')}));
+  
   // Scroll suave
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
-
-  // Header scroll effect
-  const header = document.getElementById('header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
-
-  // Animações de entrada
-  const sections = document.querySelectorAll('section');
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, observerOptions);
-
-  sections.forEach(section => {
-    observer.observe(section);
-  });
-
-  // Função para copiar código
-  window.copyAccessCode = function() {
-    const codeElement = document.getElementById('accessCode');
-    const code = codeElement.innerText;
-    
-    navigator.clipboard.writeText(code).then(() => {
-      // Feedback visual
-      const copyBtn = document.querySelector('.copy-btn');
-      const originalText = copyBtn.innerHTML;
-      copyBtn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
-      
-      setTimeout(() => {
-        copyBtn.innerHTML = originalText;
-      }, 2000);
-      
-      // Mostrar notificação
-      showNotification('Código copiado com sucesso!');
-    }).catch(err => {
-      console.error('Erro ao copiar: ', err);
-      showNotification('Erro ao copiar código', 'error');
-    });
-  };
-
-  // Função para mostrar notificação
-  function showNotification(message, type = 'success') {
-    const notification = document.createElement('div');
-    notification.style.position = 'fixed';
-    notification.style.bottom = '20px';
-    notification.style.left = '50%';
-    notification.style.transform = 'translateX(-50%)';
-    notification.style.backgroundColor = type === 'success' ? '#10b981' : '#ef4444';
-    notification.style.color = '#fff';
-    notification.style.padding = '1rem 1.5rem';
-    notification.style.borderRadius = '8px';
-    notification.style.fontWeight = '500';
-    notification.style.zIndex = '9999';
-    notification.style.animation = 'fadeInUp 0.3s ease';
-    notification.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${message}`;
-    
-    document.body.appendChild(notification);
-    
-    setTimeout(() => {
-      notification.style.opacity = '0';
-      setTimeout(() => {
-        document.body.removeChild(notification);
-      }, 300);
-    }, 3000);
-  }
-
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',function(e){e.preventDefault();document.querySelector(this.getAttribute('href'))?.scrollIntoView({behavior:'smooth'})}));
+  
+  // Header scroll
+  const header=document.getElementById('header');
+  window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>50)});
+  
+  // Animações
+  new IntersectionObserver((e)=>e.forEach(entry=>entry.isIntersecting&&entry.target.classList.add('visible')),{threshold:.1}).observe(document.querySelectorAll('section'));
+  
+  // Copiar código
+  window.copyAccessCode=()=>{const code=document.getElementById('accessCode').innerText;navigator.clipboard.writeText(code).then(()=>{const btn=document.querySelector('.copy-btn'),original=btn.innerHTML;btn.innerHTML='<i class="fas fa-check"></i> Copiado!';setTimeout(()=>btn.innerHTML=original,2000);showNotification('Código copiado!')}).catch(()=>showNotification('Erro ao copiar','error'))};
+  
+  // Notificação
+  function showNotification(msg,type='success'){const n=document.createElement('div');n.style.cssText=`position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:${type==='success'?'#10b981':'#ef4444'};color:#fff;padding:1rem 1.5rem;border-radius:8px;z-index:9999`;n.innerHTML=`<i class="fas ${type==='success'?'fa-check-circle':'fa-exclamation-circle'}"></i> ${msg}`;document.body.appendChild(n);setTimeout(()=>{n.style.opacity='0';setTimeout(()=>n.remove(),300)},3000)}
+  
   // Formulário
-  const contactForm = document.getElementById('contactForm');
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    showNotification('Mensagem enviada com sucesso! Em breve entraremos em contato.');
-    contactForm.reset();
-  });
-
-  // Atualizar link ativo no scroll
-  const sections2 = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('nav a');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections2.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (window.scrollY >= sectionTop - 150) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
-  });
+  document.getElementById('contactForm')?.addEventListener('submit',e=>{e.preventDefault();showNotification('Mensagem enviada! Em breve entraremos em contato.');e.target.reset()});
+  
+  // Link ativo
+  window.addEventListener('scroll',()=>{let current='';document.querySelectorAll('section').forEach(s=>{const top=s.offsetTop;if(window.scrollY>=top-150)current=s.getAttribute('id')});document.querySelectorAll('nav a').forEach(l=>{l.classList.remove('active');if(l.getAttribute('href')===`#${current}`)l.classList.add('active')})});
 </script>
-
 </body>
 </html>
