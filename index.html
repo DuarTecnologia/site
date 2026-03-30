@@ -249,67 +249,88 @@
       line-height: 1.6;
     }
 
-    /* Tecnologias */
+        /* Tecnologias - Versão Clean */
     #tecnologias {
-      background: rgba(15, 23, 42, 0.4);
-      backdrop-filter: blur(10px);
+      background: rgba(15, 23, 42, 0.3);
       border-radius: 20px;
       margin: 2rem 5%;
     }
-    
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
+
+    .tech-grid-slim {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 2rem;
     }
-    
-    .tech-item {
-      background: rgba(30, 41, 59, 0.7);
-      backdrop-filter: blur(5px);
-      padding: 2rem 1.5rem;
-      border-radius: 15px;
-      text-align: center;
-      transition: 0.3s;
+
+    .tech-item-slim {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(8px);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      transition: all 0.3s ease;
       border: 1px solid rgba(56, 189, 248, 0.2);
+      cursor: default;
     }
-    
-    .tech-item:hover {
-      transform: translateY(-5px);
+
+    .tech-item-slim:hover {
+      transform: translateY(-2px);
+      background: rgba(56, 189, 248, 0.15);
       border-color: #38bdf8;
     }
-    
-    .tech-icon {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 1rem;
+
+    .tech-icon-slim {
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-      border-radius: 50%;
-      transition: 0.3s;
-    }
-    
-    .tech-item:hover .tech-icon {
-      transform: scale(1.1);
-    }
-    
-    .tech-icon i {
-      font-size: 2.5rem;
-      color: #fff;
-    }
-    
-    .tech-item h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .tech-item p {
-      font-size: 0.85rem;
-      color: #94a3b8;
+      width: 32px;
+      height: 32px;
     }
 
+    .tech-icon-slim i {
+      font-size: 1.3rem;
+      color: #38bdf8;
+      transition: all 0.3s ease;
+    }
+
+    .tech-item-slim:hover .tech-icon-slim i {
+      transform: scale(1.1);
+      color: #fff;
+    }
+
+    .tech-item-slim span {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #e2e8f0;
+      letter-spacing: 0.3px;
+    }
+
+    /* Responsivo para tecnologias clean */
+    @media (max-width: 768px) {
+      .tech-grid-slim {
+        gap: 0.8rem;
+      }
+      
+      .tech-item-slim {
+        padding: 0.6rem 1.2rem;
+      }
+      
+      .tech-icon-slim i {
+        font-size: 1rem;
+      }
+      
+      .tech-item-slim span {
+        font-size: 0.8rem;
+      }
+      
+      #tecnologias {
+        margin: 1rem 1.5rem;
+      }
+    }
     /* Suporte Remoto */
     .remote-support {
       background: rgba(15, 23, 42, 0.6);
