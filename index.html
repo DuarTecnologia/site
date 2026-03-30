@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DuarTecnologia - Soluções em TI</title>
+  <title>Duarte Tecnologia - Soluções em TI</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
       position: relative;
     }
 
-        /* Imagem de fundo */
+    /* Imagem de fundo */
     body::before {
       content: '';
       position: fixed;
@@ -53,6 +53,7 @@
       z-index: -1;
       pointer-events: none;
     }
+
     /* Botão Flutuante do WhatsApp */
     .whatsapp-float {
       position: fixed;
@@ -356,6 +357,71 @@
       line-height: 1.6;
     }
 
+    /* Seção de Tecnologias */
+    #tecnologias {
+      background: rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      margin: 2rem 5%;
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .tech-item {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(5px);
+      padding: 2rem 1.5rem;
+      border-radius: 15px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .tech-item:hover {
+      transform: translateY(-5px);
+      border-color: #38bdf8;
+      background: rgba(30, 41, 59, 0.9);
+      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+    }
+
+    .tech-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .tech-icon i {
+      font-size: 2.5rem;
+      color: #fff;
+    }
+
+    .tech-item:hover .tech-icon {
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4);
+    }
+
+    .tech-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .tech-item p {
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
     /* Seção de Suporte Remoto */
     .remote-support {
       background: rgba(15, 23, 42, 0.6);
@@ -653,6 +719,33 @@
         height: 50px;
         font-size: 1.5rem;
       }
+
+      /* Responsividade para tecnologias */
+      .tech-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+      }
+
+      .tech-icon {
+        width: 60px;
+        height: 60px;
+      }
+
+      .tech-icon i {
+        font-size: 1.8rem;
+      }
+
+      .tech-item h3 {
+        font-size: 1rem;
+      }
+
+      .tech-item p {
+        font-size: 0.75rem;
+      }
+
+      #tecnologias {
+        margin: 1rem 1.5rem;
+      }
     }
 
     /* Tablet */
@@ -671,7 +764,7 @@
 <body>
 
 <header id="header">
-  <h1><i class="fas fa-laptop-code"></i> DuarTecnologia</h1>
+  <h1><i class="fas fa-laptop-code"></i> Duarte Tecnologia</h1>
   <div class="menu-toggle" id="menuToggle">
     <i class="fas fa-bars"></i>
   </div>
@@ -679,6 +772,7 @@
     <a href="#home" class="active">Início</a>
     <a href="#sobre">Sobre</a>
     <a href="#servicos">Serviços</a>
+    <a href="#tecnologias">Tecnologias</a>
     <a href="#suporte-remoto">Suporte Remoto</a>
     <a href="#contato">Contato</a>
   </nav>
@@ -746,6 +840,87 @@
   </div>
 </section>
 
+<!-- SEÇÃO DE TECNOLOGIAS - INSERIDA AQUI -->
+<section id="tecnologias">
+  <h2>Tecnologias Parceiras</h2>
+  <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Trabalhamos com as melhores e mais confiáveis tecnologias do mercado para garantir soluções de alta qualidade.</p>
+
+  <div class="tech-grid">
+    <div class="tech-item">
+      <div class="tech-icon">
+        <i class="fab fa-microsoft"></i>
+      </div>
+      <h3>Microsoft 365</h3>
+      <p>Produtividade e colaboração em nuvem</p>
+    </div>
+
+    <div class="tech-item">
+      <div class="tech-icon">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <h3>Sophos</h3>
+      <p>Segurança e proteção de dados</p>
+    </div>
+
+    <div class="tech-item">
+      <div class="tech-icon">
+        <i class="fas fa-firewall"></i>
+      </div>
+      <h3>FortiGate</h3>
+      <p>Firewall de última geração</p>
+    </div>
+
+    <div class="tech-item">
+      <div class="tech-icon">
+        <i class="fas fa-desktop"></i>
+      </div>
+      <h3>AnyDesk</h3>
+      <p>Acesso remoto seguro</p>
+    </div>
+
+    <div class="tech-item">
+      <div class="tech-icon">
+        <i class="fas fa-wifi"></i>
+      </div>
+      <h3>Ubiquiti</h3>
+      <p>Redes e infraestrutura wireless</p>
+    </div>
+
+    <div class="tech-item">
+      <div class="tech-icon">
+        <i class="fas fa-database"></i>
+      </div>
+      <h3>Intebras</h3>
+      <p>Backup e armazenamento</p>
+    </div>
+
+    <div class="tech-item">
+      <div class="tech-icon">
+        <i class="fas fa-laptop"></i>
+      </div>
+      <h3>Dell</h3>
+      <p>Hardware e servidores</p>
+    </div>
+
+    <div class="tech-item">
+      <div class="tech-icon">
+        <i class="fas fa-print"></i>
+      </div>
+      <h3>HP</h3>
+      <p>Impressoras e workstations</p>
+    </div>
+
+    <div class="tech-item">
+      <div class="tech-icon">
+        <i class="fas fa-network-wired"></i>
+      </div>
+      <h3>Cisco</h3>
+      <p>Redes corporativas</p>
+    </div>
+  </div>
+</section>
+<!-- FIM DA SEÇÃO DE TECNOLOGIAS -->
+
 <section id="suporte-remoto" class="remote-support">
   <h2>Suporte Remoto</h2>
   <p style="text-align: center; max-width: 800px; margin: 0 auto;">Precisa de ajuda? Conecte-se remotamente e resolva seus problemas de forma rápida e segura.</p>
@@ -791,6 +966,7 @@
     <div class="contact-info">
       <p><i class="fas fa-envelope"></i> contato@duartecnologia.com.br</p>
       <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20de%20TI." target="_blank">(11) 99999-9999</a></p>
+      <p><i class="fas fa-phone"></i> (11) 3333-4444</p>
       <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
       <p><i class="fas fa-clock"></i> Segunda a Sexta: 8h às 18h</p>
     </div>
@@ -813,7 +989,7 @@
 </section>
 
 <footer>
-  <p>© 2026 DuarTecnologia - Todos os direitos reservados</p>
+  <p>© 2026 Duarte Tecnologia - Todos os direitos reservados</p>
 </footer>
 
 <!-- Botão Flutuante WhatsApp -->
