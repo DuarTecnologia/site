@@ -71,6 +71,10 @@
       letter-spacing: -0.5px;
     }
 
+    header h1 i {
+      margin-right: 10px;
+    }
+
     /* Menu Desktop */
     nav {
       display: flex;
@@ -245,6 +249,97 @@
       line-height: 1.6;
     }
 
+    /* Seção de Suporte Remoto */
+    .remote-support {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(14, 165, 233, 0.05));
+      border: 2px solid rgba(56, 189, 248, 0.3);
+      margin-top: 3rem;
+    }
+
+    .remote-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .remote-info {
+      text-align: left;
+    }
+
+    .remote-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #38bdf8;
+    }
+
+    .remote-info p {
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+    }
+
+    .code-info {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1.5rem;
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .code-info h4 {
+      color: #38bdf8;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .access-code {
+      background: #0f172a;
+      padding: 1rem;
+      border-radius: 10px;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 5px;
+      color: #38bdf8;
+      margin: 1rem 0;
+      font-family: monospace;
+    }
+
+    .copy-btn {
+      background: rgba(56, 189, 248, 0.2);
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      background: #38bdf8;
+      color: #fff;
+    }
+
     /* Formulário */
     .contact-container {
       display: grid;
@@ -381,6 +476,11 @@
         font-size: 1rem;
       }
 
+      .remote-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
       .contact-container {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -392,6 +492,11 @@
 
       h2 {
         font-size: 2rem;
+      }
+
+      .access-code {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
       }
     }
   </style>
@@ -408,6 +513,7 @@
     <a href="#home" class="active">Início</a>
     <a href="#sobre">Sobre</a>
     <a href="#servicos">Serviços</a>
+    <a href="#suporte-remoto">Suporte Remoto</a>
     <a href="#contato">Contato</a>
   </nav>
 </header>
@@ -415,7 +521,7 @@
 <section id="home" class="hero">
   <h2>Soluções em Tecnologia e Suporte de TI</h2>
   <p>Especialista em suporte técnico, redes, cloud e infraestrutura. Transformando tecnologia em resultado.</p>
-  <a href="#contato" class="btn"><i class="fas fa-comment"></i> Fale Comigo</a>
+  <a href="#suporte-remoto" class="btn"><i class="fas fa-desktop"></i> Suporte Remoto</a>
 </section>
 
 <section id="sobre">
@@ -471,6 +577,43 @@
   </div>
 </section>
 
+<section id="suporte-remoto" class="remote-support">
+  <h2>Suporte Remoto</h2>
+  <p style="text-align: center; max-width: 800px; margin: 0 auto;">Precisa de ajuda? Conecte-se remotamente e resolva seus problemas de forma rápida e segura.</p>
+
+  <div class="remote-content">
+    <div class="remote-info">
+      <h3><i class="fas fa-download"></i> Baixe o AnyDesk</h3>
+      <p>Para iniciar o atendimento remoto, baixe e execute o AnyDesk clicando no botão abaixo. É rápido, seguro e não requer instalação.</p>
+      <a href="https://anydesk.com/pt/downloads" target="_blank" class="download-btn">
+        <i class="fas fa-download"></i> Baixar AnyDesk
+      </a>
+      <a href="https://anydesk.com/pt" target="_blank" class="download-btn" style="background: rgba(56, 189, 248, 0.2); border: 1px solid #38bdf8;">
+        <i class="fas fa-info-circle"></i> Saiba mais
+      </a>
+      <div style="margin-top: 1.5rem;">
+        <p><i class="fas fa-check-circle" style="color: #38bdf8;"></i> <strong>Compatível com:</strong> Windows, Mac, Linux, Android, iOS</p>
+        <p><i class="fas fa-lock" style="color: #38bdf8;"></i> <strong>Conexão segura</strong> com criptografia TLS 1.2</p>
+      </div>
+    </div>
+
+    <div class="code-info">
+      <h4><i class="fas fa-qrcode"></i> Código de Acesso</h4>
+      <p>Após baixar o AnyDesk, informe o código abaixo para iniciar o atendimento:</p>
+      <div class="access-code" id="accessCode">
+        123 456 789
+      </div>
+      <button class="copy-btn" onclick="copyAccessCode()">
+        <i class="fas fa-copy"></i> Copiar código
+      </button>
+      <p style="margin-top: 1rem; font-size: 0.9rem; color: #94a3b8;">
+        <i class="fas fa-clock"></i> Disponível em horário comercial<br>
+        Atendimento rápido e personalizado
+      </p>
+    </div>
+  </div>
+</section>
+
 <section id="contato">
   <h2>Contato</h2>
   <p style="text-align: center; margin-bottom: 2rem;">Entre em contato para soluções em TI:</p>
@@ -481,6 +624,7 @@
       <p><i class="fab fa-whatsapp"></i> (11) 99999-9999</p>
       <p><i class="fas fa-phone"></i> (11) 3333-4444</p>
       <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+      <p><i class="fas fa-clock"></i> Segunda a Sexta: 8h às 18h</p>
     </div>
 
     <div class="contact-form">
@@ -567,11 +711,59 @@
     observer.observe(section);
   });
 
+  // Função para copiar código
+  window.copyAccessCode = function() {
+    const codeElement = document.getElementById('accessCode');
+    const code = codeElement.innerText;
+    
+    navigator.clipboard.writeText(code).then(() => {
+      // Feedback visual
+      const copyBtn = document.querySelector('.copy-btn');
+      const originalText = copyBtn.innerHTML;
+      copyBtn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
+      
+      setTimeout(() => {
+        copyBtn.innerHTML = originalText;
+      }, 2000);
+      
+      // Mostrar notificação
+      showNotification('Código copiado com sucesso!');
+    }).catch(err => {
+      console.error('Erro ao copiar: ', err);
+      showNotification('Erro ao copiar código', 'error');
+    });
+  };
+
+  // Função para mostrar notificação
+  function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.style.position = 'fixed';
+    notification.style.bottom = '20px';
+    notification.style.right = '20px';
+    notification.style.backgroundColor = type === 'success' ? '#10b981' : '#ef4444';
+    notification.style.color = '#fff';
+    notification.style.padding = '1rem 1.5rem';
+    notification.style.borderRadius = '8px';
+    notification.style.fontWeight = '500';
+    notification.style.zIndex = '9999';
+    notification.style.animation = 'fadeInUp 0.3s ease';
+    notification.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${message}`;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+      notification.style.opacity = '0';
+      setTimeout(() => {
+        document.body.removeChild(notification);
+      }, 300);
+    }, 3000);
+  }
+
   // Formulário
   const contactForm = document.getElementById('contactForm');
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
+    showNotification('Mensagem enviada com sucesso! Em breve entraremos em contato.');
     contactForm.reset();
   });
 
