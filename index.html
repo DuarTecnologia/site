@@ -250,66 +250,204 @@
       line-height: 1.6;
     }
 
-    /* ========== TECNOLOGIAS PARCEIRAS - VERSÃO CLEAN ========== */
-    /* Cards em formato de pills (arredondados), layout horizontal e clean */
-    #tecnologias {
-      background: rgba(15, 23, 42, 0.5); /* Fundo mais transparente para mostrar imagem */
-      border-radius: 20px;
-      margin: 2rem 5%;
-    }
+    /* ========== TECNOLOGIAS PARCEIRAS - DESIGN MODERNO ========== */
+#tecnologias {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(30, 41, 59, 0.6));
+  backdrop-filter: blur(12px);
+  border-radius: 30px;
+  margin: 2rem 5%;
+  padding: 2rem 0;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
 
-    .tech-grid-slim {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.2rem;
-      margin-top: 2rem;
-    }
+#tecnologias:hover {
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.1);
+}
 
-    .tech-item-slim {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      background: rgba(30, 41, 59, 0.85);
-      backdrop-filter: blur(8px);
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(56, 189, 248, 0.2);
-      cursor: default;
-    }
+.tech-grid-slim {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
 
-    .tech-item-slim:hover {
-      transform: translateY(-2px);
-      background: rgba(56, 189, 248, 0.25);
-      border-color: #38bdf8;
-    }
+.tech-item-slim {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.7));
+  backdrop-filter: blur(8px);
+  padding: 1.2rem 1.8rem;
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  min-width: 120px;
+}
 
-    .tech-icon-slim {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-    }
+/* Efeito de brilho no hover */
+.tech-item-slim::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.3), transparent);
+  transition: left 0.6s ease;
+}
 
-    .tech-icon-slim i {
-      font-size: 1.3rem;
-      color: #38bdf8;
-      transition: all 0.3s ease;
-    }
+.tech-item-slim:hover::before {
+  left: 100%;
+}
 
-    .tech-item-slim:hover .tech-icon-slim i {
-      transform: scale(1.1);
-      color: #fff;
-    }
+.tech-item-slim:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(56, 189, 248, 0.15));
+  border-color: #38bdf8;
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+}
 
-    .tech-item-slim span {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #f1f5f9;
-      letter-spacing: 0.3px;
-    }
+.tech-icon-slim {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(56, 189, 248, 0.15);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.tech-item-slim:hover .tech-icon-slim {
+  background: rgba(56, 189, 248, 0.3);
+  transform: rotate(360deg) scale(1.1);
+}
+
+.tech-icon-slim i {
+  font-size: 1.8rem;
+  color: #38bdf8;
+  transition: all 0.3s ease;
+}
+
+.tech-item-slim:hover .tech-icon-slim i {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.tech-item-slim span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tech-item-slim:hover span {
+  color: #38bdf8;
+  letter-spacing: 1px;
+}
+
+/* Adicionando uma linha decorativa no título da seção */
+#tecnologias h2 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+#tecnologias h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+  border-radius: 2px;
+}
+
+/* Animações sutis para os cards ao carregar a página */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tech-item-slim {
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+/* Delay progressivo para cada card */
+.tech-item-slim:nth-child(1) { animation-delay: 0.1s; }
+.tech-item-slim:nth-child(2) { animation-delay: 0.15s; }
+.tech-item-slim:nth-child(3) { animation-delay: 0.2s; }
+.tech-item-slim:nth-child(4) { animation-delay: 0.25s; }
+.tech-item-slim:nth-child(5) { animation-delay: 0.3s; }
+.tech-item-slim:nth-child(6) { animation-delay: 0.35s; }
+.tech-item-slim:nth-child(7) { animation-delay: 0.4s; }
+.tech-item-slim:nth-child(8) { animation-delay: 0.45s; }
+.tech-item-slim:nth-child(9) { animation-delay: 0.5s; }
+
+/* Responsividade aprimorada */
+@media (max-width: 768px) {
+  .tech-grid-slim {
+    gap: 1rem;
+  }
+  
+  .tech-item-slim {
+    padding: 0.9rem 1.2rem;
+    min-width: 100px;
+  }
+  
+  .tech-icon-slim {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .tech-icon-slim i {
+    font-size: 1.4rem;
+  }
+  
+  .tech-item-slim span {
+    font-size: 0.75rem;
+  }
+  
+  #tecnologias {
+    margin: 1.5rem 1.5rem;
+    border-radius: 25px;
+  }
+}
+
+/* Efeito de carregamento para dispositivos com movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .tech-item-slim {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .tech-item-slim:hover {
+    transform: translateY(-2px);
+  }
+}
 
     /* ========== SUPORTE REMOTO ========== */
     .remote-support {
