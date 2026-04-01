@@ -37,7 +37,7 @@
       height: 100%;
       background: url('Fundo_site.png') center center no-repeat fixed;
       background-size: cover;
-      opacity: 0.7; /* Aumentado de 0.35 para 0.7 - imagem mais visível */
+      opacity: 0.7;
       z-index: -2;
       pointer-events: none;
     }
@@ -50,7 +50,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.5), rgba(30, 41, 59, 0.55)); /* Opacidade reduzida */
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.5), rgba(30, 41, 59, 0.55));
       z-index: -1;
       pointer-events: none;
     }
@@ -219,7 +219,7 @@
     }
     
     .card {
-      background: rgba(30, 41, 59, 0.85); /* Opacidade aumentada para melhor legibilidade */
+      background: rgba(30, 41, 59, 0.85);
       backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 15px;
@@ -246,48 +246,172 @@
     }
     
     .card p {
-      color: #e2e8f0; /* Texto mais claro para melhor contraste */
+      color: #e2e8f0;
       line-height: 1.6;
     }
 
-    <!-- ========== TECNOLOGIAS PARCEIRAS ========== -->
-<section id="tecnologias">
-  <h2>Tecnologias Parceiras</h2>
-  <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: #e2e8f0;">
-    Trabalhamos com as melhores tecnologias do mercado para garantir soluções de alta qualidade.
-  </p>
+    /* ========== TECNOLOGIAS PARCEIRAS - DESIGN FLUIDO ========== */
+    #tecnologias {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(30, 41, 59, 0.6));
+      backdrop-filter: blur(12px);
+      border-radius: 30px;
+      margin: 2rem 5%;
+      padding: 2rem 0;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
 
-  <div class="tech-grid-slim">
-    <div class="tech-item-slim">
-      <div class="tech-icon-slim"><i class="fab fa-microsoft"></i></div>
-      <span>Microsoft 365</span>
-    </div>
-    <div class="tech-item-slim">
-      <div class="tech-icon-slim"><i class="fas fa-wifi"></i></div>
-      <span>UniFi WiFi</span>
-    </div>
-    <div class="tech-item-slim">
-      <div class="tech-icon-slim"><i class="fas fa-laptop"></i></div>
-      <span>Dell</span>
-    </div>
-    <div class="tech-item-slim">
-      <div class="tech-icon-slim"><i class="fas fa-tablet-alt"></i></div>
-      <span>Lenovo</span>
-    </div>
-    <div class="tech-item-slim">
-      <div class="tech-icon-slim"><i class="fas fa-mobile-alt"></i></div>
-      <span>Samsung</span>
-    </div>
-    <div class="tech-item-slim">
-      <div class="tech-icon-slim"><i class="fas fa-shield-alt"></i></div>
-      <span>Sophos</span>
-    </div>
-    <div class="tech-item-slim">
-      <div class="tech-icon-slim"><i class="fas fa-shield-hogwarts"></i></div>
-      <span>Fortinet</span>
-    </div>
-  </div>
-</section>
+    #tecnologias:hover {
+      border-color: rgba(56, 189, 248, 0.5);
+      box-shadow: 0 15px 40px rgba(56, 189, 248, 0.1);
+    }
+
+    .tech-grid-slim {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1.8rem;
+      margin-top: 2rem;
+      padding: 0 2rem;
+    }
+
+    .tech-item-slim {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.7));
+      backdrop-filter: blur(8px);
+      padding: 1.2rem 1.8rem;
+      border-radius: 20px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      min-width: 130px;
+      flex: 0 1 auto;
+    }
+
+    /* Efeito de brilho no hover */
+    .tech-item-slim::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.3), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .tech-item-slim:hover::before {
+      left: 100%;
+    }
+
+    .tech-item-slim:hover {
+      transform: translateY(-5px) scale(1.05);
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(56, 189, 248, 0.15));
+      border-color: #38bdf8;
+      box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+    }
+
+    .tech-icon-slim {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      background: rgba(56, 189, 248, 0.15);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .tech-item-slim:hover .tech-icon-slim {
+      background: rgba(56, 189, 248, 0.3);
+      transform: rotate(360deg) scale(1.1);
+    }
+
+    .tech-icon-slim i {
+      font-size: 2rem;
+      color: #38bdf8;
+      transition: all 0.3s ease;
+    }
+
+    .tech-item-slim:hover .tech-icon-slim i {
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    .tech-item-slim span {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #f1f5f9;
+      letter-spacing: 0.5px;
+      text-align: center;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .tech-item-slim:hover span {
+      color: #38bdf8;
+      letter-spacing: 1px;
+    }
+
+    /* Estilo especial para ícones específicos */
+    .tech-item-slim .fa-microsoft {
+      color: #00a4ef;
+    }
+
+    .tech-item-slim .fa-wifi {
+      color: #1e88e5;
+    }
+
+    .tech-item-slim .fa-laptop {
+      color: #0078d4;
+    }
+
+    .tech-item-slim .fa-tablet-alt {
+      color: #1428a0;
+    }
+
+    .tech-item-slim .fa-mobile-alt {
+      color: #0a4b7a;
+    }
+
+    .tech-item-slim .fa-shield-alt {
+      color: #e85d04;
+    }
+
+    /* Animações sutis para os cards ao carregar a página */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .tech-item-slim {
+      animation: fadeInUp 0.5s ease forwards;
+      opacity: 0;
+    }
+
+    /* Delay progressivo para cada card */
+    .tech-item-slim:nth-child(1) { animation-delay: 0.1s; }
+    .tech-item-slim:nth-child(2) { animation-delay: 0.15s; }
+    .tech-item-slim:nth-child(3) { animation-delay: 0.2s; }
+    .tech-item-slim:nth-child(4) { animation-delay: 0.25s; }
+    .tech-item-slim:nth-child(5) { animation-delay: 0.3s; }
+    .tech-item-slim:nth-child(6) { animation-delay: 0.35s; }
+    .tech-item-slim:nth-child(7) { animation-delay: 0.4s; }
+
     /* ========== SUPORTE REMOTO ========== */
     .remote-support {
       background: rgba(15, 23, 42, 0.75);
@@ -526,25 +650,59 @@
         font-size: 1.5rem;
       }
       
-      /* Responsivo para tecnologias clean */
+      /* Responsivo para tecnologias */
       .tech-grid-slim {
-        gap: 0.8rem;
+        gap: 1.2rem;
+        padding: 0 1rem;
       }
       
       .tech-item-slim {
-        padding: 0.6rem 1.2rem;
+        padding: 1rem 1.2rem;
+        min-width: 110px;
+      }
+      
+      .tech-icon-slim {
+        width: 44px;
+        height: 44px;
       }
       
       .tech-icon-slim i {
-        font-size: 1rem;
+        font-size: 1.6rem;
       }
       
       .tech-item-slim span {
         font-size: 0.8rem;
+        white-space: normal;
       }
       
       #tecnologias {
-        margin: 1rem 1.5rem;
+        margin: 1.5rem 1.5rem;
+        border-radius: 25px;
+      }
+    }
+
+    /* Para telas muito pequenas, ajuste para 2 colunas */
+    @media (max-width: 580px) {
+      .tech-grid-slim {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1rem;
+      }
+      
+      .tech-item-slim {
+        width: 100%;
+      }
+    }
+
+    /* Efeito de carregamento para dispositivos com movimento reduzido */
+    @media (prefers-reduced-motion: reduce) {
+      .tech-item-slim {
+        animation: none;
+        opacity: 1;
+      }
+      
+      .tech-item-slim:hover {
+        transform: translateY(-2px);
       }
     }
   </style>
@@ -600,247 +758,45 @@
   </div>
 </section>
 
-/* ========== TECNOLOGIAS PARCEIRAS - DESIGN FLUIDO ========== */
-#tecnologias {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(30, 41, 59, 0.6));
-  backdrop-filter: blur(12px);
-  border-radius: 30px;
-  margin: 2rem 5%;
-  padding: 2rem 0;
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
+<!-- ========== TECNOLOGIAS PARCEIRAS ========== -->
+<section id="tecnologias">
+  <h2>Tecnologias Parceiras</h2>
+  <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: #e2e8f0;">
+    Trabalhamos com as melhores tecnologias do mercado para garantir soluções de alta qualidade.
+  </p>
 
-#tecnologias:hover {
-  border-color: rgba(56, 189, 248, 0.5);
-  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.1);
-}
+  <div class="tech-grid-slim">
+    <div class="tech-item-slim">
+      <div class="tech-icon-slim"><i class="fab fa-microsoft"></i></div>
+      <span>Microsoft 365</span>
+    </div>
+    <div class="tech-item-slim">
+      <div class="tech-icon-slim"><i class="fas fa-wifi"></i></div>
+      <span>UniFi WiFi</span>
+    </div>
+    <div class="tech-item-slim">
+      <div class="tech-icon-slim"><i class="fas fa-laptop"></i></div>
+      <span>Dell</span>
+    </div>
+    <div class="tech-item-slim">
+      <div class="tech-icon-slim"><i class="fas fa-tablet-alt"></i></div>
+      <span>Lenovo</span>
+    </div>
+    <div class="tech-item-slim">
+      <div class="tech-icon-slim"><i class="fas fa-mobile-alt"></i></div>
+      <span>Samsung</span>
+    </div>
+    <div class="tech-item-slim">
+      <div class="tech-icon-slim"><i class="fas fa-shield-alt"></i></div>
+      <span>Sophos</span>
+    </div>
+    <div class="tech-item-slim">
+      <div class="tech-icon-slim"><i class="fas fa-shield-alt"></i></div>
+      <span>Fortinet</span>
+    </div>
+  </div>
+</section>
 
-.tech-grid-slim {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1.8rem;
-  margin-top: 2rem;
-  padding: 0 2rem;
-}
-
-.tech-item-slim {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.7));
-  backdrop-filter: blur(8px);
-  padding: 1.2rem 1.8rem;
-  border-radius: 20px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  min-width: 130px;
-  flex: 0 1 auto;
-}
-
-/* Efeito de brilho no hover */
-.tech-item-slim::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.3), transparent);
-  transition: left 0.6s ease;
-}
-
-.tech-item-slim:hover::before {
-  left: 100%;
-}
-
-.tech-item-slim:hover {
-  transform: translateY(-5px) scale(1.05);
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(56, 189, 248, 0.15));
-  border-color: #38bdf8;
-  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
-}
-
-.tech-icon-slim {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  background: rgba(56, 189, 248, 0.15);
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.tech-item-slim:hover .tech-icon-slim {
-  background: rgba(56, 189, 248, 0.3);
-  transform: rotate(360deg) scale(1.1);
-}
-
-.tech-icon-slim i {
-  font-size: 2rem;
-  color: #38bdf8;
-  transition: all 0.3s ease;
-}
-
-.tech-item-slim:hover .tech-icon-slim i {
-  color: #fff;
-  transform: scale(1.1);
-}
-
-.tech-item-slim span {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #f1f5f9;
-  letter-spacing: 0.5px;
-  text-align: center;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.tech-item-slim:hover span {
-  color: #38bdf8;
-  letter-spacing: 1px;
-}
-
-/* Estilo especial para ícones específicos */
-.tech-item-slim .fa-microsoft {
-  color: #00a4ef;
-}
-
-.tech-item-slim .fa-wifi {
-  color: #1e88e5;
-}
-
-.tech-item-slim .fa-laptop {
-  color: #0078d4;
-}
-
-.tech-item-slim .fa-tablet-alt {
-  color: #1428a0;
-}
-
-.tech-item-slim .fa-mobile-alt {
-  color: #0a4b7a;
-}
-
-.tech-item-slim .fa-shield-alt {
-  color: #e85d04;
-}
-
-.tech-item-slim .fa-shield-hogwarts {
-  color: #f48c06;
-}
-
-/* Adicionando uma linha decorativa no título da seção */
-#tecnologias h2 {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 1.5rem;
-}
-
-#tecnologias h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
-  border-radius: 2px;
-}
-
-/* Animações sutis para os cards ao carregar a página */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.tech-item-slim {
-  animation: fadeInUp 0.5s ease forwards;
-  opacity: 0;
-}
-
-/* Delay progressivo para cada card */
-.tech-item-slim:nth-child(1) { animation-delay: 0.1s; }
-.tech-item-slim:nth-child(2) { animation-delay: 0.15s; }
-.tech-item-slim:nth-child(3) { animation-delay: 0.2s; }
-.tech-item-slim:nth-child(4) { animation-delay: 0.25s; }
-.tech-item-slim:nth-child(5) { animation-delay: 0.3s; }
-.tech-item-slim:nth-child(6) { animation-delay: 0.35s; }
-.tech-item-slim:nth-child(7) { animation-delay: 0.4s; }
-
-/* Responsividade fluida */
-@media (max-width: 768px) {
-  .tech-grid-slim {
-    gap: 1.2rem;
-    padding: 0 1rem;
-  }
-  
-  .tech-item-slim {
-    padding: 1rem 1.2rem;
-    min-width: 110px;
-  }
-  
-  .tech-icon-slim {
-    width: 44px;
-    height: 44px;
-  }
-  
-  .tech-icon-slim i {
-    font-size: 1.6rem;
-  }
-  
-  .tech-item-slim span {
-    font-size: 0.8rem;
-    white-space: normal;
-  }
-  
-  #tecnologias {
-    margin: 1.5rem 1.5rem;
-    border-radius: 25px;
-  }
-}
-
-/* Para telas muito pequenas, ajuste para 2 colunas */
-@media (max-width: 580px) {
-  .tech-grid-slim {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1rem;
-  }
-  
-  .tech-item-slim {
-    width: 100%;
-  }
-}
-
-/* Efeito de carregamento para dispositivos com movimento reduzido */
-@media (prefers-reduced-motion: reduce) {
-  .tech-item-slim {
-    animation: none;
-    opacity: 1;
-  }
-  
-  .tech-item-slim:hover {
-    transform: translateY(-2px);
-  }
-}
 <!-- ========== SUPORTE REMOTO ========== -->
 <section id="suporte-remoto" class="remote-support">
   <h2>Suporte Remoto</h2>
