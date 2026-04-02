@@ -27,7 +27,7 @@
       position: relative;
     }
 
-    /* Imagem de fundo com overlay - imagem mais visível */
+    /* Imagem de fundo com overlay */
     body::before {
       content: '';
       position: fixed;
@@ -42,7 +42,7 @@
       pointer-events: none;
     }
 
-    /* Overlay mais sutil para não escurecer demais a imagem */
+    /* Overlay mais sutil */
     body::after {
       content: '';
       position: fixed;
@@ -250,13 +250,13 @@
       line-height: 1.6;
     }
 
-    /* ========== TECNOLOGIAS PARCEIRAS - DESIGN FLUIDO ========== */
+    /* ========== TECNOLOGIAS PARCEIRAS - CARDS AJUSTADOS ========== */
     #tecnologias {
       background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(30, 41, 59, 0.6));
       backdrop-filter: blur(12px);
       border-radius: 30px;
       margin: 2rem 5%;
-      padding: 2rem 0;
+      padding: 3rem 2rem;
       border: 1px solid rgba(56, 189, 248, 0.2);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease;
@@ -267,14 +267,15 @@
       box-shadow: 0 15px 40px rgba(56, 189, 248, 0.1);
     }
 
+    /* Grid responsivo para os cards */
     .tech-grid-slim {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 200px));
+      gap: 2rem;
       justify-content: center;
-      align-items: center;
-      gap: 1.8rem;
-      margin-top: 2rem;
-      padding: 0 2rem;
+      align-items: stretch;
+      margin-top: 3rem;
+      padding: 0 1rem;
     }
 
     .tech-item-slim {
@@ -282,19 +283,18 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0.8rem;
+      gap: 1rem;
       background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.7));
       backdrop-filter: blur(8px);
-      padding: 1.2rem 1.8rem;
+      padding: 1.5rem 1rem;
       border-radius: 20px;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       border: 1px solid rgba(56, 189, 248, 0.2);
       cursor: pointer;
       position: relative;
       overflow: hidden;
-      min-width: 130px;
-      flex: 0 1 auto;
       text-decoration: none;
+      min-height: 140px;
     }
 
     /* Efeito de brilho no hover */
@@ -314,18 +314,18 @@
     }
 
     .tech-item-slim:hover {
-      transform: translateY(-5px) scale(1.05);
+      transform: translateY(-8px) scale(1.02);
       background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(56, 189, 248, 0.15));
       border-color: #38bdf8;
-      box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.3);
     }
 
     .tech-icon-slim {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 52px;
-      height: 52px;
+      width: 70px;
+      height: 70px;
       background: rgba(56, 189, 248, 0.15);
       border-radius: 50%;
       transition: all 0.3s ease;
@@ -337,7 +337,7 @@
     }
 
     .tech-icon-slim i {
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: #38bdf8;
       transition: all 0.3s ease;
     }
@@ -348,43 +348,17 @@
     }
 
     .tech-item-slim span {
-      font-size: 0.9rem;
+      font-size: 1rem;
       font-weight: 600;
       color: #f1f5f9;
       letter-spacing: 0.5px;
       text-align: center;
       transition: all 0.3s ease;
-      white-space: nowrap;
     }
 
     .tech-item-slim:hover span {
       color: #38bdf8;
       letter-spacing: 1px;
-    }
-
-    /* Estilo especial para ícones específicos */
-    .tech-item-slim .fa-microsoft {
-      color: #00a4ef;
-    }
-
-    .tech-item-slim .fa-wifi {
-      color: #1e88e5;
-    }
-
-    .tech-item-slim .fa-laptop {
-      color: #0078d4;
-    }
-
-    .tech-item-slim .fa-tablet-alt {
-      color: #1428a0;
-    }
-
-    .tech-item-slim .fa-mobile-alt {
-      color: #0a4b7a;
-    }
-
-    .tech-item-slim .fa-shield-alt {
-      color: #e85d04;
     }
 
     /* Animações sutis para os cards ao carregar a página */
@@ -651,20 +625,52 @@
         font-size: 1.5rem;
       }
       
-      /* Responsivo para tecnologias */
+      /* Ajustes responsivos para cards de tecnologia */
       .tech-grid-slim {
-        gap: 1.2rem;
-        padding: 0 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 160px));
+        gap: 1.5rem;
+        padding: 0 0.5rem;
       }
       
       .tech-item-slim {
-        padding: 1rem 1.2rem;
-        min-width: 110px;
+        padding: 1.2rem 0.8rem;
+        min-height: 130px;
       }
       
       .tech-icon-slim {
-        width: 44px;
-        height: 44px;
+        width: 55px;
+        height: 55px;
+      }
+      
+      .tech-icon-slim i {
+        font-size: 2rem;
+      }
+      
+      .tech-item-slim span {
+        font-size: 0.85rem;
+      }
+      
+      #tecnologias {
+        margin: 1.5rem;
+        padding: 2rem 1rem;
+        border-radius: 25px;
+      }
+    }
+
+    /* Para telas muito pequenas */
+    @media (max-width: 480px) {
+      .tech-grid-slim {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      
+      .tech-item-slim {
+        padding: 1rem 0.5rem;
+      }
+      
+      .tech-icon-slim {
+        width: 48px;
+        height: 48px;
       }
       
       .tech-icon-slim i {
@@ -672,26 +678,7 @@
       }
       
       .tech-item-slim span {
-        font-size: 0.8rem;
-        white-space: normal;
-      }
-      
-      #tecnologias {
-        margin: 1.5rem 1.5rem;
-        border-radius: 25px;
-      }
-    }
-
-    /* Para telas muito pequenas, ajuste para 2 colunas */
-    @media (max-width: 580px) {
-      .tech-grid-slim {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 1rem;
-      }
-      
-      .tech-item-slim {
-        width: 100%;
+        font-size: 0.75rem;
       }
     }
 
@@ -703,7 +690,7 @@
       }
       
       .tech-item-slim:hover {
-        transform: translateY(-2px);
+        transform: translateY(-5px);
       }
     }
   </style>
@@ -759,10 +746,10 @@
   </div>
 </section>
 
-<!-- ========== TECNOLOGIAS PARCEIRAS ========== -->
+<!-- ========== TECNOLOGIAS PARCEIRAS - CARDS AJUSTADOS ========== -->
 <section id="tecnologias">
   <h2>Tecnologias Parceiras</h2>
-  <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: #e2e8f0;">
+  <p style="text-align: center; max-width: 800px; margin: 0 auto; color: #e2e8f0;">
     Trabalhamos com as melhores tecnologias do mercado para garantir soluções de alta qualidade.
     <br>Clique nos cards para conhecer mais sobre cada fabricante.
   </p>
@@ -897,10 +884,10 @@
     // Scroll suave para links internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
         e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const target = document.querySelector(targetId);
+        const target = document.querySelector(href);
         if (target) {
           target.scrollIntoView({ behavior: 'smooth' });
         }
@@ -970,7 +957,6 @@
     if (contactForm) {
       contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        // Aqui você pode adicionar lógica de envio real (fetch/AJAX)
         showNotification('Mensagem enviada! Em breve entraremos em contato.');
         contactForm.reset();
       });
