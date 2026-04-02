@@ -250,51 +250,42 @@
       line-height: 1.6;
     }
 
-    /* ========== TECNOLOGIAS PARCEIRAS - CARDS AJUSTADOS ========== */
+    /* ========== TECNOLOGIAS PARCEIRAS - SEM CARD GRANDE ========== */
     #tecnologias {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(30, 41, 59, 0.6));
-  backdrop-filter: blur(12px);
-  border-radius: 20px;  /* ← REDUZIDO: antes 30px */
-  margin: 1rem 5%;  /* ← REDUZIDO: antes 2rem */
-  padding: 1.5rem 1rem;  /* ← REDUZIDO: antes 3rem 2rem */
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);  /* ← REDUZIDO */
-  transition: all 0.3s ease;
-}
-
-    #tecnologias:hover {
-      border-color: rgba(56, 189, 248, 0.5);
-      box-shadow: 0 15px 40px rgba(56, 189, 248, 0.1);
+      /* REMOVIDO: background, backdrop-filter, border-radius, border, box-shadow */
+      margin: 0 auto;
+      padding: 0;
+      transition: all 0.3s ease;
     }
 
     /* Grid responsivo para os cards */
-.tech-grid-slim {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 140px));  /* ← REDUZIDO: antes 160px-200px */
-  gap: 1rem;  /* ← REDUZIDO: antes 2rem */
-  justify-content: center;
-  align-items: stretch;
-  margin-top: 1.5rem;  /* ← REDUZIDO: antes 3rem */
-  padding: 0 0.5rem;  /* ← REDUZIDO: antes 0 1rem */
-}
+    .tech-grid-slim {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 140px));
+      gap: 1rem;
+      justify-content: center;
+      align-items: stretch;
+      margin-top: 2rem;
+      padding: 0;
+    }
 
     .tech-item-slim {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 1rem;
+      gap: 0.8rem;
       background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.7));
       backdrop-filter: blur(8px);
-      padding: 1.5rem 1rem;
-      border-radius: 20px;
+      padding: 1rem 0.8rem;
+      border-radius: 15px;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       border: 1px solid rgba(56, 189, 248, 0.2);
       cursor: pointer;
       position: relative;
       overflow: hidden;
       text-decoration: none;
-      min-height: 140px;
+      min-height: 110px;
     }
 
     /* Efeito de brilho no hover */
@@ -314,18 +305,18 @@
     }
 
     .tech-item-slim:hover {
-      transform: translateY(-8px) scale(1.02);
+      transform: translateY(-5px) scale(1.02);
       background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(56, 189, 248, 0.15));
       border-color: #38bdf8;
-      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.3);
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.2);
     }
 
     .tech-icon-slim {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 70px;
-      height: 70px;
+      width: 55px;
+      height: 55px;
       background: rgba(56, 189, 248, 0.15);
       border-radius: 50%;
       transition: all 0.3s ease;
@@ -337,7 +328,7 @@
     }
 
     .tech-icon-slim i {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       color: #38bdf8;
       transition: all 0.3s ease;
     }
@@ -348,7 +339,7 @@
     }
 
     .tech-item-slim span {
-      font-size: 1rem;
+      font-size: 0.8rem;
       font-weight: 600;
       color: #f1f5f9;
       letter-spacing: 0.5px;
@@ -365,7 +356,7 @@
     @keyframes fadeInUp {
       from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
       }
       to {
         opacity: 1;
@@ -374,18 +365,18 @@
     }
 
     .tech-item-slim {
-      animation: fadeInUp 0.5s ease forwards;
+      animation: fadeInUp 0.4s ease forwards;
       opacity: 0;
     }
 
     /* Delay progressivo para cada card */
-    .tech-item-slim:nth-child(1) { animation-delay: 0.1s; }
-    .tech-item-slim:nth-child(2) { animation-delay: 0.15s; }
-    .tech-item-slim:nth-child(3) { animation-delay: 0.2s; }
-    .tech-item-slim:nth-child(4) { animation-delay: 0.25s; }
-    .tech-item-slim:nth-child(5) { animation-delay: 0.3s; }
-    .tech-item-slim:nth-child(6) { animation-delay: 0.35s; }
-    .tech-item-slim:nth-child(7) { animation-delay: 0.4s; }
+    .tech-item-slim:nth-child(1) { animation-delay: 0.05s; }
+    .tech-item-slim:nth-child(2) { animation-delay: 0.1s; }
+    .tech-item-slim:nth-child(3) { animation-delay: 0.15s; }
+    .tech-item-slim:nth-child(4) { animation-delay: 0.2s; }
+    .tech-item-slim:nth-child(5) { animation-delay: 0.25s; }
+    .tech-item-slim:nth-child(6) { animation-delay: 0.3s; }
+    .tech-item-slim:nth-child(7) { animation-delay: 0.35s; }
 
     /* ========== SUPORTE REMOTO ========== */
     .remote-support {
@@ -627,33 +618,26 @@
       
       /* Ajustes responsivos para cards de tecnologia */
       .tech-grid-slim {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 160px));
-        gap: 1.5rem;
-        padding: 0 0.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 120px));
+        gap: 0.8rem;
       }
       
       .tech-item-slim {
-        padding: 1.2rem 0.8rem;
-        min-height: 130px;
+        padding: 0.8rem 0.5rem;
+        min-height: 95px;
       }
       
       .tech-icon-slim {
-        width: 55px;
-        height: 55px;
+        width: 45px;
+        height: 45px;
       }
       
       .tech-icon-slim i {
-        font-size: 2rem;
+        font-size: 1.4rem;
       }
       
       .tech-item-slim span {
-        font-size: 0.85rem;
-      }
-      
-      #tecnologias {
-        margin: 1.5rem;
-        padding: 2rem 1rem;
-        border-radius: 25px;
+        font-size: 0.7rem;
       }
     }
 
@@ -661,24 +645,24 @@
     @media (max-width: 480px) {
       .tech-grid-slim {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        gap: 0.8rem;
       }
       
       .tech-item-slim {
-        padding: 1rem 0.5rem;
+        padding: 0.8rem 0.5rem;
       }
       
       .tech-icon-slim {
-        width: 48px;
-        height: 48px;
+        width: 42px;
+        height: 42px;
       }
       
       .tech-icon-slim i {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
       }
       
       .tech-item-slim span {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
       }
     }
 
@@ -690,7 +674,7 @@
       }
       
       .tech-item-slim:hover {
-        transform: translateY(-5px);
+        transform: translateY(-3px);
       }
     }
   </style>
@@ -746,10 +730,10 @@
   </div>
 </section>
 
-<!-- ========== TECNOLOGIAS PARCEIRAS - CARDS AJUSTADOS ========== -->
+<!-- ========== TECNOLOGIAS PARCEIRAS - SEM CARD GRANDE ========== -->
 <section id="tecnologias">
   <h2>Tecnologias Parceiras</h2>
-  <p style="text-align: center; max-width: 800px; margin: 0 auto; color: #e2e8f0;">
+  <p style="text-align: center; max-width: 800px; margin: 0 auto 1.5rem; color: #e2e8f0;">
     Trabalhamos com as melhores tecnologias do mercado para garantir soluções de alta qualidade.
     <br>Clique nos cards para conhecer mais sobre cada fabricante.
   </p>
@@ -818,7 +802,6 @@
     <div class="contact-info">
       <p><i class="fas fa-envelope"></i> contato@duartecnologia.com.br</p>
       <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5511970273342?text=Olá!%20Gostaria%20de%20mais%20informações" target="_blank">(11) 97027-3342</a></p>
-      
       <p><i class="fas fa-map-marker-alt"></i> Osasco, SP</p>
       <p><i class="fas fa-clock"></i> Segunda a Sexta: 8h às 18h</p>
     </div>
