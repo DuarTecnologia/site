@@ -252,7 +252,6 @@
 
     /* ========== TECNOLOGIAS PARCEIRAS - SEM CARD GRANDE ========== */
     #tecnologias {
-      /* REMOVIDO: background, backdrop-filter, border-radius, border, box-shadow */
       margin: 0 auto;
       padding: 0;
       transition: all 0.3s ease;
@@ -288,7 +287,6 @@
       min-height: 110px;
     }
 
-    /* Efeito de brilho no hover */
     .tech-item-slim::before {
       content: '';
       position: absolute;
@@ -352,7 +350,6 @@
       letter-spacing: 1px;
     }
 
-    /* Animações sutis para os cards ao carregar a página */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -369,7 +366,6 @@
       opacity: 0;
     }
 
-    /* Delay progressivo para cada card */
     .tech-item-slim:nth-child(1) { animation-delay: 0.05s; }
     .tech-item-slim:nth-child(2) { animation-delay: 0.1s; }
     .tech-item-slim:nth-child(3) { animation-delay: 0.15s; }
@@ -378,12 +374,11 @@
     .tech-item-slim:nth-child(6) { animation-delay: 0.3s; }
     .tech-item-slim:nth-child(7) { animation-delay: 0.35s; }
 
-    /* ========== SUPORTE REMOTO ========== */
-    .remote-support {
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(56, 189, 248, 0.3);
-      border-radius: 20px;
+    /* ========== SUPORTE REMOTO - SEM CARD GRANDE ========== */
+    #suporte-remoto {
+      /* REMOVIDO: background, backdrop-filter, border, border-radius */
+      margin: 0 auto;
+      padding: 0;
     }
     
     .remote-content {
@@ -405,7 +400,8 @@
     }
     
     .code-info {
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(10px);
       padding: 1.5rem;
       border-radius: 15px;
       text-align: center;
@@ -616,7 +612,6 @@
         font-size: 1.5rem;
       }
       
-      /* Ajustes responsivos para cards de tecnologia */
       .tech-grid-slim {
         grid-template-columns: repeat(auto-fit, minmax(100px, 120px));
         gap: 0.8rem;
@@ -641,7 +636,6 @@
       }
     }
 
-    /* Para telas muito pequenas */
     @media (max-width: 480px) {
       .tech-grid-slim {
         grid-template-columns: repeat(2, 1fr);
@@ -666,7 +660,6 @@
       }
     }
 
-    /* Efeito de carregamento para dispositivos com movimento reduzido */
     @media (prefers-reduced-motion: reduce) {
       .tech-item-slim {
         animation: none;
@@ -730,7 +723,7 @@
   </div>
 </section>
 
-<!-- ========== TECNOLOGIAS PARCEIRAS - SEM CARD GRANDE ========== -->
+<!-- ========== TECNOLOGIAS PARCEIRAS ========== -->
 <section id="tecnologias">
   <h2>Tecnologias Parceiras</h2>
   <p style="text-align: center; max-width: 800px; margin: 0 auto 1.5rem; color: #e2e8f0;">
@@ -770,8 +763,8 @@
   </div>
 </section>
 
-<!-- ========== SUPORTE REMOTO ========== -->
-<section id="suporte-remoto" class="remote-support">
+<!-- ========== SUPORTE REMOTO - SEM CARD GRANDE ========== -->
+<section id="suporte-remoto">
   <h2>Suporte Remoto</h2>
   <p style="text-align: center; max-width: 800px; margin: 0 auto;">Precisa de ajuda? Conecte-se remotamente de forma rápida e segura.</p>
   <div class="remote-content">
@@ -829,7 +822,6 @@
 <!-- ========== SCRIPTS OTIMIZADOS ========== -->
 <script>
   (function() {
-    // Menu mobile toggle
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
     
@@ -846,7 +838,6 @@
       
       menuToggle.addEventListener('click', toggleMenu);
       
-      // Fechar menu ao clicar em link
       document.querySelectorAll('nav a').forEach(link => {
         link.addEventListener('click', () => {
           if (navMenu.classList.contains('active')) {
@@ -864,7 +855,6 @@
       });
     }
     
-    // Scroll suave para links internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -877,7 +867,6 @@
       });
     });
     
-    // Efeito no header ao scroll
     const header = document.getElementById('header');
     if (header) {
       window.addEventListener('scroll', () => {
@@ -889,7 +878,6 @@
       });
     }
     
-    // Copiar código de acesso
     window.copyAccessCode = function() {
       const codeElement = document.getElementById('accessCode');
       if (!codeElement) return;
@@ -909,7 +897,6 @@
       });
     };
     
-    // Notificação toast
     function showNotification(msg, type = 'success') {
       const notification = document.createElement('div');
       notification.setAttribute('role', 'alert');
@@ -935,7 +922,6 @@
       }, 3000);
     }
     
-    // Envio do formulário
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
       contactForm.addEventListener('submit', (e) => {
@@ -945,7 +931,6 @@
       });
     }
     
-    // Link ativo no scroll
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav a');
     
