@@ -6,7 +6,7 @@
   <title>DuarTecnologia - Soluções em TI</title>
   <meta name="description" content="Especialistas em suporte técnico, redes, cloud e infraestrutura. Transformamos tecnologia em resultado para sua empresa.">
   
-  <!-- Google Fonts - Apenas pesos necessários -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Font Awesome Icons -->
@@ -210,7 +210,7 @@
       transform: translateX(-50%);
     }
 
-    /* ========== CARDS (SOBRE E SERVIÇOS) ========== */
+    /* ========== CARDS (SOBRE E SERVIÇOS) MAIS TRANSPARENTES ========== */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -219,8 +219,8 @@
     }
     
     .card {
-      background: rgba(30, 41, 59, 0.85);
-      backdrop-filter: blur(10px);
+      background: rgba(30, 41, 59, 0.55);  /* MAIS TRANSPARENTE: antes 0.85 */
+      backdrop-filter: blur(8px);  /* blur reduzido */
       padding: 2rem;
       border-radius: 15px;
       transition: 0.3s;
@@ -231,7 +231,7 @@
     .card:hover {
       transform: translateY(-10px);
       border-color: #38bdf8;
-      background: rgba(30, 41, 59, 0.95);
+      background: rgba(30, 41, 59, 0.75);  /* menos transparente no hover */
     }
     
     .card i {
@@ -250,14 +250,12 @@
       line-height: 1.6;
     }
 
-    /* ========== TECNOLOGIAS PARCEIRAS - SEM CARD GRANDE ========== */
+    /* ========== TECNOLOGIAS PARCEIRAS - CARDS MAIS TRANSPARENTES ========== */
     #tecnologias {
       margin: 0 auto;
       padding: 0;
-      transition: all 0.3s ease;
     }
 
-    /* Grid responsivo para os cards */
     .tech-grid-slim {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(120px, 140px));
@@ -274,12 +272,12 @@
       align-items: center;
       justify-content: center;
       gap: 0.8rem;
-      background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.7));
-      backdrop-filter: blur(8px);
+      background: rgba(30, 41, 59, 0.5);  /* MAIS TRANSPARENTE: antes 0.9 */
+      backdrop-filter: blur(5px);  /* blur reduzido */
       padding: 1rem 0.8rem;
       border-radius: 15px;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      border: 1px solid rgba(56, 189, 248, 0.15);  /* borda mais sutil */
       cursor: pointer;
       position: relative;
       overflow: hidden;
@@ -294,7 +292,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.3), transparent);
+      background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.2), transparent);
       transition: left 0.6s ease;
     }
 
@@ -304,9 +302,9 @@
 
     .tech-item-slim:hover {
       transform: translateY(-5px) scale(1.02);
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(56, 189, 248, 0.15));
+      background: rgba(56, 189, 248, 0.2);  /* hover mais transparente */
       border-color: #38bdf8;
-      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.2);
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.15);
     }
 
     .tech-icon-slim {
@@ -315,13 +313,13 @@
       justify-content: center;
       width: 55px;
       height: 55px;
-      background: rgba(56, 189, 248, 0.15);
+      background: rgba(56, 189, 248, 0.1);  /* mais transparente */
       border-radius: 50%;
       transition: all 0.3s ease;
     }
 
     .tech-item-slim:hover .tech-icon-slim {
-      background: rgba(56, 189, 248, 0.3);
+      background: rgba(56, 189, 248, 0.25);
       transform: rotate(360deg) scale(1.1);
     }
 
@@ -374,9 +372,8 @@
     .tech-item-slim:nth-child(6) { animation-delay: 0.3s; }
     .tech-item-slim:nth-child(7) { animation-delay: 0.35s; }
 
-    /* ========== SUPORTE REMOTO - SEM CARD GRANDE ========== */
+    /* ========== SUPORTE REMOTO - CARD DO CÓDIGO MAIS TRANSPARENTE ========== */
     #suporte-remoto {
-      /* REMOVIDO: background, backdrop-filter, border, border-radius */
       margin: 0 auto;
       padding: 0;
     }
@@ -400,16 +397,16 @@
     }
     
     .code-info {
-      background: rgba(30, 41, 59, 0.85);
-      backdrop-filter: blur(10px);
+      background: rgba(30, 41, 59, 0.55);  /* MAIS TRANSPARENTE: antes 0.85 */
+      backdrop-filter: blur(8px);
       padding: 1.5rem;
       border-radius: 15px;
       text-align: center;
-      border: 1px solid rgba(56, 189, 248, 0.3);
+      border: 1px solid rgba(56, 189, 248, 0.2);
     }
     
     .access-code {
-      background: #0f172a;
+      background: rgba(15, 23, 42, 0.7);  /* mais transparente */
       padding: 1rem;
       border-radius: 10px;
       font-size: 2rem;
@@ -421,7 +418,7 @@
     }
     
     .copy-btn {
-      background: rgba(56, 189, 248, 0.2);
+      background: rgba(56, 189, 248, 0.15);
       border: 1px solid #38bdf8;
       color: #38bdf8;
       padding: 0.5rem 1rem;
@@ -435,7 +432,7 @@
       color: #fff;
     }
 
-    /* ========== CONTATO ========== */
+    /* ========== CONTATO - CARDS MAIS TRANSPARENTES ========== */
     .contact-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -444,8 +441,8 @@
     }
     
     .contact-info, .contact-form {
-      background: rgba(30, 41, 59, 0.85);
-      backdrop-filter: blur(10px);
+      background: rgba(30, 41, 59, 0.55);  /* MAIS TRANSPARENTE: antes 0.85 */
+      backdrop-filter: blur(8px);
       padding: 2rem;
       border-radius: 15px;
     }
@@ -480,8 +477,8 @@
     input, textarea {
       width: 100%;
       padding: 1rem;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(56, 189, 248, 0.3);
+      background: rgba(15, 23, 42, 0.7);  /* mais transparente */
+      border: 1px solid rgba(56, 189, 248, 0.2);
       border-radius: 8px;
       color: #fff;
       font-family: inherit;
@@ -508,7 +505,7 @@
     footer {
       text-align: center;
       padding: 2rem;
-      background: rgba(2, 6, 23, 0.9);
+      background: rgba(2, 6, 23, 0.7);
       border-top: 1px solid rgba(56, 189, 248, 0.1);
     }
     
@@ -763,7 +760,7 @@
   </div>
 </section>
 
-<!-- ========== SUPORTE REMOTO - SEM CARD GRANDE ========== -->
+<!-- ========== SUPORTE REMOTO ========== -->
 <section id="suporte-remoto">
   <h2>Suporte Remoto</h2>
   <p style="text-align: center; max-width: 800px; margin: 0 auto;">Precisa de ajuda? Conecte-se remotamente de forma rápida e segura.</p>
