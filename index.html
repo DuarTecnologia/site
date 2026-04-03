@@ -12,6 +12,9 @@
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+  <!-- EmailJS Library -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <style>
     /* ========== RESET E CONFIGURAÇÕES GERAIS ========== */
     * {
@@ -792,7 +795,7 @@
   </div>
 </section>
 
-<!-- ========== SUPORTE REMOTO - CENTRALIZADO ========== -->
+<!-- ========== SUPORTE REMOTO ========== -->
 <section id="suporte-remoto">
   <h2>Suporte Remoto</h2>
   <p style="text-align: center; max-width: 800px; margin: 0 auto;">Precisa de ajuda? Conecte-se remotamente de forma rápida e segura.</p>
@@ -818,7 +821,7 @@
   </div>
 </section>
 
-<!-- ========== CONTATO - CENTRALIZADO ========== -->
+<!-- ========== CONTATO ========== -->
 <section id="contato">
   <h2>Contato</h2>
   <p style="text-align: center; margin-bottom: 2rem; color: #e2e8f0;">Entre em contato para soluções em TI:</p>
@@ -833,9 +836,9 @@
     
     <div class="contact-form">
       <form id="contactForm">
-        <input type="text" id="name" placeholder="Seu nome" required>
-        <input type="email" id="email" placeholder="Seu e-mail" required>
-        <textarea id="message" placeholder="Sua mensagem" required></textarea>
+        <input type="text" id="name" name="name" placeholder="Seu nome" required>
+        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+        <textarea id="message" name="message" placeholder="Sua mensagem" required></textarea>
         <button type="submit" class="btn-submit">Enviar Mensagem</button>
       </form>
     </div>
@@ -852,9 +855,10 @@
   <a href="https://wa.me/5511970273342?text=Olá!%20Gostaria%20de%20mais%20informações" target="_blank" aria-label="Contato via WhatsApp"><i class="fab fa-whatsapp"></i></a>
 </div>
 
-<!-- ========== SCRIPTS OTIMIZADOS ========== -->
+<!-- ========== SCRIPTS ========== -->
 <script>
   (function() {
+    // Menu mobile toggle
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
     
@@ -888,6 +892,7 @@
       });
     }
     
+    // Scroll suave
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -900,6 +905,7 @@
       });
     });
     
+    // Efeito no header
     const header = document.getElementById('header');
     if (header) {
       window.addEventListener('scroll', () => {
@@ -911,6 +917,7 @@
       });
     }
     
+    // Copiar código
     window.copyAccessCode = function() {
       const codeElement = document.getElementById('accessCode');
       if (!codeElement) return;
@@ -930,6 +937,7 @@
       });
     };
     
+    // Notificação
     function showNotification(msg, type = 'success') {
       const notification = document.createElement('div');
       notification.setAttribute('role', 'alert');
@@ -955,15 +963,43 @@
       }, 3000);
     }
     
+    // ========== FORMULÁRIO DE CONTATO COM EMAILJS ==========
+    // INICIALIZE O EMAILJS COM SEU USER ID
+    // CADASTRE-SE EM: https://www.emailjs.com/
+    emailjs.init("SEU_USER_ID_AQUI"); // <-- VOCÊ PRECISA COLOCAR SEU USER ID
+    
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
       contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        showNotification('Mensagem enviada! Em breve entraremos em contato.');
-        contactForm.reset();
+        
+        const submitBtn = contactForm.querySelector('.btn-submit');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Enviando...';
+        submitBtn.disabled = true;
+        
+        // Envia via EmailJS
+        emailjs.sendForm(
+          'SEU_SERVICE_ID_AQUI',  // Service ID (criar no EmailJS)
+          'SEU_TEMPLATE_ID_AQUI', // Template ID (criar no EmailJS)
+          contactForm
+        ).then(
+          (response) => {
+            showNotification('✅ Mensagem enviada com sucesso! Em breve entraremos em contato.', 'success');
+            contactForm.reset();
+          },
+          (error) => {
+            console.error('Erro:', error);
+            showNotification('❌ Erro ao enviar mensagem. Tente novamente ou entre em contato pelo WhatsApp.', 'error');
+          }
+        ).finally(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        });
       });
     }
     
+    // Link ativo no scroll
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav a');
     
