@@ -440,12 +440,19 @@
       color: #fff;
     }
 
-    /* ========== CONTATO ========== */
+    /* ========== CONTATO - CENTRALIZADO ========== */
+    #contato {
+      text-align: center;
+    }
+    
     .contact-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
       margin-top: 2rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
     .contact-info, .contact-form {
@@ -453,6 +460,7 @@
       backdrop-filter: blur(8px);
       padding: 2rem;
       border-radius: 15px;
+      text-align: left;
     }
     
     .contact-info p {
@@ -647,6 +655,14 @@
       .remote-info h3 {
         text-align: center;
       }
+      
+      .contact-info, .contact-form {
+        text-align: center;
+      }
+      
+      .contact-info p {
+        justify-content: center;
+      }
     }
 
     @media (max-width: 480px) {
@@ -802,10 +818,11 @@
   </div>
 </section>
 
-<!-- ========== CONTATO ========== -->
+<!-- ========== CONTATO - CENTRALIZADO ========== -->
 <section id="contato">
   <h2>Contato</h2>
   <p style="text-align: center; margin-bottom: 2rem; color: #e2e8f0;">Entre em contato para soluções em TI:</p>
+  
   <div class="contact-container">
     <div class="contact-info">
       <p><i class="fas fa-envelope"></i> contato@duartecnologia.com.br</p>
@@ -813,6 +830,7 @@
       <p><i class="fas fa-map-marker-alt"></i> Osasco, SP</p>
       <p><i class="fas fa-clock"></i> Segunda a Sexta: 8h às 18h</p>
     </div>
+    
     <div class="contact-form">
       <form id="contactForm">
         <input type="text" id="name" placeholder="Seu nome" required>
