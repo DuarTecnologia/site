@@ -964,9 +964,8 @@
     }
     
     // ========== FORMULÁRIO DE CONTATO COM EMAILJS ==========
-    // INICIALIZE O EMAILJS COM SEU USER ID
-    // CADASTRE-SE EM: https://www.emailjs.com/
-    emailjs.init("SEU_USER_ID_AQUI"); // <-- VOCÊ PRECISA COLOCAR SEU USER ID
+    // Inicializa o EmailJS com sua Public Key
+    emailjs.init("B_MsHmXGRapHmE8ML");
     
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
@@ -978,10 +977,10 @@
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Enviando...';
         submitBtn.disabled = true;
         
-        // Envia via EmailJS
+        // Envia via EmailJS com seus IDs
         emailjs.sendForm(
-          'SEU_SERVICE_ID_AQUI',  // Service ID (criar no EmailJS)
-          'SEU_TEMPLATE_ID_AQUI', // Template ID (criar no EmailJS)
+          'service_1fxqldi',     // Service ID
+          'template_kf9o3zq',    // Template ID
           contactForm
         ).then(
           (response) => {
