@@ -271,6 +271,49 @@
     }
 
     /* ========== TECNOLOGIAS PARCEIRAS - COM IMAGENS ========== */
+    .tech-icon-slim img {
+  width: 55px;
+  height: auto;
+  transition: all 0.3s ease;
+  object-fit: contain;
+}
+2. Substitua a parte das imagens dos marketplaces:
+css
+/* Imagens dos marketplaces - TAMANHO PADRÃO */
+.marketplace-card img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  object-fit: contain;
+}
+3. Substitua a parte responsiva (mobile):
+css
+/* Responsivo para mobile - TAMANHO PADRÃO */
+@media (max-width: 768px) {
+  .tech-icon-slim img {
+    width: 45px;  /* Reduz um pouco no celular */
+  }
+  
+  .marketplace-card img {
+    width: 65px;  /* Reduz um pouco no celular */
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-icon-slim img {
+    width: 40px;  /* Reduz mais em celular pequeno */
+  }
+  
+  .marketplace-card img {
+    width: 55px;  /* Reduz mais em celular pequeno */
+  }
+}
+📋 Código completo da seção CSS (copiar e colar inteiro):
+Substitua TODO o conteúdo do <style> pelo código abaixo (ou apenas as partes que indiquei):
+
+css
+    /* ========== TECNOLOGIAS PARCEIRAS - TAMANHO PADRÃO ========== */
     #tecnologias {
       margin: 0 auto;
       padding: 0;
@@ -338,10 +381,12 @@
       transition: all 0.3s ease;
     }
 
+    /* TAMANHO PADRÃO DAS IMAGENS DOS PARCEIROS */
     .tech-icon-slim img {
-      width: 50px;
+      width: 55px;
       height: auto;
       transition: all 0.3s ease;
+      object-fit: contain;
     }
 
     .tech-item-slim:hover .tech-icon-slim {
@@ -386,7 +431,6 @@
     .tech-item-slim:nth-child(5) { animation-delay: 0.25s; }
     .tech-item-slim:nth-child(6) { animation-delay: 0.3s; }
     .tech-item-slim:nth-child(7) { animation-delay: 0.35s; }
-
     /* ========== SUPORTE REMOTO - CENTRALIZADO ========== */
     #suporte-remoto {
       margin: 0 auto;
