@@ -30,7 +30,7 @@
       position: relative;
     }
 
-    /* Imagem de fundo com overlay - CAMINHO CORRIGIDO */
+    /* Imagem de fundo com overlay */
     body::before {
       content: '';
       position: fixed;
@@ -45,7 +45,7 @@
       pointer-events: none;
     }
 
-    /* Overlay mais sutil */
+    /* Overlay */
     body::after {
       content: '';
       position: fixed;
@@ -128,7 +128,6 @@
       cursor: pointer;
     }
 
-    /* Estilo especial para o link Shop */
     nav a.shop-link {
       background: linear-gradient(135deg, #38bdf8, #0ea5e9);
       padding: 0.5rem 1rem;
@@ -151,7 +150,6 @@
       min-height: 100vh;
     }
 
-    /* Hero Section */
     .hero {
       display: flex;
       flex-direction: column;
@@ -230,7 +228,7 @@
       transform: translateX(-50%);
     }
 
-    /* ========== CARDS (SOBRE E SERVIÇOS) ========== */
+    /* ========== CARDS ========== */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -270,50 +268,7 @@
       line-height: 1.6;
     }
 
-    /* ========== TECNOLOGIAS PARCEIRAS - COM IMAGENS ========== */
-    .tech-icon-slim img {
-  width: 55px;
-  height: auto;
-  transition: all 0.3s ease;
-  object-fit: contain;
-}
-2. Substitua a parte das imagens dos marketplaces:
-css
-/* Imagens dos marketplaces - TAMANHO PADRÃO */
-.marketplace-card img {
-  width: 80px;
-  height: auto;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease;
-  object-fit: contain;
-}
-3. Substitua a parte responsiva (mobile):
-css
-/* Responsivo para mobile - TAMANHO PADRÃO */
-@media (max-width: 768px) {
-  .tech-icon-slim img {
-    width: 45px;  /* Reduz um pouco no celular */
-  }
-  
-  .marketplace-card img {
-    width: 65px;  /* Reduz um pouco no celular */
-  }
-}
-
-@media (max-width: 480px) {
-  .tech-icon-slim img {
-    width: 40px;  /* Reduz mais em celular pequeno */
-  }
-  
-  .marketplace-card img {
-    width: 55px;  /* Reduz mais em celular pequeno */
-  }
-}
-📋 Código completo da seção CSS (copiar e colar inteiro):
-Substitua TODO o conteúdo do <style> pelo código abaixo (ou apenas as partes que indiquei):
-
-css
-    /* ========== TECNOLOGIAS PARCEIRAS - TAMANHO PADRÃO ========== */
+    /* ========== TECNOLOGIAS PARCEIRAS ========== */
     #tecnologias {
       margin: 0 auto;
       padding: 0;
@@ -381,7 +336,7 @@ css
       transition: all 0.3s ease;
     }
 
-    /* TAMANHO PADRÃO DAS IMAGENS DOS PARCEIROS */
+    /* Tamanho padrão das imagens dos parceiros */
     .tech-icon-slim img {
       width: 55px;
       height: auto;
@@ -431,7 +386,8 @@ css
     .tech-item-slim:nth-child(5) { animation-delay: 0.25s; }
     .tech-item-slim:nth-child(6) { animation-delay: 0.3s; }
     .tech-item-slim:nth-child(7) { animation-delay: 0.35s; }
-    /* ========== SUPORTE REMOTO - CENTRALIZADO ========== */
+
+    /* ========== SUPORTE REMOTO ========== */
     #suporte-remoto {
       margin: 0 auto;
       padding: 0;
@@ -499,7 +455,7 @@ css
       color: #fff;
     }
 
-    /* ========== SHOP SECTION - COM IMAGENS ========== */
+    /* ========== SHOP SECTION ========== */
     #shop {
       text-align: center;
     }
@@ -536,11 +492,13 @@ css
       background: rgba(56, 189, 248, 0.2);
     }
     
+    /* Tamanho padrão das imagens dos marketplaces */
     .marketplace-card img {
       width: 80px;
       height: auto;
       margin-bottom: 1rem;
       transition: all 0.3s ease;
+      object-fit: contain;
     }
     
     .marketplace-card:hover img {
@@ -574,7 +532,7 @@ css
       box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
     }
 
-    /* ========== CONTATO - CENTRALIZADO ========== */
+    /* ========== CONTATO ========== */
     #contato {
       text-align: center;
     }
@@ -780,7 +738,7 @@ css
       }
 
       .tech-icon-slim img {
-        width: 40px;
+        width: 45px;
       }
       
       .tech-item-slim span {
@@ -809,7 +767,7 @@ css
       }
       
       .marketplace-card img {
-        width: 60px;
+        width: 65px;
       }
     }
 
@@ -829,11 +787,15 @@ css
       }
 
       .tech-icon-slim img {
-        width: 35px;
+        width: 40px;
       }
       
       .tech-item-slim span {
         font-size: 0.65rem;
+      }
+      
+      .marketplace-card img {
+        width: 55px;
       }
     }
 
@@ -901,7 +863,7 @@ css
   </div>
 </section>
 
-<!-- ========== TECNOLOGIAS PARCEIRAS - COM IMAGENS ========== -->
+<!-- ========== TECNOLOGIAS PARCEIRAS ========== -->
 <section id="tecnologias">
   <h2>Tecnologias Parceiras</h2>
   <p style="text-align: center; max-width: 800px; margin: 0 auto 1.5rem; color: #e2e8f0;">
@@ -926,7 +888,7 @@ css
     
     <a href="https://www.dell.com/pt-br" target="_blank" class="tech-item-slim" rel="noopener noreferrer">
       <div class="tech-icon-slim">
-        <img src="assets/imagens/parceiros/dell.png" alt="Dell" onerror="this.src='https://via.placeholder.com/50?text=Dell'">
+        <img src="assets/imagens/parceiros/dell.png" alt="Dell" onerror="this.src='https://via.placeholder.com/55?text=Dell'">
       </div>
       <span>Dell</span>
     </a>
@@ -987,7 +949,7 @@ css
   </div>
 </section>
 
-<!-- ========== SHOP - COM IMAGENS ========== -->
+<!-- ========== SHOP ========== -->
 <section id="shop">
   <h2><i class="fas fa-store"></i> Nossa Loja</h2>
   <p style="text-align: center; max-width: 800px; margin: 0 auto 1rem; color: #e2e8f0;">
