@@ -65,7 +65,7 @@
       top: 0;
       background: rgba(15, 23, 42, 0.95);
       backdrop-filter: blur(10px);
-      padding: 1rem 5%;
+      padding: 0.8rem 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -74,23 +74,23 @@
     }
 
     header.scrolled {
-      padding: 0.7rem 5%;
+      padding: 0.5rem 5%;
       background: rgba(15, 23, 42, 0.98);
     }
     
     header h1 {
       color: #38bdf8;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: 700;
     }
     
     header h1 i {
-      margin-right: 10px;
+      margin-right: 8px;
     }
 
     nav {
       display: flex;
-      gap: 1.2rem;  /* ESPAÇAMENTO REDUZIDO entre os links do menu */
+      gap: 1rem;
     }
     
     nav a {
@@ -99,7 +99,7 @@
       font-weight: 500;
       transition: 0.3s;
       position: relative;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
     
     nav a::after {
@@ -131,7 +131,7 @@
 
     nav a.shop-link {
       background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.9rem;
       border-radius: 50px;
       transition: 0.3s;
     }
@@ -145,10 +145,10 @@
       display: none;
     }
 
-    /* ========== SEÇÕES ========== */
+    /* ========== SEÇÕES - ESPAÇAMENTO REDUZIDO ========== */
     section {
-      padding: 100px 5%;
-      min-height: 100vh;
+      padding: 70px 5% 50px;
+      min-height: auto;
     }
 
     .hero {
@@ -157,17 +157,19 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      min-height: 90vh;
+      padding-top: 80px;
     }
     
     .hero h2 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-size: 2.8rem;
+      margin-bottom: 0.8rem;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
     
     .hero p {
-      font-size: 1.2rem;
-      margin: 1.5rem 0;
+      font-size: 1.1rem;
+      margin: 1rem 0;
       max-width: 600px;
       color: #cbd5e1;
     }
@@ -175,7 +177,7 @@
     /* ========== BOTÕES ========== */
     .btn, .download-btn, .btn-submit {
       display: inline-block;
-      padding: 1rem 2rem;
+      padding: 0.8rem 1.8rem;
       background: linear-gradient(135deg, #38bdf8, #0ea5e9);
       color: #fff;
       border-radius: 50px;
@@ -184,6 +186,7 @@
       transition: 0.3s;
       border: none;
       cursor: pointer;
+      font-size: 0.9rem;
     }
     
     .btn:hover, .download-btn:hover, .btn-submit:hover {
@@ -202,8 +205,8 @@
 
     /* ========== TÍTULOS ========== */
     h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
       position: relative;
       display: inline-block;
     }
@@ -211,9 +214,9 @@
     h2::after {
       content: '';
       position: absolute;
-      bottom: -10px;
+      bottom: -8px;
       left: 0;
-      width: 60px;
+      width: 50px;
       height: 3px;
       background: #38bdf8;
       border-radius: 2px;
@@ -229,18 +232,18 @@
       transform: translateX(-50%);
     }
 
-    /* ========== CARDS ========== */
+    /* ========== CARDS - ESPAÇAMENTO REDUZIDO ========== */
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
     
     .card {
       background: rgba(30, 41, 59, 0.55);
       backdrop-filter: blur(8px);
-      padding: 2rem;
+      padding: 1.5rem;
       border-radius: 15px;
       transition: 0.3s;
       border: 1px solid rgba(56, 189, 248, 0.2);
@@ -248,41 +251,47 @@
     }
     
     .card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-5px);
       border-color: #38bdf8;
       background: rgba(30, 41, 59, 0.75);
     }
     
     .card i {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       color: #38bdf8;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
     
     .card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
     }
     
     .card p {
       color: #e2e8f0;
-      line-height: 1.6;
+      line-height: 1.5;
+      font-size: 0.9rem;
     }
 
     /* ========== TECNOLOGIAS PARCEIRAS - ESPAÇAMENTO REDUZIDO ========== */
     #tecnologias {
       margin: 0 auto;
-      padding: 80px 5% 60px;
+      padding: 60px 5% 50px;
+    }
+
+    #tecnologias p {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
     }
 
     /* Grid mais compacto entre os cards */
     .tech-grid-slim {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 150px));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 140px));
+      gap: 0.8rem;
       justify-content: center;
       align-items: stretch;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       padding: 0;
     }
 
@@ -292,18 +301,18 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0.75rem;
+      gap: 0.6rem;
       background: rgba(30, 41, 59, 0.5);
       backdrop-filter: blur(5px);
-      padding: 1rem 0.6rem;
-      border-radius: 15px;
+      padding: 0.8rem 0.5rem;
+      border-radius: 12px;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       border: 1px solid rgba(56, 189, 248, 0.15);
       cursor: pointer;
       position: relative;
       overflow: hidden;
       text-decoration: none;
-      min-height: 130px;
+      min-height: 115px;
     }
 
     .tech-item-slim::before {
@@ -322,7 +331,7 @@
     }
 
     .tech-item-slim:hover {
-      transform: translateY(-5px) scale(1.02);
+      transform: translateY(-4px) scale(1.02);
       background: rgba(56, 189, 248, 0.2);
       border-color: #38bdf8;
       box-shadow: 0 8px 20px rgba(56, 189, 248, 0.15);
@@ -332,15 +341,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 65px;
-      height: 65px;
+      width: 55px;
+      height: 55px;
       background: rgba(56, 189, 248, 0.1);
       border-radius: 50%;
       transition: all 0.3s ease;
     }
 
     .tech-icon-slim img {
-      width: 48px;
+      width: 42px;
       height: auto;
       transition: all 0.3s ease;
       object-fit: contain;
@@ -352,7 +361,7 @@
     }
 
     .tech-item-slim span {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 600;
       color: #f1f5f9;
       letter-spacing: 0.3px;
@@ -389,18 +398,23 @@
     .tech-item-slim:nth-child(6) { animation-delay: 0.3s; }
     .tech-item-slim:nth-child(7) { animation-delay: 0.35s; }
 
-    /* ========== SUPORTE REMOTO ========== */
+    /* ========== SUPORTE REMOTO - ESPAÇAMENTO REDUZIDO ========== */
     #suporte-remoto {
       margin: 0 auto;
-      padding: 0;
+      padding: 60px 5% 50px;
       text-align: center;
+    }
+    
+    #suporte-remoto > p {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
     }
     
     .remote-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      margin-top: 2rem;
+      gap: 2rem;
+      margin-top: 1.5rem;
       max-width: 1000px;
       margin-left: auto;
       margin-right: auto;
@@ -411,34 +425,46 @@
     }
     
     .remote-info h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
       color: #38bdf8;
+    }
+    
+    .remote-info p {
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
     }
     
     .download-btn {
       margin-right: 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
+      padding: 0.7rem 1.5rem;
+      font-size: 0.85rem;
     }
     
     .code-info {
       background: rgba(30, 41, 59, 0.55);
       backdrop-filter: blur(8px);
-      padding: 1.5rem;
+      padding: 1.2rem;
       border-radius: 15px;
       text-align: center;
       border: 1px solid rgba(56, 189, 248, 0.2);
     }
     
+    .code-info h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    
     .access-code {
       background: rgba(15, 23, 42, 0.7);
-      padding: 1rem;
+      padding: 0.8rem;
       border-radius: 10px;
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 700;
       letter-spacing: 5px;
       color: #38bdf8;
-      margin: 1rem 0;
+      margin: 0.8rem 0;
       font-family: monospace;
     }
     
@@ -446,10 +472,11 @@
       background: rgba(56, 189, 248, 0.15);
       border: 1px solid #38bdf8;
       color: #38bdf8;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.8rem;
       border-radius: 8px;
       cursor: pointer;
       transition: 0.3s;
+      font-size: 0.8rem;
     }
     
     .copy-btn:hover {
@@ -457,28 +484,34 @@
       color: #fff;
     }
 
-    /* ========== SHOP SECTION ========== */
+    /* ========== SHOP SECTION - ESPAÇAMENTO REDUZIDO ========== */
     #shop {
       text-align: center;
+      padding: 60px 5% 50px;
+    }
+    
+    #shop > p {
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
     }
     
     .shop-container {
       max-width: 800px;
       margin: 0 auto;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
     }
     
     .marketplace-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
     
     .marketplace-card {
       background: rgba(30, 41, 59, 0.55);
       backdrop-filter: blur(8px);
-      padding: 2rem;
+      padding: 1.5rem;
       border-radius: 15px;
       transition: 0.3s;
       border: 1px solid rgba(56, 189, 248, 0.2);
@@ -489,15 +522,15 @@
     }
     
     .marketplace-card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-5px);
       border-color: #38bdf8;
       background: rgba(56, 189, 248, 0.2);
     }
     
     .marketplace-card img {
-      width: 80px;
+      width: 65px;
       height: auto;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       transition: all 0.3s ease;
       object-fit: contain;
     }
@@ -507,25 +540,26 @@
     }
     
     .marketplace-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+      margin-bottom: 0.4rem;
     }
     
     .marketplace-card p {
       color: #cbd5e6;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
     
     .btn-shop {
       display: inline-block;
-      margin-top: 2rem;
-      padding: 1rem 2rem;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.8rem;
       background: linear-gradient(135deg, #38bdf8, #0ea5e9);
       color: #fff;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
       transition: 0.3s;
+      font-size: 0.9rem;
     }
     
     .btn-shop:hover {
@@ -533,16 +567,22 @@
       box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
     }
 
-    /* ========== CONTATO ========== */
+    /* ========== CONTATO - ESPAÇAMENTO REDUZIDO ========== */
     #contato {
       text-align: center;
+      padding: 60px 5% 50px;
+    }
+    
+    #contato > p {
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
     }
     
     .contact-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      margin-top: 2rem;
+      gap: 2rem;
+      margin-top: 1.5rem;
       max-width: 1000px;
       margin-left: auto;
       margin-right: auto;
@@ -551,17 +591,18 @@
     .contact-info, .contact-form {
       background: rgba(30, 41, 59, 0.55);
       backdrop-filter: blur(8px);
-      padding: 2rem;
+      padding: 1.5rem;
       border-radius: 15px;
       text-align: left;
     }
     
     .contact-info p {
-      margin: 1rem 0;
+      margin: 0.8rem 0;
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.8rem;
       color: #e2e8f0;
+      font-size: 0.9rem;
     }
     
     .contact-info a {
@@ -576,7 +617,8 @@
     
     .contact-info i {
       color: #38bdf8;
-      width: 30px;
+      width: 25px;
+      font-size: 1rem;
     }
     
     .contact-info .fa-whatsapp {
@@ -585,14 +627,15 @@
     
     input, textarea {
       width: 100%;
-      padding: 1rem;
+      padding: 0.8rem;
       background: rgba(15, 23, 42, 0.7);
       border: 1px solid rgba(56, 189, 248, 0.2);
       border-radius: 8px;
       color: #fff;
       font-family: inherit;
       transition: 0.3s;
-      margin-top: 1rem;
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
     }
     
     input:focus, textarea:focus {
@@ -602,45 +645,48 @@
     
     textarea {
       resize: vertical;
-      min-height: 120px;
+      min-height: 100px;
     }
     
     .btn-submit {
       width: 100%;
-      margin-top: 1rem;
+      margin-top: 0.8rem;
+      padding: 0.8rem;
+      font-size: 0.9rem;
     }
 
     /* ========== FOOTER ========== */
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 1.5rem;
       background: rgba(2, 6, 23, 0.7);
       border-top: 1px solid rgba(56, 189, 248, 0.1);
     }
     
     footer p {
       color: #94a3b8;
+      font-size: 0.8rem;
     }
 
     /* ========== WHATSAPP FLUTUANTE ========== */
     .whatsapp-float {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      bottom: 25px;
+      right: 25px;
       z-index: 1000;
       animation: pulse 2s infinite;
     }
     
     .whatsapp-float a {
       display: flex;
-      width: 60px;
-      height: 60px;
+      width: 55px;
+      height: 55px;
       background: #25d366;
       border-radius: 50%;
       align-items: center;
       justify-content: center;
       color: #fff;
-      font-size: 2rem;
+      font-size: 1.8rem;
       text-decoration: none;
       transition: 0.3s;
     }
@@ -662,14 +708,14 @@
       
       nav {
         position: fixed;
-        top: 60px;
+        top: 55px;
         left: -100%;
         width: 100%;
         background: rgba(15, 23, 42, 0.98);
         flex-direction: column;
         align-items: center;
-        padding: 2rem;
-        gap: 1.5rem;
+        padding: 1.5rem;
+        gap: 1.2rem;
         transition: 0.3s;
       }
       
@@ -677,9 +723,8 @@
         left: 0;
       }
       
-      /* No mobile o espaçamento entre os links do menu será maior para melhor toque */
       nav a {
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
       
       nav a.shop-link {
@@ -692,12 +737,12 @@
       }
       
       .hero p {
-        font-size: 1rem;
+        font-size: 0.95rem;
       }
       
       .btn-whatsapp {
         margin-left: 0;
-        margin-top: 1rem;
+        margin-top: 0.8rem;
       }
       
       .remote-content, .contact-container {
@@ -705,11 +750,17 @@
       }
       
       section {
-        padding: 80px 1.5rem;
+        padding: 60px 1.5rem 40px;
+      }
+      
+      .hero {
+        min-height: 85vh;
+        padding-top: 70px;
       }
       
       h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 1.2rem;
       }
       
       .access-code {
@@ -729,22 +780,22 @@
       }
       
       .tech-grid-slim {
-        grid-template-columns: repeat(auto-fit, minmax(110px, 130px));
-        gap: 0.8rem;
+        grid-template-columns: repeat(auto-fit, minmax(105px, 120px));
+        gap: 0.7rem;
       }
       
       .tech-item-slim {
-        padding: 0.8rem 0.4rem;
-        min-height: 115px;
+        padding: 0.7rem 0.4rem;
+        min-height: 105px;
       }
       
       .tech-icon-slim {
-        width: 55px;
-        height: 55px;
+        width: 50px;
+        height: 50px;
       }
 
       .tech-icon-slim img {
-        width: 42px;
+        width: 38px;
       }
       
       .tech-item-slim span {
@@ -757,6 +808,7 @@
       
       .remote-info h3 {
         text-align: center;
+        font-size: 1.3rem;
       }
       
       .contact-info, .contact-form {
@@ -773,27 +825,35 @@
       }
       
       .marketplace-card img {
-        width: 65px;
+        width: 55px;
+      }
+      
+      .cards {
+        gap: 1rem;
+      }
+      
+      .card {
+        padding: 1.2rem;
       }
     }
 
     @media (max-width: 480px) {
       .tech-grid-slim {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.7rem;
+        gap: 0.6rem;
       }
       
       .tech-item-slim {
-        padding: 0.7rem 0.3rem;
+        padding: 0.6rem 0.3rem;
       }
       
       .tech-icon-slim {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
       }
 
       .tech-icon-slim img {
-        width: 38px;
+        width: 34px;
       }
       
       .tech-item-slim span {
@@ -801,7 +861,7 @@
       }
       
       .marketplace-card img {
-        width: 55px;
+        width: 50px;
       }
     }
 
@@ -850,7 +910,7 @@
 <!-- ========== SOBRE ========== -->
 <section id="sobre">
   <h2>Sobre</h2>
-  <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: #e2e8f0;">Profissional de TI com mais de 8 anos de experiência em suporte técnico, redes, infraestrutura e cloud. Atuação com atendimento a usuários, diretoria e ambientes corporativos.</p>
+  <p style="text-align: center; max-width: 800px; margin: 0 auto 1.5rem; color: #e2e8f0; font-size: 0.95rem;">Profissional de TI com mais de 8 anos de experiência em suporte técnico, redes, infraestrutura e cloud. Atuação com atendimento a usuários, diretoria e ambientes corporativos.</p>
   <div class="cards">
     <div class="card"><i class="fas fa-bullseye"></i><h3>Missão</h3><p>Oferecer soluções tecnológicas eficientes e acessíveis.</p></div>
     <div class="card"><i class="fas fa-eye"></i><h3>Visão</h3><p>Ser referência em suporte e inovação em tecnologia.</p></div>
@@ -872,7 +932,7 @@
 <!-- ========== TECNOLOGIAS PARCEIRAS ========== -->
 <section id="tecnologias">
   <h2>Tecnologias Parceiras</h2>
-  <p style="text-align: center; max-width: 800px; margin: 0 auto 1.5rem; color: #e2e8f0;">
+  <p style="text-align: center; max-width: 800px; margin: 0 auto 1rem; color: #e2e8f0;">
     Trabalhamos com as melhores tecnologias do mercado para garantir soluções de alta qualidade.
     <br>Clique nos cards para conhecer mais sobre cada fabricante.
   </p>
@@ -932,14 +992,14 @@
 <!-- ========== SUPORTE REMOTO ========== -->
 <section id="suporte-remoto">
   <h2>Suporte Remoto</h2>
-  <p style="text-align: center; max-width: 800px; margin: 0 auto;">Precisa de ajuda? Conecte-se remotamente de forma rápida e segura.</p>
+  <p>Precisa de ajuda? Conecte-se remotamente de forma rápida e segura.</p>
   
   <div class="remote-content">
     <div class="remote-info">
       <h3><i class="fas fa-download"></i> Baixe o AnyDesk</h3>
       <p>Baixe e execute o AnyDesk. É rápido, seguro e não requer instalação.</p>
       <a href="https://anydesk.com/pt/downloads" target="_blank" class="download-btn"><i class="fas fa-download"></i> Baixar AnyDesk</a>
-      <div style="margin-top: 1.5rem;">
+      <div style="margin-top: 1rem;">
         <p><i class="fas fa-check-circle" style="color: #38bdf8;"></i> Windows, Mac, Linux, Android, iOS</p>
         <p><i class="fas fa-lock" style="color: #38bdf8;"></i> Conexão segura com criptografia TLS</p>
       </div>
@@ -950,7 +1010,7 @@
       <p>Após baixar, informe o código abaixo:</p>
       <div class="access-code" id="accessCode">123 456 789</div>
       <button class="copy-btn" onclick="copyAccessCode()"><i class="fas fa-copy"></i> Copiar código</button>
-      <p style="margin-top: 1rem; font-size: 0.9rem; color: #cbd5e6;"><i class="fas fa-clock"></i> Atendimento em horário comercial</p>
+      <p style="margin-top: 0.8rem; font-size: 0.8rem; color: #cbd5e6;"><i class="fas fa-clock"></i> Atendimento em horário comercial</p>
     </div>
   </div>
 </section>
@@ -958,9 +1018,7 @@
 <!-- ========== SHOP ========== -->
 <section id="shop">
   <h2><i class="fas fa-store"></i> Nossa Loja</h2>
-  <p style="text-align: center; max-width: 800px; margin: 0 auto 1rem; color: #e2e8f0;">
-    Confira nossos produtos nos melhores marketplaces!
-  </p>
+  <p>Confira nossos produtos nos melhores marketplaces!</p>
   
   <div class="shop-container">
     <div class="marketplace-grid">
@@ -986,7 +1044,7 @@
 <!-- ========== CONTATO ========== -->
 <section id="contato">
   <h2>Contato</h2>
-  <p style="text-align: center; margin-bottom: 2rem; color: #e2e8f0;">Entre em contato para soluções em TI:</p>
+  <p>Entre em contato para soluções em TI:</p>
   
   <div class="contact-container">
     <div class="contact-info">
@@ -1110,11 +1168,12 @@
         transform: translateX(-50%);
         background: ${type === 'success' ? '#10b981' : '#ef4444'};
         color: #fff;
-        padding: 1rem 1.5rem;
+        padding: 0.8rem 1.2rem;
         border-radius: 8px;
         z-index: 9999;
         font-weight: 500;
         box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        font-size: 0.9rem;
       `;
       notification.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${msg}`;
       document.body.appendChild(notification);
