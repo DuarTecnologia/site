@@ -90,7 +90,7 @@
 
     nav {
       display: flex;
-      gap: 2rem;
+      gap: 1.2rem;  /* ESPAÇAMENTO REDUZIDO entre os links do menu */
     }
     
     nav a {
@@ -99,6 +99,7 @@
       font-weight: 500;
       transition: 0.3s;
       position: relative;
+      font-size: 0.95rem;
     }
     
     nav a::after {
@@ -278,7 +279,7 @@
     .tech-grid-slim {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(130px, 150px));
-      gap: 1rem;          /* espaçamento reduzido entre os cards */
+      gap: 1rem;
       justify-content: center;
       align-items: stretch;
       margin-top: 2rem;
@@ -291,10 +292,10 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0.75rem;       /* espaço interno entre ícone e texto reduzido */
+      gap: 0.75rem;
       background: rgba(30, 41, 59, 0.5);
       backdrop-filter: blur(5px);
-      padding: 1rem 0.6rem;  /* padding vertical/horizontal reduzido */
+      padding: 1rem 0.6rem;
       border-radius: 15px;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       border: 1px solid rgba(56, 189, 248, 0.15);
@@ -302,7 +303,7 @@
       position: relative;
       overflow: hidden;
       text-decoration: none;
-      min-height: 130px;    /* altura mínima reduzida */
+      min-height: 130px;
     }
 
     .tech-item-slim::before {
@@ -327,7 +328,6 @@
       box-shadow: 0 8px 20px rgba(56, 189, 248, 0.15);
     }
 
-    /* Ícone levemente menor para melhor compactação */
     .tech-icon-slim {
       display: flex;
       align-items: center;
@@ -339,7 +339,6 @@
       transition: all 0.3s ease;
     }
 
-    /* Tamanho padrão das imagens dos parceiros */
     .tech-icon-slim img {
       width: 48px;
       height: auto;
@@ -352,7 +351,6 @@
       transform: rotate(360deg) scale(1.1);
     }
 
-    /* Texto um pouco mais compacto */
     .tech-item-slim span {
       font-size: 0.8rem;
       font-weight: 600;
@@ -496,7 +494,6 @@
       background: rgba(56, 189, 248, 0.2);
     }
     
-    /* Tamanho padrão das imagens dos marketplaces */
     .marketplace-card img {
       width: 80px;
       height: auto;
@@ -680,6 +677,11 @@
         left: 0;
       }
       
+      /* No mobile o espaçamento entre os links do menu será maior para melhor toque */
+      nav a {
+        font-size: 1.1rem;
+      }
+      
       nav a.shop-link {
         background: linear-gradient(135deg, #38bdf8, #0ea5e9);
         padding: 0.5rem 1.5rem;
@@ -726,7 +728,6 @@
         font-size: 1.5rem;
       }
       
-      /* responsivo para a grid reduzida */
       .tech-grid-slim {
         grid-template-columns: repeat(auto-fit, minmax(110px, 130px));
         gap: 0.8rem;
@@ -868,7 +869,7 @@
   </div>
 </section>
 
-<!-- ========== TECNOLOGIAS PARCEIRAS - ESPAÇAMENTO MAIS COMPACTO ========== -->
+<!-- ========== TECNOLOGIAS PARCEIRAS ========== -->
 <section id="tecnologias">
   <h2>Tecnologias Parceiras</h2>
   <p style="text-align: center; max-width: 800px; margin: 0 auto 1.5rem; color: #e2e8f0;">
