@@ -7,7 +7,7 @@
   <meta name="description" content="Especialistas em suporte técnico, redes, cloud e infraestrutura. Transformamos tecnologia em resultado para sua empresa.">
   
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -28,6 +28,7 @@
       background: #0f172a;
       color: #fff;
       position: relative;
+      scroll-behavior: smooth;
     }
 
     /* Imagem de fundo com overlay */
@@ -40,12 +41,12 @@
       height: 100%;
       background: url('assets/imagens/fundo/Fundo_site.png') center center no-repeat fixed;
       background-size: cover;
-      opacity: 0.7;
+      opacity: 0.6;
       z-index: -2;
       pointer-events: none;
     }
 
-    /* Overlay */
+    /* Overlay mais suave */
     body::after {
       content: '';
       position: fixed;
@@ -53,7 +54,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.5), rgba(30, 41, 59, 0.55));
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.6), rgba(30, 41, 59, 0.45));
       z-index: -1;
       pointer-events: none;
     }
@@ -63,34 +64,38 @@
       position: fixed;
       width: 100%;
       top: 0;
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(10px);
-      padding: 1rem 5%;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(12px);
+      padding: 0.8rem 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
       transition: 0.3s;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.1);
     }
 
     header.scrolled {
-      padding: 0.8rem 5%;
+      padding: 0.6rem 5%;
       background: rgba(15, 23, 42, 0.98);
+      border-bottom-color: rgba(56, 189, 248, 0.3);
     }
     
     header h1 {
       color: #38bdf8;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 700;
+      letter-spacing: -0.5px;
     }
     
     header h1 i {
-      margin-right: 10px;
+      margin-right: 8px;
+      font-size: 1.2rem;
     }
 
     nav {
       display: flex;
-      gap: 1.2rem;  /* AJUSTADO: 1.5rem -> 1.2rem */
+      gap: 1rem;
     }
     
     nav a {
@@ -99,7 +104,7 @@
       font-weight: 500;
       transition: 0.3s;
       position: relative;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
     
     nav a::after {
@@ -111,6 +116,7 @@
       height: 2px;
       background: #38bdf8;
       transition: 0.3s;
+      border-radius: 2px;
     }
     
     nav a:hover::after,
@@ -125,13 +131,13 @@
 
     .menu-toggle {
       display: none;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       cursor: pointer;
     }
 
     nav a.shop-link {
       background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.9rem;
       border-radius: 50px;
       transition: 0.3s;
     }
@@ -145,10 +151,10 @@
       display: none;
     }
 
-    /* ========== SEÇÕES ========== */
+    /* ========== SEÇÕES - ESPAÇAMENTO MAIS COMPACTO ========== */
     section {
-      padding: 75px 5% 60px;  /* AJUSTADO: 90px 5% 70px -> 75px 5% 60px */
-      min-height: 100vh;
+      padding: 65px 5% 50px;
+      min-height: auto;
     }
 
     .hero {
@@ -157,25 +163,31 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      min-height: 85vh;
+      padding-top: 70px;
     }
     
     .hero h2 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(135deg, #fff, #38bdf8);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
     }
     
     .hero p {
-      font-size: 1.15rem;
-      margin: 1.2rem 0;
-      max-width: 600px;
+      font-size: 1rem;
+      margin: 1rem 0;
+      max-width: 550px;
       color: #cbd5e1;
     }
 
     /* ========== BOTÕES ========== */
     .btn, .download-btn, .btn-submit {
       display: inline-block;
-      padding: 0.9rem 2rem;
+      padding: 0.75rem 1.8rem;
       background: linear-gradient(135deg, #38bdf8, #0ea5e9);
       color: #fff;
       border-radius: 50px;
@@ -184,6 +196,7 @@
       transition: 0.3s;
       border: none;
       cursor: pointer;
+      font-size: 0.85rem;
     }
     
     .btn:hover, .download-btn:hover, .btn-submit:hover {
@@ -193,7 +206,7 @@
     
     .btn-whatsapp {
       background: linear-gradient(135deg, #25d366, #128C7E);
-      margin-left: 1rem;
+      margin-left: 0.8rem;
     }
     
     .btn-whatsapp:hover {
@@ -202,18 +215,19 @@
 
     /* ========== TÍTULOS ========== */
     h2 {
-      font-size: 2.4rem;
-      margin-bottom: 1.5rem;  /* AJUSTADO: 1.8rem -> 1.5rem */
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
       position: relative;
       display: inline-block;
+      font-weight: 700;
     }
     
     h2::after {
       content: '';
       position: absolute;
-      bottom: -10px;
+      bottom: -8px;
       left: 0;
-      width: 60px;
+      width: 50px;
       height: 3px;
       background: #38bdf8;
       border-radius: 2px;
@@ -232,60 +246,62 @@
     /* ========== CARDS ========== */
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 1.5rem;  /* AJUSTADO: 1.8rem -> 1.5rem */
-      margin-top: 2rem;  /* AJUSTADO: 2.5rem -> 2rem */
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.8rem;
     }
     
     .card {
-      background: rgba(30, 41, 59, 0.55);
+      background: rgba(30, 41, 59, 0.5);
       backdrop-filter: blur(8px);
-      padding: 1.5rem;  /* AJUSTADO: 1.8rem -> 1.5rem */
-      border-radius: 15px;
+      padding: 1.2rem;
+      border-radius: 16px;
       transition: 0.3s;
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      border: 1px solid rgba(56, 189, 248, 0.15);
       text-align: center;
     }
     
     .card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-5px);
       border-color: #38bdf8;
-      background: rgba(30, 41, 59, 0.75);
+      background: rgba(56, 189, 248, 0.15);
     }
     
     .card i {
-      font-size: 2.4rem;
+      font-size: 2rem;
       color: #38bdf8;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
     
     .card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.8rem;
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
     }
     
     .card p {
       color: #e2e8f0;
       line-height: 1.5;
+      font-size: 0.85rem;
     }
 
-    /* ========== TECNOLOGIAS PARCEIRAS ========== */
+    /* ========== TECNOLOGIAS PARCEIRAS - MAIS COMPACTO ========== */
     #tecnologias {
       margin: 0 auto;
-      padding: 80px 5% 60px;
+      padding: 60px 5% 45px;
     }
 
     #tecnologias p {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
     }
 
     .tech-grid-slim {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 155px));
-      gap: 1rem;  /* AJUSTADO: 1.2rem -> 1rem */
+      grid-template-columns: repeat(auto-fit, minmax(120px, 140px));
+      gap: 0.8rem;
       justify-content: center;
       align-items: stretch;
-      margin-top: 1.5rem;  /* AJUSTADO: 2rem -> 1.5rem */
+      margin-top: 1.5rem;
       padding: 0;
     }
 
@@ -294,55 +310,36 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0.6rem;  /* AJUSTADO: 0.8rem -> 0.6rem */
-      background: rgba(30, 41, 59, 0.5);
+      gap: 0.5rem;
+      background: rgba(30, 41, 59, 0.45);
       backdrop-filter: blur(5px);
-      padding: 1rem 0.7rem;  /* AJUSTADO: 1.2rem 0.8rem -> 1rem 0.7rem */
-      border-radius: 15px;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border: 1px solid rgba(56, 189, 248, 0.15);
+      padding: 0.8rem 0.5rem;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(56, 189, 248, 0.1);
       cursor: pointer;
-      position: relative;
-      overflow: hidden;
       text-decoration: none;
-      min-height: 135px;
-    }
-
-    .tech-item-slim::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.2), transparent);
-      transition: left 0.6s ease;
-    }
-
-    .tech-item-slim:hover::before {
-      left: 100%;
     }
 
     .tech-item-slim:hover {
-      transform: translateY(-5px) scale(1.02);
+      transform: translateY(-3px);
       background: rgba(56, 189, 248, 0.2);
       border-color: #38bdf8;
-      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.15);
     }
 
     .tech-icon-slim {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 70px;
-      height: 70px;
+      width: 60px;
+      height: 60px;
       background: rgba(56, 189, 248, 0.1);
       border-radius: 50%;
       transition: all 0.3s ease;
     }
 
     .tech-icon-slim img {
-      width: 52px;
+      width: 45px;
       height: auto;
       transition: all 0.3s ease;
       object-fit: contain;
@@ -350,64 +347,39 @@
 
     .tech-item-slim:hover .tech-icon-slim {
       background: rgba(56, 189, 248, 0.25);
-      transform: rotate(360deg) scale(1.1);
+      transform: scale(1.05);
     }
 
     .tech-item-slim span {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       font-weight: 600;
       color: #f1f5f9;
-      letter-spacing: 0.5px;
       text-align: center;
       transition: all 0.3s ease;
     }
 
     .tech-item-slim:hover span {
       color: #38bdf8;
-      letter-spacing: 0.8px;
     }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .tech-item-slim {
-      animation: fadeInUp 0.4s ease forwards;
-      opacity: 0;
-    }
-
-    .tech-item-slim:nth-child(1) { animation-delay: 0.05s; }
-    .tech-item-slim:nth-child(2) { animation-delay: 0.1s; }
-    .tech-item-slim:nth-child(3) { animation-delay: 0.15s; }
-    .tech-item-slim:nth-child(4) { animation-delay: 0.2s; }
-    .tech-item-slim:nth-child(5) { animation-delay: 0.25s; }
-    .tech-item-slim:nth-child(6) { animation-delay: 0.3s; }
-    .tech-item-slim:nth-child(7) { animation-delay: 0.35s; }
-
-    /* ========== SUPORTE REMOTO ========== */
+    /* ========== SUPORTE REMOTO - MAIS COMPACTO ========== */
     #suporte-remoto {
       margin: 0 auto;
-      padding: 70px 5% 50px;  /* AJUSTADO: 80px 5% 60px -> 70px 5% 50px */
+      padding: 60px 5% 45px;
       text-align: center;
     }
     
     #suporte-remoto > p {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
     }
     
     .remote-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;  /* AJUSTADO: 2.5rem -> 2rem */
-      margin-top: 2rem;
-      max-width: 1000px;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      max-width: 900px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -417,34 +389,46 @@
     }
     
     .remote-info h3 {
-      font-size: 1.7rem;
-      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      margin-bottom: 0.7rem;
       color: #38bdf8;
     }
     
+    .remote-info p {
+      font-size: 0.85rem;
+      margin-bottom: 0.7rem;
+    }
+    
     .download-btn {
-      margin-right: 1rem;
-      margin-bottom: 1rem;
+      margin-right: 0.8rem;
+      margin-bottom: 0.7rem;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.8rem;
     }
     
     .code-info {
-      background: rgba(30, 41, 59, 0.55);
+      background: rgba(30, 41, 59, 0.5);
       backdrop-filter: blur(8px);
-      padding: 1.5rem;
-      border-radius: 15px;
+      padding: 1.2rem;
+      border-radius: 16px;
       text-align: center;
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      border: 1px solid rgba(56, 189, 248, 0.15);
+    }
+    
+    .code-info h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
     }
     
     .access-code {
       background: rgba(15, 23, 42, 0.7);
-      padding: 1rem;
+      padding: 0.7rem;
       border-radius: 10px;
-      font-size: 1.8rem;
+      font-size: 1.3rem;
       font-weight: 700;
-      letter-spacing: 5px;
+      letter-spacing: 4px;
       color: #38bdf8;
-      margin: 1rem 0;
+      margin: 0.8rem 0;
       font-family: monospace;
     }
     
@@ -452,10 +436,11 @@
       background: rgba(56, 189, 248, 0.15);
       border: 1px solid #38bdf8;
       color: #38bdf8;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.8rem;
       border-radius: 8px;
       cursor: pointer;
       transition: 0.3s;
+      font-size: 0.75rem;
     }
     
     .copy-btn:hover {
@@ -463,80 +448,77 @@
       color: #fff;
     }
 
-    /* ========== SHOP SECTION ========== */
+    /* ========== SHOP SECTION - APENAS MERCADO LIVRE ========== */
     #shop {
       text-align: center;
-      padding: 80px 5% 60px;
+      padding: 60px 5% 45px;
     }
     
     #shop > p {
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.9rem;
     }
     
     .shop-container {
-      max-width: 800px;
+      max-width: 500px;
       margin: 0 auto;
-      margin-top: 2rem;
     }
     
-    .marketplace-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;  /* AJUSTADO: 2rem -> 1.5rem */
-      margin-top: 2rem;
-    }
-    
-    .marketplace-card {
-      background: rgba(30, 41, 59, 0.55);
+    .marketplace-single {
+      background: rgba(30, 41, 59, 0.5);
       backdrop-filter: blur(8px);
-      padding: 1.5rem;  /* AJUSTADO: 2rem -> 1.5rem */
-      border-radius: 15px;
+      padding: 1.8rem;
+      border-radius: 20px;
       transition: 0.3s;
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      border: 1px solid rgba(56, 189, 248, 0.15);
       text-align: center;
       text-decoration: none;
       color: #fff;
       display: block;
+      margin: 1.5rem auto 0;
+      max-width: 350px;
     }
     
-    .marketplace-card:hover {
-      transform: translateY(-8px);
+    .marketplace-single:hover {
+      transform: translateY(-5px);
       border-color: #38bdf8;
-      background: rgba(56, 189, 248, 0.2);
+      background: rgba(56, 189, 248, 0.15);
     }
     
-    .marketplace-card img {
-      width: 75px;
+    .marketplace-single img {
+      width: 80px;
       height: auto;
       margin-bottom: 1rem;
       transition: all 0.3s ease;
       object-fit: contain;
     }
     
-    .marketplace-card:hover img {
-      transform: scale(1.1);
+    .marketplace-single:hover img {
+      transform: scale(1.05);
     }
     
-    .marketplace-card h3 {
+    .marketplace-single h3 {
       font-size: 1.4rem;
       margin-bottom: 0.5rem;
+      color: #38bdf8;
     }
     
-    .marketplace-card p {
+    .marketplace-single p {
       color: #cbd5e6;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
     
     .btn-shop {
       display: inline-block;
-      margin-top: 2rem;
-      padding: 1rem 2rem;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.8rem;
       background: linear-gradient(135deg, #38bdf8, #0ea5e9);
       color: #fff;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
       transition: 0.3s;
+      font-size: 0.85rem;
     }
     
     .btn-shop:hover {
@@ -544,40 +526,42 @@
       box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
     }
 
-    /* ========== CONTATO ========== */
+    /* ========== CONTATO - MAIS COMPACTO ========== */
     #contato {
       text-align: center;
-      padding: 70px 5% 50px;  /* AJUSTADO: 80px 5% 60px -> 70px 5% 50px */
+      padding: 60px 5% 45px;
     }
     
     #contato > p {
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.9rem;
     }
     
     .contact-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;  /* AJUSTADO: 2.5rem -> 2rem */
-      margin-top: 2rem;
-      max-width: 1000px;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      max-width: 900px;
       margin-left: auto;
       margin-right: auto;
     }
     
     .contact-info, .contact-form {
-      background: rgba(30, 41, 59, 0.55);
+      background: rgba(30, 41, 59, 0.5);
       backdrop-filter: blur(8px);
-      padding: 2rem;
-      border-radius: 15px;
+      padding: 1.5rem;
+      border-radius: 16px;
       text-align: left;
     }
     
     .contact-info p {
-      margin: 1rem 0;
+      margin: 0.8rem 0;
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.8rem;
       color: #e2e8f0;
+      font-size: 0.85rem;
     }
     
     .contact-info a {
@@ -592,7 +576,8 @@
     
     .contact-info i {
       color: #38bdf8;
-      width: 30px;
+      width: 25px;
+      font-size: 1rem;
     }
     
     .contact-info .fa-whatsapp {
@@ -601,14 +586,15 @@
     
     input, textarea {
       width: 100%;
-      padding: 1rem;
+      padding: 0.8rem;
       background: rgba(15, 23, 42, 0.7);
       border: 1px solid rgba(56, 189, 248, 0.2);
-      border-radius: 8px;
+      border-radius: 10px;
       color: #fff;
       font-family: inherit;
       transition: 0.3s;
-      margin-top: 1rem;
+      margin-top: 0.8rem;
+      font-size: 0.85rem;
     }
     
     input:focus, textarea:focus {
@@ -618,47 +604,51 @@
     
     textarea {
       resize: vertical;
-      min-height: 120px;
+      min-height: 100px;
     }
     
     .btn-submit {
       width: 100%;
-      margin-top: 1rem;
+      margin-top: 0.8rem;
+      padding: 0.7rem;
+      font-size: 0.85rem;
     }
 
     /* ========== FOOTER ========== */
     footer {
       text-align: center;
-      padding: 2rem;
-      background: rgba(2, 6, 23, 0.7);
+      padding: 1.5rem;
+      background: rgba(2, 6, 23, 0.8);
       border-top: 1px solid rgba(56, 189, 248, 0.1);
     }
     
     footer p {
       color: #94a3b8;
+      font-size: 0.75rem;
     }
 
     /* ========== WHATSAPP FLUTUANTE ========== */
     .whatsapp-float {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      bottom: 25px;
+      right: 25px;
       z-index: 1000;
       animation: pulse 2s infinite;
     }
     
     .whatsapp-float a {
       display: flex;
-      width: 60px;
-      height: 60px;
+      width: 55px;
+      height: 55px;
       background: #25d366;
       border-radius: 50%;
       align-items: center;
       justify-content: center;
       color: #fff;
-      font-size: 2rem;
+      font-size: 1.8rem;
       text-decoration: none;
       transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
     }
     
     .whatsapp-float a:hover {
@@ -678,15 +668,16 @@
       
       nav {
         position: fixed;
-        top: 60px;
+        top: 55px;
         left: -100%;
         width: 100%;
         background: rgba(15, 23, 42, 0.98);
         flex-direction: column;
         align-items: center;
-        padding: 2rem;
-        gap: 1.5rem;
+        padding: 1.5rem;
+        gap: 1.2rem;
         transition: 0.3s;
+        backdrop-filter: blur(10px);
       }
       
       nav.active {
@@ -694,25 +685,24 @@
       }
       
       nav a {
-        font-size: 1rem;
+        font-size: 0.95rem;
       }
       
       nav a.shop-link {
-        background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-        padding: 0.5rem 1.5rem;
+        padding: 0.4rem 1.2rem;
       }
       
       .hero h2 {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
       }
       
       .hero p {
-        font-size: 1rem;
+        font-size: 0.9rem;
       }
       
       .btn-whatsapp {
         margin-left: 0;
-        margin-top: 1rem;
+        margin-top: 0.8rem;
       }
       
       .remote-content, .contact-container {
@@ -720,91 +710,41 @@
       }
       
       section {
-        padding: 60px 1.5rem 45px;
+        padding: 50px 1.2rem 35px;
+      }
+      
+      .hero {
+        min-height: 80vh;
+        padding-top: 60px;
       }
       
       h2 {
-        font-size: 2rem;
+        font-size: 1.6rem;
       }
       
       .access-code {
-        font-size: 1.3rem;
-        letter-spacing: 3px;
+        font-size: 1.1rem;
+        letter-spacing: 2px;
       }
       
       .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
+        bottom: 15px;
+        right: 15px;
       }
       
       .whatsapp-float a {
-        width: 50px;
-        height: 50px;
+        width: 48px;
+        height: 48px;
         font-size: 1.5rem;
       }
       
       .tech-grid-slim {
-        grid-template-columns: repeat(auto-fit, minmax(115px, 135px));
-        gap: 0.9rem;
+        grid-template-columns: repeat(auto-fit, minmax(105px, 120px));
+        gap: 0.7rem;
       }
       
       .tech-item-slim {
-        padding: 0.9rem 0.5rem;
-        min-height: 115px;
-      }
-      
-      .tech-icon-slim {
-        width: 55px;
-        height: 55px;
-      }
-
-      .tech-icon-slim img {
-        width: 42px;
-      }
-      
-      .tech-item-slim span {
-        font-size: 0.72rem;
-      }
-      
-      .remote-info {
-        text-align: center;
-      }
-      
-      .remote-info h3 {
-        text-align: center;
-        font-size: 1.4rem;
-      }
-      
-      .contact-info, .contact-form {
-        text-align: center;
-      }
-      
-      .contact-info p {
-        justify-content: center;
-      }
-      
-      .marketplace-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-      
-      .marketplace-card img {
-        width: 60px;
-      }
-      
-      .cards {
-        gap: 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .tech-grid-slim {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem;
-      }
-      
-      .tech-item-slim {
-        padding: 0.8rem 0.4rem;
+        padding: 0.7rem 0.4rem;
       }
       
       .tech-icon-slim {
@@ -817,22 +757,69 @@
       }
       
       .tech-item-slim span {
-        font-size: 0.68rem;
+        font-size: 0.65rem;
       }
       
-      .marketplace-card img {
-        width: 55px;
+      .remote-info {
+        text-align: center;
+      }
+      
+      .remote-info h3 {
+        text-align: center;
+        font-size: 1.3rem;
+      }
+      
+      .contact-info, .contact-form {
+        text-align: center;
+      }
+      
+      .contact-info p {
+        justify-content: center;
+      }
+      
+      .cards {
+        gap: 1rem;
+      }
+      
+      .card {
+        padding: 1rem;
+      }
+      
+      .marketplace-single {
+        padding: 1.2rem;
+        max-width: 280px;
+      }
+      
+      .marketplace-single img {
+        width: 65px;
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .tech-item-slim {
-        animation: none;
-        opacity: 1;
+    @media (max-width: 480px) {
+      .tech-grid-slim {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
       }
       
-      .tech-item-slim:hover {
-        transform: translateY(-3px);
+      .tech-item-slim {
+        padding: 0.6rem 0.3rem;
+      }
+      
+      .tech-icon-slim {
+        width: 45px;
+        height: 45px;
+      }
+
+      .tech-icon-slim img {
+        width: 34px;
+      }
+      
+      .tech-item-slim span {
+        font-size: 0.6rem;
+      }
+      
+      .hero h2 {
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -870,7 +857,7 @@
 <!-- ========== SOBRE ========== -->
 <section id="sobre">
   <h2>Sobre</h2>
-  <p style="text-align: center; max-width: 800px; margin: 0 auto 1.5rem; color: #e2e8f0;">Profissional de TI com mais de 8 anos de experiência em suporte técnico, redes, infraestrutura e cloud. Atuação com atendimento a usuários, diretoria e ambientes corporativos.</p>
+  <p style="text-align: center; max-width: 700px; margin: 0 auto 1.2rem; color: #cbd5e1; font-size: 0.9rem;">Profissional de TI com mais de 8 anos de experiência em suporte técnico, redes, infraestrutura e cloud. Atuação com atendimento a usuários, diretoria e ambientes corporativos.</p>
   <div class="cards">
     <div class="card"><i class="fas fa-bullseye"></i><h3>Missão</h3><p>Oferecer soluções tecnológicas eficientes e acessíveis.</p></div>
     <div class="card"><i class="fas fa-eye"></i><h3>Visão</h3><p>Ser referência em suporte e inovação em tecnologia.</p></div>
@@ -892,7 +879,7 @@
 <!-- ========== TECNOLOGIAS PARCEIRAS ========== -->
 <section id="tecnologias">
   <h2>Tecnologias Parceiras</h2>
-  <p style="text-align: center; max-width: 800px; margin: 0 auto 1rem; color: #e2e8f0;">
+  <p style="text-align: center; max-width: 700px; margin: 0 auto 0.8rem; color: #cbd5e1;">
     Trabalhamos com as melhores tecnologias do mercado para garantir soluções de alta qualidade.
     <br>Clique nos cards para conhecer mais sobre cada fabricante.
   </p>
@@ -900,49 +887,49 @@
   <div class="tech-grid-slim">
     <a href="https://www.microsoft.com/pt-br/microsoft-365" target="_blank" class="tech-item-slim" rel="noopener noreferrer">
       <div class="tech-icon-slim">
-        <img src="assets/imagens/parceiros/microsoft.png" alt="Microsoft">
+        <img src="assets/imagens/parceiros/microsoft.png" alt="Microsoft" onerror="this.style.display='none'">
       </div>
       <span>Microsoft 365</span>
     </a>
     
     <a href="https://ui.com/br/pt/wifi" target="_blank" class="tech-item-slim" rel="noopener noreferrer">
       <div class="tech-icon-slim">
-        <img src="assets/imagens/parceiros/unifi.png" alt="UniFi">
+        <img src="assets/imagens/parceiros/unifi.png" alt="UniFi" onerror="this.style.display='none'">
       </div>
       <span>UniFi WiFi</span>
     </a>
     
     <a href="https://www.dell.com/pt-br" target="_blank" class="tech-item-slim" rel="noopener noreferrer">
       <div class="tech-icon-slim">
-        <img src="assets/imagens/parceiros/dell.png" alt="Dell" onerror="this.src='https://via.placeholder.com/55?text=Dell'">
+        <img src="assets/imagens/parceiros/dell.png" alt="Dell" onerror="this.style.display='none'">
       </div>
       <span>Dell</span>
     </a>
     
     <a href="https://www.lenovo.com/br/pt" target="_blank" class="tech-item-slim" rel="noopener noreferrer">
       <div class="tech-icon-slim">
-        <img src="assets/imagens/parceiros/lenovo.png" alt="Lenovo">
+        <img src="assets/imagens/parceiros/lenovo.png" alt="Lenovo" onerror="this.style.display='none'">
       </div>
       <span>Lenovo</span>
     </a>
     
     <a href="https://www.samsung.com/br" target="_blank" class="tech-item-slim" rel="noopener noreferrer">
       <div class="tech-icon-slim">
-        <img src="assets/imagens/parceiros/samsung.png" alt="Samsung">
+        <img src="assets/imagens/parceiros/samsung.png" alt="Samsung" onerror="this.style.display='none'">
       </div>
       <span>Samsung</span>
     </a>
     
     <a href="https://www.sophos.com/pt-br" target="_blank" class="tech-item-slim" rel="noopener noreferrer">
       <div class="tech-icon-slim">
-        <img src="assets/imagens/parceiros/sophos.png" alt="Sophos">
+        <img src="assets/imagens/parceiros/sophos.png" alt="Sophos" onerror="this.style.display='none'">
       </div>
       <span>Sophos</span>
     </a>
     
     <a href="https://www.fortinet.com/br" target="_blank" class="tech-item-slim" rel="noopener noreferrer">
       <div class="tech-icon-slim">
-        <img src="assets/imagens/parceiros/fortinet.png" alt="Fortinet">
+        <img src="assets/imagens/parceiros/fortinet.png" alt="Fortinet" onerror="this.style.display='none'">
       </div>
       <span>Fortinet</span>
     </a>
@@ -959,7 +946,7 @@
       <h3><i class="fas fa-download"></i> Baixe o AnyDesk</h3>
       <p>Baixe e execute o AnyDesk. É rápido, seguro e não requer instalação.</p>
       <a href="https://anydesk.com/pt/downloads" target="_blank" class="download-btn"><i class="fas fa-download"></i> Baixar AnyDesk</a>
-      <div style="margin-top: 1rem;">
+      <div style="margin-top: 0.8rem;">
         <p><i class="fas fa-check-circle" style="color: #38bdf8;"></i> Windows, Mac, Linux, Android, iOS</p>
         <p><i class="fas fa-lock" style="color: #38bdf8;"></i> Conexão segura com criptografia TLS</p>
       </div>
@@ -970,30 +957,22 @@
       <p>Após baixar, informe o código abaixo:</p>
       <div class="access-code" id="accessCode">123 456 789</div>
       <button class="copy-btn" onclick="copyAccessCode()"><i class="fas fa-copy"></i> Copiar código</button>
-      <p style="margin-top: 0.8rem; font-size: 0.85rem; color: #cbd5e6;"><i class="fas fa-clock"></i> Atendimento em horário comercial</p>
+      <p style="margin-top: 0.7rem; font-size: 0.75rem; color: #cbd5e6;"><i class="fas fa-clock"></i> Atendimento em horário comercial</p>
     </div>
   </div>
 </section>
 
-<!-- ========== SHOP ========== -->
+<!-- ========== SHOP - APENAS MERCADO LIVRE ========== -->
 <section id="shop">
   <h2><i class="fas fa-store"></i> Nossa Loja</h2>
-  <p>Confira nossos produtos nos melhores marketplaces!</p>
+  <p>Confira nossos produtos no Mercado Livre!</p>
   
   <div class="shop-container">
-    <div class="marketplace-grid">
-      <a href="https://www.mercadolivre.com.br/social/duartee7/lists" target="_blank" class="marketplace-card" rel="noopener noreferrer">
-        <img src="assets/imagens/marketplaces/mercadolivre.png" alt="Mercado Livre">
-        <h3>Mercado Livre</h3>
-        <p>Encontre nossos produtos com entrega rápida e segura</p>
-      </a>
-      
-      <a href="https://shopee.com.br/" target="_blank" class="marketplace-card" rel="noopener noreferrer">
-        <img src="assets/imagens/marketplaces/shopee.png" alt="Shopee">
-        <h3>Shopee</h3>
-        <p>Ofertas exclusivas e frete grátis em compras selecionadas</p>
-      </a>
-    </div>
+    <a href="https://www.mercadolivre.com.br/social/duartee7/lists" target="_blank" class="marketplace-single" rel="noopener noreferrer">
+      <img src="assets/imagens/marketplaces/mercadolivre.png" alt="Mercado Livre" onerror="this.style.display='none'">
+      <h3>Mercado Livre</h3>
+      <p>Encontre nossos produtos com entrega rápida e segura</p>
+    </a>
     
     <a href="https://www.mercadolivre.com.br/social/duartee7" target="_blank" class="btn-shop">
       <i class="fas fa-arrow-right"></i> Visitar Nossa Loja
@@ -1128,11 +1107,12 @@
         transform: translateX(-50%);
         background: ${type === 'success' ? '#10b981' : '#ef4444'};
         color: #fff;
-        padding: 0.8rem 1.2rem;
+        padding: 0.7rem 1.2rem;
         border-radius: 8px;
         z-index: 9999;
         font-weight: 500;
         box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        font-size: 0.85rem;
       `;
       notification.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${msg}`;
       document.body.appendChild(notification);
@@ -1183,7 +1163,7 @@
     if (sections.length && navLinks.length) {
       window.addEventListener('scroll', () => {
         let current = '';
-        const scrollPosition = window.scrollY + 150;
+        const scrollPosition = window.scrollY + 120;
         
         sections.forEach(section => {
           const sectionTop = section.offsetTop;
